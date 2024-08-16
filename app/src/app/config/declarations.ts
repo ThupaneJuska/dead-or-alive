@@ -16,6 +16,14 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-dashboardComponent
+import { dashboardComponent } from '../components/Admin Dashboard/dashboard.component';
+//CORE_REFERENCE_IMPORT-landingComponent
+import { landingComponent } from '../components/Landing/landing.component';
+//CORE_REFERENCE_IMPORT-loginComponent
+import { loginComponent } from '../components/Authentication/login.component';
+//CORE_REFERENCE_IMPORT-registerComponent
+import { registerComponent } from '../components/Authentication/register.component';
 
 /**
  * Reads datasource object and injects the datasource object into window object
@@ -31,7 +39,7 @@ export function startupServiceFactory(startupService: NDataSourceService) {
         });
       });
     });
-  }
+  };
 }
 
 /**
@@ -48,6 +56,14 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-dashboardComponent
+  dashboardComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingComponent
+  landingComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginComponent
+  loginComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-registerComponent
+  registerComponent,
 ];
 
 /**

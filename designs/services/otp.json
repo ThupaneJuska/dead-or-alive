@@ -1,0 +1,143 @@
+[
+    {
+        "id": "sd_otGe0ZttRfKuTfoN",
+        "type": "tab",
+        "createdDate": "2024-08-19T08:44:29.280Z",
+        "label": "otp",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "otp",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_09Bm08p2OwW8ujPC",
+        "type": "Start",
+        "z": "sd_otGe0ZttRfKuTfoN",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "otpService",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "otp_code",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "otpService",
+        "category": "General",
+        "x": 60,
+        "y": 60,
+        "wires": [
+            [
+                "sd_tTfgJfslztSufprN"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "otp"
+    },
+    {
+        "id": "sd_tTfgJfslztSufprN",
+        "type": "ServiceVariables",
+        "z": "sd_otGe0ZttRfKuTfoN",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "setOtp",
+                "typedIpValue": {
+                    "type": "bh.input",
+                    "value": "otp_code"
+                }
+            }
+        ],
+        "functionName": "sd_tTfgJfslztSufprN",
+        "category": "Function",
+        "x": 160,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "otp",
+        "generated": true
+    },
+    {
+        "id": "sd_0E1cDi89uWuvLIHb",
+        "type": "Start",
+        "z": "sd_otGe0ZttRfKuTfoN",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getOtp",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "otp_code",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getOtp",
+        "category": "General",
+        "x": 60,
+        "y": 160,
+        "wires": [
+            [
+                "sd_6fV3TCBKQD4w93ap"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "otp"
+    },
+    {
+        "id": "sd_6fV3TCBKQD4w93ap",
+        "type": "ServiceVariables",
+        "z": "sd_otGe0ZttRfKuTfoN",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "setOtp",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "otp_code"
+                }
+            }
+        ],
+        "functionName": "sd_6fV3TCBKQD4w93ap",
+        "category": "Function",
+        "x": 160,
+        "y": 160,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "otp",
+        "generated": true
+    }
+]

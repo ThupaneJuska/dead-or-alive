@@ -1,9 +1,26 @@
 {
     "routes": [
         {
+            "path": "login",
+            "component": "loginComponent"
+        },
+        {
+            "path": "forgot-password",
+            "component": "forgot_passwordComponent"
+        },
+        {
+            "path": "verify-code",
+            "component": "verify_codeComponent"
+        },
+        {
+            "path": "reset-password",
+            "component": "reset_passwordComponent"
+        },
+        {
             "path": "''",
-            "redirectTo": "",
-            "pathMatch": "full"
+            "redirectTo": "/login",
+            "pathMatch": "full",
+            "default": true
         },
         {
             "path": "**",

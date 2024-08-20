@@ -1,24 +1,16 @@
 {
     "routes": [
         {
-            "path": "login",
-            "component": "loginComponent"
+            "path": "DOAServices",
+            "component": "landingComponent"
         },
         {
-            "path": "forgot-password",
-            "component": "forgot_passwordComponent"
-        },
-        {
-            "path": "verify-code",
-            "component": "verify_codeComponent"
-        },
-        {
-            "path": "reset-password",
-            "component": "reset_passwordComponent"
+            "path": "call",
+            "component": "contact_usComponent"
         },
         {
             "path": "''",
-            "redirectTo": "/login",
+            "redirectTo": "/DOAServices",
             "pathMatch": "full",
             "default": true
         },

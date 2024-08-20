@@ -26,6 +26,8 @@ import { otp } from '../sd-services/otp';
 import { verify_codeComponent } from '../components/Authentication/verify_code.component';
 //CORE_REFERENCE_IMPORT-forgot_passwordComponent
 import { forgot_passwordComponent } from '../components/Authentication/forgot_password.component';
+//CORE_REFERENCE_IMPORT-contact_usComponent
+import { contact_usComponent } from '../components/Landing/contact_us.component';
 //CORE_REFERENCE_IMPORT-dashboardComponent
 import { dashboardComponent } from '../components/Admin Dashboard/dashboard.component';
 //CORE_REFERENCE_IMPORT-landingComponent
@@ -74,6 +76,8 @@ export const appDeclarations = [
   verify_codeComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-forgot_passwordComponent
   forgot_passwordComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-contact_usComponent
+  contact_usComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-dashboardComponent
   dashboardComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingComponent
@@ -113,7 +117,9 @@ export const appRoutes = [
   { path: 'forgot-password', component: forgot_passwordComponent },
   { path: 'verify-code', component: verify_codeComponent },
   { path: 'reset-password', component: reset_passwordComponent },
-  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'DOAServices', component: landingComponent },
+  { path: 'call', component: contact_usComponent },
+  { path: '', redirectTo: '/loginDOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

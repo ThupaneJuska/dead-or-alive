@@ -3,7 +3,7 @@
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
-import { Component, Injector } from '@angular/core'; //_splitter_
+import { Component, HostListener, Injector } from '@angular/core'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -55,14 +55,47 @@ export class landingComponent {
     }
   }
 
+  @HostListener('document:wheel', ['$event']) sd_EZA5vzCitJkCx2Z4(event) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.$event = event;
+      bh = this.sd_v9PTfBLExBjAc9ot(bh);
+      //appendnew_next_sd_EZA5vzCitJkCx2Z4
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_EZA5vzCitJkCx2Z4');
+    }
+  }
+
   //appendnew_flow_landingComponent_start
 
   sd_FJVIE0SwZ4pVtZwy(bh) {
     try {
+      this.page.isScrolled = false;
       //appendnew_next_sd_FJVIE0SwZ4pVtZwy
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_FJVIE0SwZ4pVtZwy');
+    }
+  }
+
+  sd_v9PTfBLExBjAc9ot(bh) {
+    try {
+      const page = this.page; // console.log("check", bh.input.event)
+      // console.log("w", window)
+      console.log('p', page.isScrolled);
+      if (window.scrollY > 1) {
+        console.log('moved', window.scrollY);
+        // page.toolbar.classList.add('scrolled');
+        page.isScrolled = true;
+      } else {
+        page.isScrolled = false;
+      }
+      //appendnew_next_sd_v9PTfBLExBjAc9ot
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_v9PTfBLExBjAc9ot');
     }
   }
 

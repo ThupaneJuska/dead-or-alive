@@ -22,3 +22,23 @@
         "loader"
     ]
 }
+
+{
+    "classes": [
+        "FullHeight",
+        "width20",
+        "fullWidth",
+        "yellow-bg",
+        "GREENISH-BG",
+        "GREENISH-COLOR",
+        "COLOR-WHITE",
+        "box-shadow",
+        "CARDS",
+        "toolbar",
+        "bg-ligth",
+        "scrolled",
+        "center-text",
+        "image-call",
+        "cdk-text-field-autofill-monitored"
+    ]
+}

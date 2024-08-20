@@ -1,5 +1,30 @@
 {
     "classes": [
+        "full-height",
+        "full-width",
+        "nav-bar",
+        "relative",
+        "absolute",
+        "login",
+        "logo",
+        "section",
+        "login-form-container",
+        "form",
+        "login-text",
+        "input-field",
+        "mat-form-field-infix",
+        "mat-form-field-appearance-outline",
+        "mat-form-field-outline",
+        "login-btn",
+        "btn",
+        "forgot-pass",
+        "forgot",
+        "loader"
+    ]
+}
+
+{
+    "classes": [
         "FullHeight",
         "width20",
         "fullWidth",

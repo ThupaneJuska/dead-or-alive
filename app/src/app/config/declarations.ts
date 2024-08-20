@@ -113,13 +113,13 @@ export const appProviders = [
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
+  { path: 'DOAServices', component: landingComponent },
+  { path: 'call', component: contact_usComponent },
   { path: 'login', component: loginComponent },
   { path: 'forgot-password', component: forgot_passwordComponent },
   { path: 'verify-code', component: verify_codeComponent },
   { path: 'reset-password', component: reset_passwordComponent },
-  { path: 'DOAServices', component: landingComponent },
-  { path: 'call', component: contact_usComponent },
-  { path: '', redirectTo: '/loginDOAServices', pathMatch: 'full' },
+  { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

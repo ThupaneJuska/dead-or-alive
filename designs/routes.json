@@ -9,6 +9,22 @@
             "component": "contact_usComponent"
         },
         {
+            "path": "login",
+            "component": "loginComponent"
+        },
+        {
+            "path": "forgot-password",
+            "component": "forgot_passwordComponent"
+        },
+        {
+            "component": "verify_codeComponent",
+            "path": "verify-code"
+        },
+        {
+            "component": "reset_passwordComponent",
+            "path": "reset-password"
+        },
+        {
             "path": "''",
             "redirectTo": "/DOAServices",
             "pathMatch": "full",

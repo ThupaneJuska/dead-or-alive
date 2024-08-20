@@ -1,6 +1,16 @@
 {
     "routes": [
         {
+            "path": "dashboard",
+            "component": "dashboardComponent",
+            "children": [
+                {
+                    "path": "home",
+                    "component": "homeComponent"
+                }
+            ]
+        },
+        {
             "path": "DOAServices",
             "component": "landingComponent"
         },

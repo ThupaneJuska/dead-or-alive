@@ -55,14 +55,70 @@ export class dashboardComponent {
     }
   }
 
+  navItems(index: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { index };
+      bh.local = {};
+      bh = this.sd_MzHFd7vzx5yvrY4O(bh);
+      //appendnew_next_navItems
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_daPh54ERMYaeDgOn');
+    }
+  }
   //appendnew_flow_dashboardComponent_start
 
   sd_Fes81ouNq6OVHJG2(bh) {
     try {
+      this.page.navItem = 'Home';
+      this.page.selectedItem = 0;
+      bh = this.sd_BZk5VYcbok7vTCa5(bh);
       //appendnew_next_sd_Fes81ouNq6OVHJG2
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_Fes81ouNq6OVHJG2');
+    }
+  }
+
+  sd_BZk5VYcbok7vTCa5(bh) {
+    try {
+      bh = this.sd_6vIzrnwUGbfiq4Y8(bh);
+      //appendnew_next_sd_BZk5VYcbok7vTCa5
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_BZk5VYcbok7vTCa5');
+    }
+  }
+
+  sd_6vIzrnwUGbfiq4Y8(bh) {
+    try {
+      const page = this.page;
+      page.sideNav = [
+        { label: 'Home', icon: 'home', route: '/dashboard/home' },
+        { label: 'Claims', icon: 'description' },
+        { label: 'Register Client', icon: 'edit' },
+        { label: 'Schedules', icon: 'today' },
+        { label: 'Reports', icon: 'folder_open' },
+        { label: 'Audit Logs', icon: 'trending_up' },
+      ];
+      //appendnew_next_sd_6vIzrnwUGbfiq4Y8
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6vIzrnwUGbfiq4Y8');
+    }
+  }
+
+  sd_MzHFd7vzx5yvrY4O(bh) {
+    try {
+      const page = this.page;
+      page.navItem = bh.input.index.label;
+      //appendnew_next_sd_MzHFd7vzx5yvrY4O
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_MzHFd7vzx5yvrY4O');
     }
   }
 

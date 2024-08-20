@@ -1,0 +1,61 @@
+<div fxLayout="column wrap" class="full-width" fxLayoutAlign="start center" [fxShow]="true" fxFill>
+  <div fxLayout="row wrap" class="full-width" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+    <div fxLayout="column wrap" class="width-30 margin-top-10px margin-left-1em search" fxLayoutAlign="start stretch" [fxShow]="true">
+      <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+        <input matInput type="Search" placeholder="Search" [required]="false" (keydown)="onFilter_2($event)">
+        <mat-icon matPrefix>search</mat-icon>
+      </mat-form-field>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+      <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="blue-color" fxLayoutAlign="center stretch" [fxShow]="true">
+          <div>
+            View by</div>
+        </div>
+        <div fxLayout="column wrap" class="padding-5px filter-cards" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div class="padding-5px blue-color">
+            Plan A</div>
+        </div>
+        <div fxLayout="column wrap" class="filter-cards" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div class="padding-5px blue-color">
+            Plan B</div>
+        </div>
+        <div fxLayout="column wrap" class="filter-cards" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div class="padding-5px blue-color">
+            Plan C</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="full-width" fxLayoutAlign="center stretch" [fxShow]="true">
+    <div fxLayout="column" style="width:95%; border: 1.5px solid #124e52;">
+      <table mat-table [dataSource]="page?.tableData" matSort class="table-width-fix">
+        <tr mat-header-row *matHeaderRowDef="[&apos;position&apos;,&apos;name&apos;,&apos;weight&apos;,&apos;symbol&apos;]"></tr>
+        <tr mat-row *matRowDef="let row; columns: [&apos;position&apos;,&apos;name&apos;,&apos;weight&apos;,&apos;symbol&apos;];"></tr>
+
+        <ng-container matColumnDef="position">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>POSITION</th>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.position}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef>NAME</th>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.name}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="weight">
+          <th mat-header-cell *matHeaderCellDef>WEIGHT</th>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.weight}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="symbol">
+          <th mat-header-cell *matHeaderCellDef>SYMBOL</th>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.symbol}}</td>
+        </ng-container>
+      </table>
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
+      </mat-paginator>
+
+    </div>
+  </div>
+</div>

@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-homeComponent
+import { homeComponent } from '../components/Admin Dashboard/home.component';
 //CORE_REFERENCE_IMPORT-loaderComponent
 import { loaderComponent } from '../components/loader/loader.component';
 //CORE_REFERENCE_IMPORT-reset_passwordComponent
@@ -68,6 +70,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
+  homeComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loaderComponent
   loaderComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-reset_passwordComponent
@@ -113,13 +117,18 @@ export const appProviders = [
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
+  {
+    path: 'dashboard',
+    component: dashboardComponent,
+    children: [{ path: 'home', component: homeComponent }],
+  },
   { path: 'DOAServices', component: landingComponent },
   { path: 'call', component: contact_usComponent },
   { path: 'login', component: loginComponent },
   { path: 'forgot-password', component: forgot_passwordComponent },
   { path: 'verify-code', component: verify_codeComponent },
   { path: 'reset-password', component: reset_passwordComponent },
-  { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
+  { path: '', redirectTo: '/DOAServicesDOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

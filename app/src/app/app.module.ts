@@ -5,7 +5,7 @@ import { appImportModules } from './config/import-modules';
 
 @NgModule({
   declarations: [...appDeclarations],
-  imports: [...appImportModules],
+  imports: [...appImportModules, ],
   providers: [...appProviders],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
   bootstrap: [...appBootstrap]

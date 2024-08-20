@@ -1,9 +1,20 @@
 {
     "routes": [
         {
+            "path": "dashboard",
+            "component": "dashboardComponent",
+            "children": [
+                {
+                    "path": "home",
+                    "component": "homeComponent"
+                }
+            ]
+        },
+        {
             "path": "''",
-            "redirectTo": "",
-            "pathMatch": "full"
+            "redirectTo": "/dashboard/home",
+            "pathMatch": "full",
+            "default": true
         },
         {
             "path": "**",

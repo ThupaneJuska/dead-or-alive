@@ -2,6 +2,89 @@
 
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
+$yellow: #f7dd71;
+$light-grey: #edf5f5;
+$light-blue: #124e52;
+// angel
+bh-contact_us{
+    // background-color:#edf5f5 ;
+    height: 100vh !important;
+}
+.FullHeight{
+    height: 100%;
+}
+.width20{
+    width: 5%;
+}
+.fullWidth{
+    width: 100%;
+}
+.yellow-bg{
+    background-color:$yellow;
+}
+.GREENISH-BG{
+    background-color: #124e52;
+}
+.GREENISH-COLOR{
+    color: $light-blue;
+}
+.COLOR-WHITE{
+    color: WHITE;
+}
+.box-shadow {
+    border-bottom: 5.5px solid #124e52 !important;
+    border-right: 5.5px solid #124e52 !important;
+    border-radius: 10px !important;
+}
+.box-shadow:hover {
+    border: 3px solid #124e52 !important;
+}
+.CARDS{
+    border: solid 1px #124e5285;
+     border-radius: 10px !important;
+    height: 390px;
+overflow: hidden;
+margin-bottom: 10px;
+}
+.CARDS:hover {
+     height: 390px;
+         box-sizing: unset !important;
+      border-bottom: 4.5px solid #124e52 !important;
+     border-right: 4.5px solid #124e52 !important;
+    border-radius: 10px !important;
+}
+.toolbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px;
+  text-align: center;
+  transition: background-color 0.3s ease;
+  z-index: 1000;
+   background-color: #edf5f5;
+}
+.bg-ligth{
+     background-color: #edf5f5;
+}
+.scrolled {
+  background-color: white;
+
+  border-bottom: 1px solid #ccc;
+
+ }
+.center-text{
+    text-align: center
+}
+.image-call{
+        width: 13rem;
+        height: 13rem;
+}
+
+.cdk-text-field-autofill-monitored:not(:-webkit-autofill){
+    max-height: 80px;
+}
+// angel
 
 //colors
 $yellow: #f7dd71;

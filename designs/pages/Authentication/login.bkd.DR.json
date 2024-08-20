@@ -365,7 +365,7 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "width:38%; border-radius:50%",
+                                "_value": "width:50%; border-radius:50%",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -379,7 +379,7 @@
                             },
                             {
                                 "_key": "imgSrc",
-                                "_value": "/Web/images/logo.jpg",
+                                "_value": "/Web/images/logo.png",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },

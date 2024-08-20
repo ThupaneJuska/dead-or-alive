@@ -18,6 +18,18 @@ window['neutrinos'] = {
 //CORE_REFERENCE_IMPORTS
 //CORE_REFERENCE_IMPORT-homeComponent
 import { homeComponent } from '../components/Admin Dashboard/home.component';
+//CORE_REFERENCE_IMPORT-loaderComponent
+import { loaderComponent } from '../components/loader/loader.component';
+//CORE_REFERENCE_IMPORT-reset_passwordComponent
+import { reset_passwordComponent } from '../components/Authentication/reset_password.component';
+//CORE_REFERENCE_IMPORT-otp
+import { otp } from '../sd-services/otp';
+//CORE_REFERENCE_IMPORT-verify_codeComponent
+import { verify_codeComponent } from '../components/Authentication/verify_code.component';
+//CORE_REFERENCE_IMPORT-forgot_passwordComponent
+import { forgot_passwordComponent } from '../components/Authentication/forgot_password.component';
+//CORE_REFERENCE_IMPORT-contact_usComponent
+import { contact_usComponent } from '../components/Landing/contact_us.component';
 //CORE_REFERENCE_IMPORT-dashboardComponent
 import { dashboardComponent } from '../components/Admin Dashboard/dashboard.component';
 //CORE_REFERENCE_IMPORT-landingComponent
@@ -60,6 +72,16 @@ export const appDeclarations = [
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
   homeComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loaderComponent
+  loaderComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-reset_passwordComponent
+  reset_passwordComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-verify_codeComponent
+  verify_codeComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-forgot_passwordComponent
+  forgot_passwordComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-contact_usComponent
+  contact_usComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-dashboardComponent
   dashboardComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingComponent
@@ -85,6 +107,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-otp
+  otp,
 ];
 
 /**
@@ -98,7 +122,13 @@ export const appRoutes = [
     component: dashboardComponent,
     children: [{ path: 'home', component: homeComponent }],
   },
-  { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
+  { path: 'DOAServices', component: landingComponent },
+  { path: 'call', component: contact_usComponent },
+  { path: 'login', component: loginComponent },
+  { path: 'forgot-password', component: forgot_passwordComponent },
+  { path: 'verify-code', component: verify_codeComponent },
+  { path: 'reset-password', component: reset_passwordComponent },
+  { path: '', redirectTo: '/DOAServicesDOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

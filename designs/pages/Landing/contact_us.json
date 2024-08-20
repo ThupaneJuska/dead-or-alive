@@ -1,0 +1,219 @@
+[
+    {
+        "id": "sd_YuwrB9kbk8y0g2BR",
+        "type": "tab",
+        "createdDate": "2024-08-18T20:25:10.987Z",
+        "label": "contact_us",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "contact_usComponent"
+    },
+    {
+        "id": "sd_hd5ID4SyAIDQ6ziH",
+        "type": "OnInit",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_hd5ID4SyAIDQ6ziH",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_iNYxRsu8lErBTFfW"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "contact_usComponent"
+    },
+    {
+        "id": "sd_UJhEms9XJlOq7Ybs",
+        "type": "PageVariables",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "isScrolled",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            }
+        ],
+        "functionName": "sd_UJhEms9XJlOq7Ybs",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_D4WnzTN0EiFEzzs2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_T4TpJcBpCObCC90t",
+        "type": "HostListener",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "eventName": "\"document:wheel\"",
+        "functionName": "sd_T4TpJcBpCObCC90t",
+        "category": "Listener",
+        "x": 185,
+        "y": 200,
+        "wires": [
+            [
+                "sd_Rbe49ktoIz9qSgrZ"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "eventName": {
+                "type": "str",
+                "value": "document:wheel",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "contact_usComponent"
+    },
+    {
+        "id": "sd_Rbe49ktoIz9qSgrZ",
+        "type": "Script",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// console.log(\"check\", bh.input.event)\n// console.log(\"w\", window)\nconsole.log(\"p\",page.isScrolled)\nif( window.scrollY > 1){\n    console.log(\"moved\", window.scrollY)\n    // page.toolbar.classList.add('scrolled');\n    page.isScrolled = true\n} else{\n    page.isScrolled = false\n}",
+        "functionName": "sd_Rbe49ktoIz9qSgrZ",
+        "category": "Function",
+        "x": 265,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_D4WnzTN0EiFEzzs2",
+        "type": "Script",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.formContact = new FormGroup({\n    email:new FormControl(\"\",Validators.required),\n    title:new FormControl(\"\"),\n    massege:new FormControl(\"\",Validators.required)\n})",
+        "functionName": "sd_D4WnzTN0EiFEzzs2",
+        "category": "Function",
+        "x": 300,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_iNYxRsu8lErBTFfW",
+        "type": "UseDependency",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "FormGroup",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/forms",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_iNYxRsu8lErBTFfW",
+        "category": "Function",
+        "x": 120,
+        "y": 40,
+        "wires": [
+            [
+                "sd_UJhEms9XJlOq7Ybs"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ApSpYIma5PeptqEU",
+        "type": "PageStart",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "massege",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "massege",
+        "category": "General",
+        "x": 105,
+        "y": 340,
+        "wires": [
+            [
+                "sd_nGFKFjLdJumHKzuI"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "contact_usComponent"
+    },
+    {
+        "id": "sd_nGFKFjLdJumHKzuI",
+        "type": "Script",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(page.formContact)",
+        "functionName": "sd_nGFKFjLdJumHKzuI",
+        "category": "Function",
+        "x": 240,
+        "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    }
+]

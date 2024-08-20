@@ -1,9 +1,18 @@
 {
     "routes": [
         {
+            "path": "DOAServices",
+            "component": "landingComponent"
+        },
+        {
+            "path": "call",
+            "component": "contact_usComponent"
+        },
+        {
             "path": "''",
-            "redirectTo": "",
-            "pathMatch": "full"
+            "redirectTo": "/DOAServices",
+            "pathMatch": "full",
+            "default": true
         },
         {
             "path": "**",

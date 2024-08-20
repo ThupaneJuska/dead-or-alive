@@ -12,7 +12,7 @@
         },
         {
             "path": "''",
-            "redirectTo": "/dashboard/home",
+            "redirectTo": "/DOAServices",
             "pathMatch": "full",
             "default": true
         },

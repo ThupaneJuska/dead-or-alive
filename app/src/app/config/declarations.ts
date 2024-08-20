@@ -98,7 +98,7 @@ export const appRoutes = [
     component: dashboardComponent,
     children: [{ path: 'home', component: homeComponent }],
   },
-  { path: '', redirectTo: '/dashboard/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

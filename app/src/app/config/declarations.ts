@@ -16,10 +16,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
-//CORE_REFERENCE_IMPORT-dashboardComponent
-import { dashboardComponent } from '../components/Admin Dashboard/dashboard.component';
 //CORE_REFERENCE_IMPORT-landingComponent
 import { landingComponent } from '../components/Landing/landing.component';
+//CORE_REFERENCE_IMPORT-dashboardComponent
+import { dashboardComponent } from '../components/Admin Dashboard/dashboard.component';
 //CORE_REFERENCE_IMPORT-loginComponent
 import { loginComponent } from '../components/Authentication/login.component';
 //CORE_REFERENCE_IMPORT-registerComponent
@@ -56,10 +56,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
-  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-dashboardComponent
-  dashboardComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-landingComponent
   landingComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-dashboardComponent
+  dashboardComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loginComponent
   loginComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-registerComponent
@@ -89,7 +89,8 @@ export const appProviders = [
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
-  { path: '', redirectTo: '/', pathMatch: 'full' },
+  { path: 'register', component: registerComponent },
+  { path: '', redirectTo: '**', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

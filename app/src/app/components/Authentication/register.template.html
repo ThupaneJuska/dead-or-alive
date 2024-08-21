@@ -1,1 +1,513 @@
-<div id="angularRoot"></div>
+<div fxLayout="column wrap" class="kg-full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><mat-horizontal-stepper [linear]="true" #stepper class="kg-full-width">
+      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-step label="Client Details" [stepControl]="page.clientForm" editable="true"><mat-card>
+            <mat-card-content>
+              <form [formGroup]="page.clientForm">
+                <h3>
+                  Client Details</h3>
+                <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+                    <mat-error align="start" *ngIf="page.clientForm.controls.firstName?.errors?.required">First Name is <strong>required<strong></strong></strong></mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+                    <mat-error align="start" *ngIf="page.clientForm.controls.lastName?.errors?.required">Last Name is <strong>required<strong></strong></strong></mat-error>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput placeholder="ID Number" [required]="false" formControlName="idNumber" maxlength="13">
+                    <mat-error align="start" *ngIf="page.clientForm.controls.idNumber?.errors?.required">ID Number is <strong>required<strong></strong></strong></mat-error><mat-error align="start" *ngIf="page.clientForm.controls.idNumber?.errors?.minlength">ID Number must be 13 digits long!!</mat-error>
+                  </mat-form-field><mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                    <mat-label>Gender</mat-label>
+                    <mat-select formControlName="gender" placeholder="Gender" [required]="false">
+                      <ng-template ngFor let-option [ngForOf]="page.genders" let-i="index">
+                        <mat-option [value]="option.value">{{option.viewValue}}</mat-option>
+                      </ng-template>
+                    </mat-select>
+                    <mat-error align="start" *ngIf="page.clientForm.controls.gender?.errors?.required">Gender is <strong>required<strong></strong></strong></mat-error>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true"><mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                    <mat-label>Package Type</mat-label>
+                    <mat-select formControlName="packageType" placeholder="Package Type" [required]="false">
+                      <ng-template ngFor let-option [ngForOf]="page.package" let-i="index">
+                        <mat-option [value]="option.value">{{option.viewValue}}</mat-option>
+                      </ng-template>
+                    </mat-select>
+                    <mat-error align="start" *ngIf="page.clientForm.controls.packageType?.errors?.required">Package Type is <strong>required<strong></strong></strong></mat-error>
+                  </mat-form-field></div>
+                <h3>
+                  Contact Details</h3>
+                <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput placeholder="Cellphone" [required]="false" formControlName="cellphone">
+                    <mat-error align="start" *ngIf="page.clientForm.controls.cellphone?.errors?.required">Cellphone is <strong>required<strong></strong></strong></mat-error>
+                  </mat-form-field>
+                  <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput placeholder="Address" [required]="false" formControlName="address">
+                    <mat-error align="start" *ngIf="page.clientForm.controls.address?.errors?.required">Address is <strong>required<strong></strong></strong></mat-error>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                    <input matInput type="email" placeholder="Email" [required]="false" formControlName="email">
+                    <mat-error align="start" *ngIf="page.clientForm.controls.email?.errors?.required">Email is <strong>required<strong></strong></strong></mat-error><mat-error align="start" *ngIf="page.clientForm.controls.email?.errors?.email">Please enter a valid email address</mat-error>
+                  </mat-form-field>
+                </div>
+                <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                  <div (click)="upload()">
+                    <input type="file" id="upload">
+                  </div>
+                </div>
+                <div fxLayout="row wrap" class="kg-margin-top-3em" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button class="kg-grey" matStepperNext [disabled]="page.clientForm.invalid">Next</button></div>
+              </form>
+            </mat-card-content>
+          </mat-card></mat-step><mat-step label="Beneficary Details" [stepControl]="page.beneficaryForm" editable="true" Disabled="page.clientForm.invalid">
+          <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-accordion class="kg-full-width">
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+
+                    <mat-panel-title>
+                      Beneficary Form 1
+                    </mat-panel-title></mat-expansion-panel-header>
+                  <form [formGroup]="page.beneficaryForm">
+                    <h3>
+                      Beneficary Details</h3>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+                        <mat-error align="start" *ngIf="page.beneficaryForm.controls.firstName?.errors?.required">First Name is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+                        <mat-error align="start" *ngIf="page.beneficaryForm.controls.lastName?.errors?.required">Last Name is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="ID Number" [required]="false" formControlName="idNumber" maxlength="13">
+                        <mat-error align="start" *ngIf="page.beneficaryForm.controls.idNumber?.errors?.required">ID Number is <strong>required<strong></strong></strong></mat-error><mat-error align="start" *ngIf="page.beneficaryForm.controls.idNumber?.errors?.minlength">ID Number must be 13 digits long!!</mat-error>
+                      </mat-form-field><mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender" placeholder="Gender" [required]="false">
+                          <ng-template ngFor let-option [ngForOf]="page.genders" let-i="index">
+                            <mat-option [value]="option.value">{{option.viewValue}}</mat-option>
+                          </ng-template>
+                        </mat-select>
+                        <mat-error align="start" *ngIf="page.beneficaryForm.controls.gender?.errors?.required">Gender is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                    <h3>
+                      Beneficary Contact Details</h3>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Cellphone" [required]="false" formControlName="cellphone">
+                        <mat-error align="start" *ngIf="page.beneficaryForm.controls.cellphone?.errors?.required">Cellphone is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Email" [required]="false" formControlName="email">
+                        <mat-error align="start" *ngIf="page.beneficaryForm.controls.email?.errors?.required">Email is <strong>required<strong></strong></strong></mat-error><mat-error align="start" *ngIf="page.beneficaryForm.controls.email?.errors?.email">Please enter a valid email address</mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row wrap" class="kg-full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Relationship" [required]="false" formControlName="relationship">
+                        <mat-error align="start" *ngIf="page.beneficaryForm.controls.relationship?.errors?.required">Relationship is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                  </form>
+                </mat-expansion-panel></mat-accordion></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.showBeneficaryForm2"><mat-accordion class="kg-full-width">
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                  <mat-expansion-panel-header>
+
+                    <mat-panel-title>
+                      Beneficary Form 2
+                    </mat-panel-title></mat-expansion-panel-header>
+                  <form [formGroup]="page.beneficaryForm2">
+                    <h3>
+                      Beneficary Details</h3>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+                        <mat-error align="start" *ngIf="page.beneficaryForm2.controls.firstName?.errors?.required">First Name is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+                        <mat-error align="start" *ngIf="page.beneficaryForm2.controls.lastName?.errors?.required">Last Name is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="ID Number" [required]="false" formControlName="idNumber" maxlength="13">
+                        <mat-error align="start" *ngIf="page.beneficaryForm2.controls.idNumber?.errors?.required">ID Number is <strong>required<strong></strong></strong></mat-error><mat-error align="start" *ngIf="page.beneficaryForm2.controls.idNumber?.errors?.minlength">ID Number must be 13 digits long!!</mat-error>
+                      </mat-form-field><mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender" placeholder="Gender" [required]="false">
+                          <ng-template ngFor let-option [ngForOf]="page.genders" let-i="index">
+                            <mat-option [value]="option.value">{{option.viewValue}}</mat-option>
+                          </ng-template>
+                        </mat-select>
+                        <mat-error align="start" *ngIf="page.beneficaryForm2.controls.gender?.errors?.required">Gender is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                    <h3>
+                      Beneficary Contact Details</h3>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Cellphone" [required]="false" formControlName="cellphone">
+                        <mat-error align="start" *ngIf="page.beneficaryForm2.controls.cellphone?.errors?.required">Cellphone is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Email" [required]="false" formControlName="email">
+                        <mat-error align="start" *ngIf="page.beneficaryForm2.controls.email?.errors?.required">Email is <strong>required<strong></strong></strong></mat-error><mat-error align="start" *ngIf="page.beneficaryForm2.controls.email?.errors?.email">Please enter a valid email address</mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Relationship" [required]="false" formControlName="relationship">
+                        <mat-error align="start" *ngIf="page.beneficaryForm2.controls.relationship?.errors?.required">Relationship is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                  </form>
+                </mat-expansion-panel></mat-accordion></div>
+            <div fxLayout="row wrap" fxLayoutAlign="end stretch" [fxShow]="true" *ngIf="page.hideIcon"><mat-icon class="kg-pointer" (click)="showBeneficaryForm2()">add_circle</mat-icon></div>
+            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button matStepperPrevious color="warn">Back</button><button mat-raised-button class="kg-grey" matStepperNext [disabled]="page.beneficaryForm.invalid">Next</button></div>
+          </div>
+        </mat-step><mat-step label="Dependency Details" [stepControl]="page.dependencyForm" optional="true" editable="true">
+          <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-accordion class="kg-full-width">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+
+                    <mat-panel-title>
+                      Dependency Form 1
+                    </mat-panel-title></mat-expansion-panel-header>
+                  <form [formGroup]="page.dependencyForm">
+                    <h3>
+                      Dependency Details</h3>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+                        <mat-error align="start" *ngIf="page.dependencyForm.controls.firstName?.errors?.required">First Name is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+                        <mat-error align="start" *ngIf="page.dependencyForm.controls.lastName?.errors?.required">Last Name is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="ID Number" [required]="false" formControlName="idNumber" maxlength="13">
+                        <mat-error align="start" *ngIf="page.dependencyForm.controls.idNumber?.errors?.required">ID Number is <strong>required<strong></strong></strong></mat-error><mat-error align="start" *ngIf="page.dependencyForm.controls.idNumber?.errors?.minlength">ID Number must be 13 digits long!!</mat-error>
+                      </mat-form-field><mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender" placeholder="Gender" [required]="false">
+                          <ng-template ngFor let-option [ngForOf]="page.genders" let-i="index">
+                            <mat-option [value]="option.value">{{option.viewValue}}</mat-option>
+                          </ng-template>
+                        </mat-select>
+                        <mat-error align="start" *ngIf="page.dependencyForm.controls.gender?.errors?.required">Gender is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                  </form>
+                </mat-expansion-panel></mat-accordion></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.showDependencyForm"><mat-accordion class="kg-full-width">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+
+                    <mat-panel-title>
+                      Dependency Form 2
+                    </mat-panel-title></mat-expansion-panel-header>
+                  <form [formGroup]="page.dependencyForm2">
+                    <h3>
+                      Dependency Details</h3>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+                        <mat-error align="start" *ngIf="page.dependencyForm2.controls.firstName?.errors?.required">First Name is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+                        <mat-error align="start" *ngIf="page.dependencyForm2.controls.lastName?.errors?.required">Last Name is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="ID Number" [required]="false" formControlName="idNumber" maxlength="13">
+                        <mat-error align="start" *ngIf="page.dependencyForm2.controls.idNumber?.errors?.required">ID Number is <strong>required<strong></strong></strong></mat-error><mat-error align="start" *ngIf="page.clientForm.controls.idNumber?.errors?.minlength">ID Number must be 13 digits long!!</mat-error>
+                      </mat-form-field><mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender" placeholder="Gender" [required]="false">
+                          <ng-template ngFor let-option [ngForOf]="page.genders" let-i="index">
+                            <mat-option [value]="option.value">{{option.viewValue}}</mat-option>
+                          </ng-template>
+                        </mat-select>
+                        <mat-error align="start" *ngIf="page.dependencyForm2.controls.gender?.errors?.required">Gender is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                  </form>
+                </mat-expansion-panel></mat-accordion></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.showDependencyForm1"><mat-accordion class="kg-full-width">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+
+                    <mat-panel-title>
+                      Dependency Form 3
+                    </mat-panel-title></mat-expansion-panel-header>
+                  <form [formGroup]="page.dependencyForm3">
+                    <h3>
+                      Dependency Details </h3>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+                        <mat-error align="start" *ngIf="page.dependencyForm3.controls.firstName?.errors?.required">First Name is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+                        <mat-error align="start" *ngIf="page.dependencyForm3.controls.lastName?.errors?.required">Last Name is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="ID Number" [required]="false" formControlName="idNumber" maxlength="13">
+                        <mat-error align="start" *ngIf="page.dependencyForm3.controls.idNumber?.errors?.required">ID Number is <strong>required<strong></strong></strong></mat-error><mat-error align="start" *ngIf="page.dependencyForm3.controls.idNumber?.errors?.minlength">ID Number must be 13 digits long!!</mat-error>
+                      </mat-form-field><mat-form-field class="kg-full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+                        <mat-label>Gender</mat-label>
+                        <mat-select formControlName="gender" placeholder="Gender" [required]="false">
+                          <ng-template ngFor let-option [ngForOf]="page.genders" let-i="index">
+                            <mat-option [value]="option.value">{{option.viewValue}}</mat-option>
+                          </ng-template>
+                        </mat-select>
+                        <mat-error align="start" *ngIf="page.dependencyForm3.controls.gender?.errors?.required">Gender is <strong>required<strong></strong></strong></mat-error>
+                      </mat-form-field>
+                    </div>
+                  </form>
+                </mat-expansion-panel></mat-accordion></div>
+            <div fxLayout="row wrap" fxLayoutAlign="end stretch" [fxShow]="true" *ngIf="page.hideIcon2"><mat-icon class="kg-pointer" (click)="showDependencyForm2()" [hidden]="page.showDependencyForm">add_circle</mat-icon></div>
+            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button matStepperPrevious color="warn">Back</button><button mat-raised-button class="kg-grey" matStepperNext>Next</button></div>
+          </div>
+        </mat-step><mat-step label="Summary">
+          <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
+              <h3>
+                Summary</h3>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-accordion class="kg-full-width">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+
+                    <mat-panel-title>
+                      <strong>Client Details</strong>
+                    </mat-panel-title></mat-expansion-panel-header>
+                  <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput placeholder="First Name" value="{{page.clientForm.value.firstName}}" [required]="false" readonly="true">
+
+                    </mat-form-field>
+                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput placeholder="Last Name" value="{{page.clientForm.value.lastName}}" [required]="false" readonly="true">
+
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput placeholder="Email" value="{{page.clientForm.value.email}}" [required]="false" readonly="true">
+
+                    </mat-form-field>
+                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput placeholder="ID Number" value="{{page.clientForm.value.idNumber}}" [required]="false" readonly="true">
+
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput placeholder="Gender" value="{{page.clientForm.value.gender}}" [required]="false" readonly="true">
+
+                    </mat-form-field>
+                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput placeholder="Cellphone" value="{{page.clientForm.value.cellphone}}" [required]="false" readonly="true">
+
+                    </mat-form-field>
+                  </div>
+                  <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput placeholder="Email" value="{{page.clientForm.value.email}}" [required]="false" readonly="true">
+
+                    </mat-form-field>
+                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                      <input matInput placeholder="Email" value="{{page.clientForm.value.email}}" [required]="false" readonly="true">
+
+                    </mat-form-field>
+                  </div>
+                </mat-expansion-panel></mat-accordion></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-accordion class="kg-full-width">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+
+                    <mat-panel-title>
+                      <strong>Beneficary Details</strong>
+                    </mat-panel-title></mat-expansion-panel-header>
+                  <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <div fxLayout="row wrap" class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="First Name" value="{{page.beneficaryForm.value.firstName}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Last Name" value="{{page.beneficaryForm.value.lastName}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                      <div fxLayout="row wrap" class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="ID Number" value="{{page.beneficaryForm.value.idNumber}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Gender" value="{{page.beneficaryForm.value.gender}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                      <div fxLayout="row wrap" class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Email" value="{{page.beneficaryForm.value.email}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Cellphone" value="{{page.beneficaryForm.value.cellphone}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                      <div fxLayout="row wrap" class="kg-full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Relationship" value="{{page.beneficaryForm.value.relationship}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.beneficaryForm2.valid">
+                      <div fxLayout="row wrap" class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="First Name" value="{{page.beneficaryForm2.value.firstName}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Last Name" value="{{page.beneficaryForm2.value.lastName}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                      <div fxLayout="row wrap" class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="ID Number" value="{{page.beneficaryForm2.value.idNumber}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Gender" value="{{page.beneficaryForm2.value.gender}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                      <div fxLayout="row wrap" class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Email" value="{{page.beneficaryForm2.value.email}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Cellphone" value="{{page.beneficaryForm2.value.cellphone}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                      <div fxLayout="row wrap" class="kg-full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Relationship" value="{{page.beneficaryForm2.value.relationship}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                </mat-expansion-panel></mat-accordion></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.dependencyForm.valid"><mat-accordion class="kg-full-width">
+                <mat-expansion-panel>
+                  <mat-expansion-panel-header>
+
+                    <mat-panel-title>
+                      <strong>Dependency Details</strong>
+                    </mat-panel-title></mat-expansion-panel-header>
+                  <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <div fxLayout="row " fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="First Name" value="{{page.dependencyForm.value.firstName}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Last Name" value="{{page.dependencyForm.value.lastName}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                      <div fxLayout="row " fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Gender" value="{{page.dependencyForm.value.gender}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder=" ID Number" value="{{page.dependencyForm.value.idNumber}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.dependencyForm2.valid">
+                      <div fxLayout="row " fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="First Name" value="{{page.dependencyForm2.value.firstName}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Last Name" value="{{page.dependencyForm2.value.lastName}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                      <div fxLayout="row " fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Gender" value="{{page.dependencyForm2.value.gender}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder=" ID Number" value="{{page.dependencyForm2.value.idNumber}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                    </div>
+                    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.dependencyForm3.valid">
+                      <div fxLayout="row " fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="First Name" value="{{page.dependencyForm3.value.firstName}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Last Name" value="{{page.dependencyForm3.value.lastName}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                      <div fxLayout="row " fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder="Gender" value="{{page.dependencyForm3.value.gender}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                        <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                          <input matInput placeholder=" ID Number" value="{{page.dependencyForm3.value.idNumber}}" [required]="false" readonly="true">
+
+                        </mat-form-field>
+                      </div>
+                    </div>
+                  </div>
+                </mat-expansion-panel></mat-accordion></div>
+            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="center stretch" [fxShow]="true"><button mat-raised-button matStepperPrevious color="warn">Back</button><button mat-raised-button class="kg-yellow" (click)="confirm()">Confirm</button></div>
+          </div>
+        </mat-step></div>
+    </mat-horizontal-stepper></div>
+</div>

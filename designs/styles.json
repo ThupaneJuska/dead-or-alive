@@ -1,3 +1,12 @@
 {
-    "classes": []
+    "classes": [
+        "kg-full-width",
+        "kg-half-width",
+        "kg-full-height",
+        "kg-text-center",
+        "kg-pointer",
+        "kg-margin-top-3em",
+        "kg-grey",
+        "kg-yellow"
+    ]
 }

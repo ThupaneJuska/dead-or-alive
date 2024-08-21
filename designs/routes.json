@@ -1,9 +1,14 @@
 {
     "routes": [
         {
+            "component": "registerComponent",
+            "path": "register"
+        },
+        {
             "path": "''",
-            "redirectTo": "",
-            "pathMatch": "full"
+            "redirectTo": "**",
+            "pathMatch": "full",
+            "default": true
         },
         {
             "path": "**",

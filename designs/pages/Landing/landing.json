@@ -40,11 +40,68 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "isScrolled",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "false"
+                }
+            }
+        ],
         "functionName": "sd_FJVIE0SwZ4pVtZwy",
         "category": "Function",
         "x": 180,
         "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "landingComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_EZA5vzCitJkCx2Z4",
+        "type": "HostListener",
+        "z": "sd_IfyqcoYyY0Qn5p9Z",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "outputs": 1,
+        "eventName": "\"document:wheel\"",
+        "functionName": "sd_EZA5vzCitJkCx2Z4",
+        "category": "Listener",
+        "x": 105,
+        "y": 180,
+        "wires": [
+            [
+                "sd_v9PTfBLExBjAc9ot"
+            ]
+        ],
+        "__ssdTypeInputs__": {
+            "eventName": {
+                "type": "str",
+                "value": "document:wheel",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "landingComponent"
+    },
+    {
+        "id": "sd_v9PTfBLExBjAc9ot",
+        "type": "Script",
+        "z": "sd_IfyqcoYyY0Qn5p9Z",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// console.log(\"check\", bh.input.event)\n// console.log(\"w\", window)\nconsole.log(\"p\",page.isScrolled)\nif( window.scrollY > 1){\n    console.log(\"moved\", window.scrollY)\n    // page.toolbar.classList.add('scrolled');\n    page.isScrolled = true\n} else{\n    page.isScrolled = false\n}",
+        "functionName": "sd_v9PTfBLExBjAc9ot",
+        "category": "Function",
+        "x": 185,
+        "y": 180,
         "wires": [
             []
         ],

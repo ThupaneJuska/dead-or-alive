@@ -3,20 +3,20 @@
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
-import { Component, HostListener, Injector } from '@angular/core'; //_splitter_
+import { Component, Injector } from '@angular/core'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
 //append_imports_end
 
 @Component({
-  selector: 'bh-landing',
-  templateUrl: './landing.template.html',
+  selector: 'bh-loader',
+  templateUrl: './loader.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class landingComponent {
+export class loaderComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -33,7 +33,7 @@ export class landingComponent {
       .get(SDPageCommonService)
       .constructFlowObject(this);
     {
-      this.sd_ByFe7BtyVy41DnTx(bh);
+      this.sd_ftIPEQ6nnEmy2iBg(bh);
     }
   }
 
@@ -45,57 +45,24 @@ export class landingComponent {
     //append_listeners
   }
 
-  sd_ByFe7BtyVy41DnTx(bh) {
+  sd_ftIPEQ6nnEmy2iBg(bh) {
     try {
-      bh = this.sd_FJVIE0SwZ4pVtZwy(bh);
-      //appendnew_next_sd_ByFe7BtyVy41DnTx
+      bh = this.sd_aGKmm1M4p6FMcgca(bh);
+      //appendnew_next_sd_ftIPEQ6nnEmy2iBg
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_ByFe7BtyVy41DnTx');
+      return this.errorHandler(bh, e, 'sd_ftIPEQ6nnEmy2iBg');
     }
   }
 
-  @HostListener('document:wheel', ['$event']) sd_EZA5vzCitJkCx2Z4(event) {
-    try {
-      var bh: any = this.__page_injector__
-        .get(SDPageCommonService)
-        .constructFlowObject(this);
-      bh.$event = event;
-      bh = this.sd_v9PTfBLExBjAc9ot(bh);
-      //appendnew_next_sd_EZA5vzCitJkCx2Z4
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_EZA5vzCitJkCx2Z4');
-    }
-  }
+  //appendnew_flow_loaderComponent_start
 
-  //appendnew_flow_landingComponent_start
-
-  sd_FJVIE0SwZ4pVtZwy(bh) {
+  sd_aGKmm1M4p6FMcgca(bh) {
     try {
-      this.page.isScrolled = false;
-      //appendnew_next_sd_FJVIE0SwZ4pVtZwy
+      //appendnew_next_sd_aGKmm1M4p6FMcgca
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_FJVIE0SwZ4pVtZwy');
-    }
-  }
-
-  sd_v9PTfBLExBjAc9ot(bh) {
-    try {
-      const page = this.page; // console.log("check", bh.input.event)
-      // console.log("w", window)
-      console.log('p', page.isScrolled);
-      if (window.scrollY > 1) {
-        console.log('moved', window.scrollY);
-        // page.toolbar.classList.add('scrolled');
-        page.isScrolled = true;
-      } else {
-        page.isScrolled = false;
-      }
-      //appendnew_next_sd_v9PTfBLExBjAc9ot
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_v9PTfBLExBjAc9ot');
+      return this.errorHandler(bh, e, 'sd_aGKmm1M4p6FMcgca');
     }
   }
 
@@ -115,5 +82,5 @@ export class landingComponent {
     bh.errorSource = src;
     throw e;
   }
-  //appendnew_flow_landingComponent_Catch
+  //appendnew_flow_loaderComponent_Catch
 }

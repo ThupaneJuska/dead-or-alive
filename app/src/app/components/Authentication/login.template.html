@@ -1,1 +1,59 @@
-<div id="angularRoot"></div>
+<div fxLayout="column wrap" class="relative full-width full-height" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" style="background-color: #0000002e" class="full-width full-height absolute" fxLayoutAlign="center center" [fxShow]="true" *ngIf="page.loading"><bh-loader></bh-loader></div>
+  <div fxLayout="column wrap" class="nav-bar" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="full-width full-height" fxLayoutAlign="space-between center" [fxShow]="true">
+      <div fxLayout="column wrap" class="logo" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/images/logo.png" style="width:50%; border-radius:50%" class="full-height"></div>
+      <div fxLayout="column wrap" class="login" fxLayoutAlign="center center" [fxShow]="true">
+        <div>
+          Login</div>
+      </div>
+    </div>
+  </div>
+  <div fxLayout="column wrap" class="section" fxLayoutAlign="center center" [fxShow]="true">
+    <div fxLayout="column wrap" class="login-form-container" fxLayoutAlign="start stretch" [fxShow]="true">
+      <form #loginForm="ngForm" class="form full-width full-height" (ngSubmit)="login(loginForm)">
+        <div fxLayout="column wrap" class="login-text" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div>
+            Login</div>
+        </div>
+        <div fxLayout="column wrap" class="input-field" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" style="height:20%; font-family: Fellix, sans-serif;" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div>
+              <small>Email*</small>
+            </div>
+          </div>
+          <div fxLayout="column wrap" style="height:50%;" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.loginForm.email" name="email" type="email" placeholder="Exp. aa@aa.aa" [required]="true" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+              <mat-error align="start" *ngIf="loginForm.controls.email?.invalid">Please enter a valid email address</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="input-field" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" style="height:20%; font-family: Fellix, sans-serif;" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div>
+              <small>Password*</small>
+            </div>
+          </div>
+          <div fxLayout="column wrap" style="height:50%;" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput [(ngModel)]="page.loginForm.password" name="password" type="password" placeholder="****" [required]="true" maxlength="4" minlength="4" pattern="^[0-9]*$" (input)="countCharacters($event)">
+              <mat-error align="start" *ngIf="page.characterCount &lt; 4">Password must have be 4 in length</mat-error><mat-error align="start" *ngIf="loginForm.controls.password?.errors?.pattern">Only Numbers Are Allowed</mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="relative login-btn" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" style="top: -6px; left: -4px" class="absolute btn" fxLayoutAlign="center center" [fxShow]="true" (click)="login(loginForm)">
+            <div>
+              Login</div>
+          </div>
+        </div>
+        <div fxLayout="column wrap" class="forgot-pass" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div routerLink="/forgot-password">
+            <small class="forgot">Forgot password?</small>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -1,13 +1,48 @@
 {
     "routes": [
         {
+            "path": "dashboard",
+            "component": "dashboardComponent",
+            "children": [
+                {
+                    "path": "home",
+                    "component": "homeComponent"
+                }
+            ]
+        },
+        {
+            "path": "DOAServices",
+            "component": "landingComponent"
+        },
+        {
+            "path": "call",
+            "component": "contact_usComponent"
+        },
+        {
+            "path": "login",
+            "component": "loginComponent"
+        },
+        {
+            "path": "forgot-password",
+            "component": "forgot_passwordComponent"
+        },
+        {
+            "component": "verify_codeComponent",
+            "path": "verify-code"
+        },
+        {
+            "component": "reset_passwordComponent",
+            "path": "reset-password"
+        },
+        {
             "component": "registerComponent",
             "path": "register"
         },
         {
             "path": "''",
-            "redirectTo": "**",
+            "redirectTo": "/DOAServices**",
             "pathMatch": "full",
+            "default": true,
             "default": true
         },
         {

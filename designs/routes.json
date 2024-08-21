@@ -35,6 +35,10 @@
             "path": "reset-password"
         },
         {
+            "component": "registerComponent",
+            "path": "register"
+        },
+        {
             "path": "''",
             "redirectTo": "/DOAServices",
             "pathMatch": "full",

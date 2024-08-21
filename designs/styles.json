@@ -69,7 +69,7 @@
         "mat-form-field-flex",
         "mat-form-field-outline",
         "pointer"
-    ]
+    ],
     "classes": [
         "full-height",
         "full-width",
@@ -91,10 +91,7 @@
         "forgot-pass",
         "forgot",
         "loader"
-    ]
-}
-
-{
+    ],
     "classes": [
         "FullHeight",
         "width20",
@@ -111,5 +108,17 @@
         "center-text",
         "image-call",
         "cdk-text-field-autofill-monitored"
+    ],
+    "classes": [
+        "kg-full-width",
+        "kg-half-width",
+        "kg-full-height",
+        "kg-text-center",
+        "kg-pointer",
+        "kg-margin-top-3em",
+        "kg-grey",
+        "kg-yellow"
     ]
 }
+
+

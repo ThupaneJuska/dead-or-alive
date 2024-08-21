@@ -117,7 +117,6 @@ export const appProviders = [
 
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_START
 export const appRoutes = [
-  { path: 'register', component: registerComponent },
   {
     path: 'dashboard',
     component: dashboardComponent,
@@ -129,7 +128,8 @@ export const appRoutes = [
   { path: 'forgot-password', component: forgot_passwordComponent },
   { path: 'verify-code', component: verify_codeComponent },
   { path: 'reset-password', component: reset_passwordComponent },
-  { path: '', redirectTo: '**DOAServicesDOAServices', pathMatch: 'full' },
+  { path: 'register', component: registerComponent },
+  { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];
 // CORE_REFERENCE_PUSH_TO_ROUTE_ARRAY_END

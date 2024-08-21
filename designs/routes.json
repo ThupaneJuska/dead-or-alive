@@ -40,9 +40,8 @@
         },
         {
             "path": "''",
-            "redirectTo": "/DOAServices**",
+            "redirectTo": "/DOAServices",
             "pathMatch": "full",
-            "default": true,
             "default": true
         },
         {

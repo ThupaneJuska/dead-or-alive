@@ -1,6 +1,21 @@
 {
     "classes": [
+        "FullHeight",
+        "width20",
+        "fullWidth",
         "yellow-bg",
+        "GREENISH-BG",
+        "GREENISH-COLOR",
+        "COLOR-WHITE",
+        "box-shadow",
+        "CARDS",
+        "toolbar",
+        "bg-ligth",
+        "scrolled",
+        "center-text",
+        "image-call",
+        "cdk-text-field-autofill-monitored",
+        "landing-login",
         "yellow-color",
         "light-blue-bg",
         "light-grey-bg",
@@ -38,7 +53,6 @@
         "height-85",
         "height-90",
         "full-height",
-        "box-shadow",
         "card-shadow",
         "filter-cards",
         "nav-items",
@@ -68,14 +82,8 @@
         "mat-form-field-appearance-outline",
         "mat-form-field-flex",
         "mat-form-field-outline",
-        "pointer"
-    ],
-    "classes": [
-        "full-height",
-        "full-width",
+        "pointer",
         "nav-bar",
-        "relative",
-        "absolute",
         "login",
         "logo",
         "section",
@@ -84,32 +92,11 @@
         "login-text",
         "input-field",
         "mat-form-field-infix",
-        "mat-form-field-appearance-outline",
-        "mat-form-field-outline",
         "login-btn",
         "btn",
         "forgot-pass",
         "forgot",
-        "loader"
-    ],
-    "classes": [
-        "FullHeight",
-        "width20",
-        "fullWidth",
-        "yellow-bg",
-        "GREENISH-BG",
-        "GREENISH-COLOR",
-        "COLOR-WHITE",
-        "box-shadow",
-        "CARDS",
-        "toolbar",
-        "bg-ligth",
-        "scrolled",
-        "center-text",
-        "image-call",
-        "cdk-text-field-autofill-monitored"
-    ],
-    "classes": [
+        "loader",
         "kg-full-width",
         "kg-half-width",
         "kg-full-height",
@@ -120,5 +107,3 @@
         "kg-yellow"
     ]
 }
-
-

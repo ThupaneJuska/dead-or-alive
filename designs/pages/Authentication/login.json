@@ -141,8 +141,8 @@
         ],
         "functionName": "sd_DUejOGCOl1GlgrTF",
         "category": "General",
-        "x": 305,
-        "y": 160,
+        "x": 285,
+        "y": 180,
         "wires": [
             [
                 "sd_ioQgoBz2AkEDMlcS"
@@ -163,8 +163,8 @@
         "script": "bh.url = page.ssdUrl + 'login'\npage.loading = true",
         "functionName": "sd_ioQgoBz2AkEDMlcS",
         "category": "Function",
-        "x": 385,
-        "y": 160,
+        "x": 365,
+        "y": 180,
         "wires": [
             [
                 "sd_zTKl6k43D2GeisCd"
@@ -183,6 +183,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -190,8 +191,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -207,14 +210,16 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_zTKl6k43D2GeisCd",
         "category": "HTTP",
-        "x": 465,
-        "y": 160,
+        "x": 445,
+        "y": 180,
         "wires": [
             [
                 "sd_R2or05KgG4F0SznO"
@@ -282,8 +287,8 @@
         "outputs": 3,
         "functionName": "sd_buYzaxDxyjRaVxqv",
         "category": "Function",
-        "x": 645,
-        "y": 160,
+        "x": 605,
+        "y": 180,
         "wires": [
             [
                 "sd_DrwpTKFaF2PfX0uE"
@@ -320,7 +325,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -328,8 +335,8 @@
         "direction": "ltr",
         "functionName": "sd_DrwpTKFaF2PfX0uE",
         "category": "General",
-        "x": 745,
-        "y": 60,
+        "x": 705,
+        "y": 100,
         "wires": [
             []
         ],
@@ -358,7 +365,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -366,8 +375,8 @@
         "direction": "ltr",
         "functionName": "sd_vl5FCxtDP6xLD1fe",
         "category": "General",
-        "x": 745,
-        "y": 160,
+        "x": 705,
+        "y": 180,
         "wires": [
             []
         ],
@@ -396,7 +405,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -404,10 +415,12 @@
         "direction": "ltr",
         "functionName": "sd_SGMcpcrY4y3UKTKj",
         "category": "General",
-        "x": 765,
+        "x": 705,
         "y": 260,
         "wires": [
-            []
+            [
+                "sd_iGycO4jnqKpix0R8"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -528,7 +541,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -556,12 +571,32 @@
         "script": "page.loading = false",
         "functionName": "sd_R2or05KgG4F0SznO",
         "category": "Function",
-        "x": 565,
-        "y": 160,
+        "x": 525,
+        "y": 180,
         "wires": [
             [
                 "sd_buYzaxDxyjRaVxqv"
             ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "loginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_iGycO4jnqKpix0R8",
+        "type": "Navigation",
+        "z": "sd_fn8FAmmpAsSioSZv",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/dashboard/home",
+        "functionName": "sd_iGycO4jnqKpix0R8",
+        "category": "Navigation",
+        "x": 800,
+        "y": 260,
+        "wires": [
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,

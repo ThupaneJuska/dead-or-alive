@@ -364,11 +364,29 @@ export class registerComponent {
       );
       bh.random = outputVariables.local.random;
 
-      bh = this.sd_lL2rQ9BIoBqeZaCn(bh);
+      bh = this.sd_E3iTiEBecw7LpUwh(bh);
       //appendnew_next_sd_uaLP5pYLb4eJZafw
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_uaLP5pYLb4eJZafw');
+    }
+  }
+
+  async sd_E3iTiEBecw7LpUwh(bh) {
+    try {
+      const randomNumberInstance: randomNumber =
+        this.__page_injector__.get(randomNumber);
+
+      let outputVariables = await randomNumberInstance.generateRandomNumber2(
+        this.page.clientForm.email
+      );
+      bh.random2 = outputVariables.local.random;
+
+      bh = this.sd_lL2rQ9BIoBqeZaCn(bh);
+      //appendnew_next_sd_E3iTiEBecw7LpUwh
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_E3iTiEBecw7LpUwh');
     }
   }
 
@@ -387,7 +405,7 @@ export class registerComponent {
       bh.body = page.clientForm.value;
       bh.body.role = 'client';
       bh.body.policyNumber = bh.random;
-      bh.body.password = bh.random.toString();
+      bh.body.password = bh.random2.toString();
       bh.body.beneficaries = [
         page.beneficaryForm.value,
         page.beneficaryForm2.value,
@@ -418,7 +436,6 @@ export class registerComponent {
       };
       this.page.result = await this.sdService.nHttpRequest(requestOptions);
       bh = this.sd_QnaW4yCDpoY9Cu3b(bh);
-      this.sd_6MdVVDqzAq0WC6Th(bh);
       //appendnew_next_sd_feAbYysgRL7fgGGm
       return bh;
     } catch (e) {
@@ -442,23 +459,15 @@ export class registerComponent {
     }
   }
 
-  sd_6MdVVDqzAq0WC6Th(bh) {
-    try {
-      console.log(new Date().toLocaleTimeString(), this.page.result);
-      //appendnew_next_sd_6MdVVDqzAq0WC6Th
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_6MdVVDqzAq0WC6Th');
-    }
-  }
-
   async sd_IKDCeaKDglhchiOD(bh) {
     try {
       const { paramObj: qprm, path: path } =
         this.sdService.getPathAndQParamsObj('/dashboard/home');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_IKDCeaKDglhchiOD
       return bh;
     } catch (e) {

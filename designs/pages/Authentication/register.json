@@ -688,7 +688,8 @@
         "y": 400,
         "wires": [
             [
-                "sd_QnaW4yCDpoY9Cu3b"
+                "sd_QnaW4yCDpoY9Cu3b",
+                "sd_6MdVVDqzAq0WC6Th"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -816,6 +817,32 @@
         "wires": [
             []
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "registerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6MdVVDqzAq0WC6Th",
+        "type": "Log",
+        "z": "sd_uqB8Ta19yPAqB9Xq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.result",
+        "functionName": "sd_6MdVVDqzAq0WC6Th",
+        "category": "General",
+        "x": 780,
+        "y": 340,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "result",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "registerComponent",

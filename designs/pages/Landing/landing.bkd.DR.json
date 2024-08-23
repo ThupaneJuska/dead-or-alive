@@ -1021,13 +1021,15 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "",
+                                    "_value": "border-radius: 18px; border: 2px solid #124e52; padding-left: 10px;padding-right: 10px; box-sizing: border-box",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "class",
-                                    "_value": "",
+                                    "_value": [
+                                        "landing-login"
+                                    ],
                                     "_type": "dav",
                                     "_attrDef": "p"
                                 },
@@ -1066,6 +1068,12 @@
                                     "_value": "true",
                                     "_type": "kv",
                                     "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "routerLink",
+                                    "_value": "/login",
+                                    "_type": "kv",
+                                    "_attrDef": "c"
                                 }
                             ],
                             "20b6ca2b-a6b1-6cde-0a70-61ce615427ff": {

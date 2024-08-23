@@ -2,6 +2,16 @@
 
 @import "@angular/material/prebuilt-themes/deeppurple-amber.css";
 @import "nDefaults.scss";
+@import '~dhtmlx-scheduler/codebase/dhtmlxscheduler.css';
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: unset;
+    // padding: 10px;
+    // box-sizing: border-box;
+}
+
 $yellow: #f7dd71;
 $light-grey: #edf5f5;
 $light-blue: #124e52;
@@ -92,9 +102,28 @@ $light-grey: #edf5f5;
 $light-blue: #124e52;
 $teal-blue: #228bc4;
 ///////////////////////////////////////////////NICHOLAS STYLES START //////////////////////////////////////////////////////////////
+//dhtmlx
+:host{
+    display: block;
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.pad{
+    // background-color: aqua;
+    padding: -500px;
+    box-sizing: border-box;
+    border: 2px solid white;
+}
 //pages
 bh-home {
     width: 100% !important;
+}
+
+.landing-login:hover{
+    cursor: pointer;
+    background-color: $yellow;
 }
 
 body {
@@ -111,7 +140,7 @@ body {
 }
 
 .light-blue-bg {
-    background-color: $light-blue;
+    background-color: $light-blue !important;
 }
 
 .light-grey-bg {
@@ -119,11 +148,11 @@ body {
 }
 
 .blue-color {
-    color: $light-blue;
+    color: $light-blue !important;
 }
 
 .white-color {
-    color: white;
+    color: white !important;
 }
 
 .white-bg {
@@ -132,6 +161,10 @@ body {
 
 .red-bg {
     background-color: red;
+}
+
+.teal-color {
+    color: $teal-blue !important;
 }
 
 //widths
@@ -305,6 +338,12 @@ width: 25%;
 
     .label {
         color: $teal-blue;
+    }
+}
+
+.table-icons {
+     .mat-icon {
+        color: $yellow !important;
     }
 }
 

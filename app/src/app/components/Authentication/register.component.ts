@@ -418,6 +418,7 @@ export class registerComponent {
       };
       this.page.result = await this.sdService.nHttpRequest(requestOptions);
       bh = this.sd_QnaW4yCDpoY9Cu3b(bh);
+      this.sd_6MdVVDqzAq0WC6Th(bh);
       //appendnew_next_sd_feAbYysgRL7fgGGm
       return bh;
     } catch (e) {
@@ -438,6 +439,16 @@ export class registerComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_QnaW4yCDpoY9Cu3b');
+    }
+  }
+
+  sd_6MdVVDqzAq0WC6Th(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.result);
+      //appendnew_next_sd_6MdVVDqzAq0WC6Th
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6MdVVDqzAq0WC6Th');
     }
   }
 

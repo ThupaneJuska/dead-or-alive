@@ -349,6 +349,12 @@
                             "_value": "true",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "/DOAServices",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
                     "90cdc21b-8e37-e2ed-80f9-99b5c68a0cdf": {
@@ -2171,7 +2177,6 @@
                                 "paletteKey": "NG-Input",
                                 "parentEditorKey": "8ce55c4d-8ec4-6541-e8f1-36a00572b3a8",
                                 "isAdvancedComponent": true,
-                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {

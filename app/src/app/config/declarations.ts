@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-schedulesComponent
+import { schedulesComponent } from '../components/Admin Dashboard/schedules.component';
 //CORE_REFERENCE_IMPORT-randomNumber
 import { randomNumber } from '../sd-services/randomNumber';
 //CORE_REFERENCE_IMPORT-homeComponent
@@ -72,6 +74,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-schedulesComponent
+  schedulesComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
   homeComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-loaderComponent
@@ -124,7 +128,10 @@ export const appRoutes = [
   {
     path: 'dashboard',
     component: dashboardComponent,
-    children: [{ path: 'home', component: homeComponent }],
+    children: [
+      { path: 'home', component: homeComponent },
+      { path: 'schedules', component: schedulesComponent },
+    ],
   },
   { path: 'DOAServices', component: landingComponent },
   { path: 'call', component: contact_usComponent },

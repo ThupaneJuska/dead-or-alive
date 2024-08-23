@@ -113,5 +113,107 @@
         "generateNext": false,
         "serviceName": "randomNumber",
         "generated": true
+    },
+    {
+        "id": "sd_2rOgF8DvS525MYfE",
+        "type": "Start",
+        "z": "sd_GBFfAkOjFZO1abZf",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "generate Random Number2",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "random",
+                "defaultValue": {
+                    "type": "num",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "generateRandomNumber2",
+        "category": "General",
+        "x": 105,
+        "y": 200,
+        "wires": [
+            [
+                "sd_UbHknMGwyEpQevig"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "randomNumber"
+    },
+    {
+        "id": "sd_UbHknMGwyEpQevig",
+        "type": "Script",
+        "z": "sd_GBFfAkOjFZO1abZf",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// Generates a random number between 1000 (inclusive) and 10000 (exclusive)\nbh.local.random = Math.floor(1000 + Math.random() * 9000); ",
+        "functionName": "sd_UbHknMGwyEpQevig",
+        "category": "Function",
+        "x": 225,
+        "y": 200,
+        "wires": [
+            [
+                "sd_IBLC4oDqfWCiSutT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "randomNumber",
+        "generated": true
+    },
+    {
+        "id": "sd_IBLC4oDqfWCiSutT",
+        "type": "ServiceVariables",
+        "z": "sd_GBFfAkOjFZO1abZf",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "random",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "random"
+                }
+            },
+            {
+                "textIp": "email",
+                "typedIpValue": {
+                    "type": "bh.input",
+                    "value": "email"
+                }
+            }
+        ],
+        "functionName": "sd_IBLC4oDqfWCiSutT",
+        "category": "Function",
+        "x": 325,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "randomNumber",
+        "generated": true
     }
 ]

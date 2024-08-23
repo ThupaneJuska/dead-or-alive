@@ -62,6 +62,34 @@ export class randomNumber {
       return await this.errorHandler(bh, e, 'sd_oKopI3GY933HFwlo');
     }
   }
+
+  async generateRandomNumber2(email: any = undefined, ...others) {
+    let bh: any = {
+      input: {
+        email,
+      },
+      local: {
+        random: 0,
+      },
+    };
+    try {
+      bh = this.sdService.__constructDefault(bh);
+
+      bh = await this.sd_UbHknMGwyEpQevig(bh);
+      //appendnew_next_generateRandomNumber2
+      return (
+        // formatting output variables
+        {
+          input: {},
+          local: {
+            random: bh.local.random,
+          },
+        }
+      );
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_2rOgF8DvS525MYfE');
+    }
+  }
   //appendnew_flow_randomNumber_start
 
   async sd_A3YPHsk36jIM6faH(bh) {
@@ -85,6 +113,29 @@ export class randomNumber {
       return bh;
     } catch (e) {
       return await this.errorHandler(bh, e, 'sd_15ou9PzMPfrGKdwn');
+    }
+  }
+
+  async sd_UbHknMGwyEpQevig(bh) {
+    try {
+      // Generates a random number between 1000 (inclusive) and 10000 (exclusive)
+      bh.local.random = Math.floor(1000 + Math.random() * 9000);
+      bh = await this.sd_IBLC4oDqfWCiSutT(bh);
+      //appendnew_next_sd_UbHknMGwyEpQevig
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_UbHknMGwyEpQevig');
+    }
+  }
+
+  async sd_IBLC4oDqfWCiSutT(bh) {
+    try {
+      this.random = bh.local.random;
+      this.email = bh.input.email;
+      //appendnew_next_sd_IBLC4oDqfWCiSutT
+      return bh;
+    } catch (e) {
+      return await this.errorHandler(bh, e, 'sd_IBLC4oDqfWCiSutT');
     }
   }
 

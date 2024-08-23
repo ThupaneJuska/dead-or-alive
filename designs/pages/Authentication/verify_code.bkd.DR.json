@@ -251,9 +251,15 @@
                             "_value": "true",
                             "_type": "kv",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "routerLink",
+                            "_value": "/DOAServices",
+                            "_type": "kv",
+                            "_attrDef": "c"
                         }
                     ],
-                    "c4bc75e0-171e-fe53-e540-b87e7599ce6c": {
+                    "e660904f-7710-58e7-197e-d3b83cc9d227": {
                         "paletteKey": "NG-image",
                         "parentEditorKey": "5da4832b-00e2-d529-cdc9-1f8eb83691a4",
                         "commentid": null,
@@ -267,7 +273,7 @@
                             },
                             {
                                 "_key": "style",
-                                "_value": "width:38%; border-radius:50%",
+                                "_value": "width:50%; border-radius:50%",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -281,7 +287,7 @@
                             },
                             {
                                 "_key": "imgSrc",
-                                "_value": "/Web/images/logo.jpg",
+                                "_value": "/Web/images/logo.png",
                                 "_type": "kv",
                                 "_attrDef": "p"
                             },
@@ -345,6 +351,7 @@
                         {
                             "_key": "class",
                             "_value": [
+                                "landing-login",
                                 "login"
                             ],
                             "_type": "dav",

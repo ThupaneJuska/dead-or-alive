@@ -77,7 +77,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.sideNav = [\n    {label: \"Home\", icon: \"home\", route: \"/dashboard/home\"},\n    {label: \"Claims\", icon: \"description\"},\n    {label: \"Register Client\", icon: \"edit\"},\n    {label: \"Schedules\", icon: \"today\"},\n    {label: \"Reports\", icon: \"folder_open\"},\n    {label: \"Audit Logs\", icon: \"trending_up\"}\n]",
+        "script": "page.sideNav = [\n    {label: \"Home\", icon: \"home\", route: \"/dashboard/home\"},\n    {label: \"Claims\", icon: \"description\"},\n    {label: \"Register Client\", icon: \"edit\"},\n    {label: \"Schedules\", icon: \"today\"},\n    {label: \"Reports\", icon: \"folder_open\"},\n   \n]",
         "functionName": "sd_6vIzrnwUGbfiq4Y8",
         "category": "Function",
         "x": 325,

@@ -1000,7 +1000,6 @@
                 "69bdecda-c9ca-a0ae-19e1-ed6af8caa089": {
                     "paletteKey": "FlexLayoutCol",
                     "parentEditorKey": "8d171485-69b1-1aee-f9db-0570171e4c17",
-                    "isCommented": "false",
                     "commentid": null,
                     "designerReference": [
                         {
@@ -2478,7 +2477,6 @@
                                 "paletteKey": "Html5",
                                 "parentEditorKey": "ac9686f7-50ff-802d-fb55-239b715b7dfe",
                                 "isAdvancedComponent": true,
-                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -2666,7 +2664,6 @@
                                     "paletteKey": "html-editor",
                                     "parentEditorKey": "3091a5bd-c606-a6c2-f7d6-6fe53b22a766",
                                     "isAdvancedChildComponent": true,
-                                    "isCommented": "false",
                                     "commentid": null,
                                     "designerReference": [
                                         {

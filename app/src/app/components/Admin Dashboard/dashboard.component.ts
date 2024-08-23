@@ -102,7 +102,6 @@ export class dashboardComponent {
         { label: 'Register Client', icon: 'edit' },
         { label: 'Schedules', icon: 'today' },
         { label: 'Reports', icon: 'folder_open' },
-        { label: 'Audit Logs', icon: 'trending_up' },
       ];
       //appendnew_next_sd_6vIzrnwUGbfiq4Y8
       return bh;

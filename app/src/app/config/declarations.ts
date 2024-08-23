@@ -18,6 +18,8 @@ window['neutrinos'] = {
 //CORE_REFERENCE_IMPORTS
 //CORE_REFERENCE_IMPORT-schedulesComponent
 import { schedulesComponent } from '../components/Admin Dashboard/schedules.component';
+//CORE_REFERENCE_IMPORT-randomNumber
+import { randomNumber } from '../sd-services/randomNumber';
 //CORE_REFERENCE_IMPORT-homeComponent
 import { homeComponent } from '../components/Admin Dashboard/home.component';
 //CORE_REFERENCE_IMPORT-loaderComponent
@@ -111,6 +113,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-randomNumber
+randomNumber,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-otp
   otp,
 ];

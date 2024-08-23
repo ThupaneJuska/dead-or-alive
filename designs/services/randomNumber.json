@@ -1,0 +1,117 @@
+[
+    {
+        "id": "sd_GBFfAkOjFZO1abZf",
+        "type": "tab",
+        "createdDate": "2024-08-23T07:48:29.377Z",
+        "label": "randomNumber",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "randomNumber",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_oKopI3GY933HFwlo",
+        "type": "Start",
+        "z": "sd_GBFfAkOjFZO1abZf",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "generate Random Number",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "email",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [
+            {
+                "key": "random",
+                "defaultValue": {
+                    "type": "num",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "generateRandomNumber",
+        "category": "General",
+        "x": 105,
+        "y": 80,
+        "wires": [
+            [
+                "sd_A3YPHsk36jIM6faH"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "randomNumber"
+    },
+    {
+        "id": "sd_A3YPHsk36jIM6faH",
+        "type": "Script",
+        "z": "sd_GBFfAkOjFZO1abZf",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// Generates a random number between 10000000 (inclusive) and 100000000 (exclusive)\nbh.local.random = Math.floor(10000000 + Math.random() * 90000000);\n",
+        "functionName": "sd_A3YPHsk36jIM6faH",
+        "category": "Function",
+        "x": 225,
+        "y": 80,
+        "wires": [
+            [
+                "sd_15ou9PzMPfrGKdwn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "randomNumber",
+        "generated": true
+    },
+    {
+        "id": "sd_15ou9PzMPfrGKdwn",
+        "type": "ServiceVariables",
+        "z": "sd_GBFfAkOjFZO1abZf",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "random",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "random"
+                }
+            },
+            {
+                "textIp": "email",
+                "typedIpValue": {
+                    "type": "bh.input",
+                    "value": "email"
+                }
+            }
+        ],
+        "functionName": "sd_15ou9PzMPfrGKdwn",
+        "category": "Function",
+        "x": 325,
+        "y": 80,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "randomNumber",
+        "generated": true
+    }
+]

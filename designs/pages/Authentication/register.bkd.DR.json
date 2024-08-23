@@ -3038,7 +3038,7 @@
                                                     },
                                                     {
                                                         "_key": "html",
-                                                        "_value": "<input type=\"file\" id=\"upload\">",
+                                                        "_value": "<input type=\"file\" id=\"upload\" required formControlName = \"file2\">\r\n<mat-error *ngIf =\"page.clientForm.controls.file2.errors?.required\">Please Upload File</mat-error>",
                                                         "_type": "a",
                                                         "_attrDef": "p"
                                                     }

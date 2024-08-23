@@ -365,10 +365,19 @@
                         },
                         {
                             "_key": "(keydown)",
-                            "_value": "",
+                            "_value": "onFilter($event)",
                             "_type": "kv",
                             "_attrDef": "c",
-                            "_customAttributeFlag": "flowpicker"
+                            "_customAttributeFlag": "flowpicker",
+                            "objValue": {
+                                "nodeID": "sd_c9oNeYPHHXzRmfhx",
+                                "functionName": "onFilter",
+                                "activeTree": "pages",
+                                "z": "sd_o4ikLTEW12PcNWYL",
+                                "input": [
+                                    "$event"
+                                ]
+                            }
                         }
                     ]
                 }
@@ -1623,7 +1632,6 @@
         "8402d24f-76c2-efb9-9d95-8d2351529e36": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "9883d758-e710-5b4c-ae58-df3a173fce20",
-            "isCommented": "false",
             "commentid": null,
             "designerReference": [
                 {
@@ -1635,7 +1643,7 @@
                 },
                 {
                     "_key": "style",
-                    "_value": "",
+                    "_value": "margin-bottom: 1em;",
                     "_type": "kv",
                     "_attrDef": "p"
                 },
@@ -1691,7 +1699,6 @@
             "fb1f9171-7b3b-8d7e-acdb-2ef84143d204": {
                 "paletteKey": "NG-image",
                 "parentEditorKey": "8402d24f-76c2-efb9-9d95-8d2351529e36",
-                "isCommented": "false",
                 "commentid": null,
                 "designerReference": [
                     {
@@ -2184,7 +2191,7 @@
                     "designerReference": [
                         {
                             "_key": "Header Label",
-                            "_value": "Claim Number",
+                            "_value": "Policy Number",
                             "_type": "a",
                             "_attrDef": "p"
                         },
@@ -2311,73 +2318,6 @@
                             }
                         ]
                     }
-                },
-                "17d64ad1-f335-d4aa-01b0-a00c6bf6a041": {
-                    "paletteKey": "ng-table-filter",
-                    "parentEditorKey": "99eecd70-5d13-f169-3009-91cfd1e5de2c",
-                    "isAdvancedComponent": true,
-                    "advancedSiblingType": "before",
-                    "commentid": null,
-                    "designerReference": [
-                        {
-                            "_key": "style",
-                            "_value": "",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "class",
-                            "_value": "",
-                            "_type": "dav",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "(tableFilterFunction)",
-                            "_value": "onFilter_4($event)",
-                            "_type": "dav",
-                            "_attrDef": "p",
-                            "value": "onFilter_4($event)",
-                            "_customAttributeFlag": "flowpicker",
-                            "objValue": {
-                                "activeTree": "pages",
-                                "functionName": "onFilter_4",
-                                "input": [
-                                    "$event"
-                                ],
-                                "nodeID": "sd_E2uPo1sSilLp9szS",
-                                "z": ""
-                            }
-                        },
-                        {
-                            "_key": "placeholder",
-                            "_value": "Search",
-                            "_type": "kv",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "layoutAlign",
-                            "_value": "end",
-                            "_type": "a",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "_key": "fxFlex",
-                            "_value": "end",
-                            "_type": "a",
-                            "_attrDef": "p"
-                        },
-                        {
-                            "skipCodegen": true,
-                            "_key": "__n_dependant_flows_key__",
-                            "_value": [
-                                "sd_tWYCZJe4tqZgrhZa",
-                                "sd_E2uPo1sSilLp9szS"
-                            ],
-                            "_type": "a",
-                            "_attrDef": "c",
-                            "_visibility": false
-                        }
-                    ]
                 }
             }
         }

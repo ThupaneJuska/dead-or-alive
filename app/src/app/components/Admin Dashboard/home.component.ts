@@ -76,7 +76,7 @@ export class homeComponent implements AfterViewInit {
     }
   }
 
-  onFilter_4(filterEvent: any = undefined, ...others) {
+  onFilter(filterEvent: any = undefined, ...others) {
     let bh: any = {};
     try {
       bh = this.__page_injector__
@@ -84,10 +84,10 @@ export class homeComponent implements AfterViewInit {
         .constructFlowObject(this);
       bh.input = { filterEvent };
       bh.local = {};
-      bh = this.sd_iBlFYTlpoczCmWts_4(bh);
-      //appendnew_next_onFilter_4
+      bh = this.sd_iBlFYTlpoczCmWts_5(bh);
+      //appendnew_next_onFilter
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_E2uPo1sSilLp9szS');
+      return this.errorHandler(bh, e, 'sd_c9oNeYPHHXzRmfhx');
     }
   }
   //appendnew_flow_homeComponent_start
@@ -96,7 +96,7 @@ export class homeComponent implements AfterViewInit {
     try {
       this.page.tableData = bh.local.dataSource;
       this.page.table = [];
-      this.page.searchValue = undefined;
+      this.page.searchValue = '';
       bh = this.sd_SqQamlbgHC0CMDv2(bh);
       //appendnew_next_sd_E9QbOlnVduPNV5MO_1
       return bh;
@@ -166,8 +166,8 @@ export class homeComponent implements AfterViewInit {
 
   sd_eJuzOUTYKNgXaqdz_1(bh) {
     try {
-      const page = this.page;
-      bh.local.dataSource = new MatTableDataSource(page.table);
+      const page = this.page; // bh.local.dataSource = new MatTableDataSource(page.table);
+      this.page.tableData = new MatTableDataSource(this.page.table);
       bh = this.sd_XAIP7JuvVAj0wF4F(bh);
       //appendnew_next_sd_eJuzOUTYKNgXaqdz_1
       return bh;
@@ -238,25 +238,37 @@ export class homeComponent implements AfterViewInit {
     }
   }
 
-  sd_iBlFYTlpoczCmWts_4(bh) {
+  sd_iBlFYTlpoczCmWts_5(bh) {
     try {
-      const page = this.page;
+      const page = this.page; // console.log(bh.input.filterEvent);
+      // const filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;
+      // // page.table.filter = filterValue.trim().toLowerCase();
+      // this.page.tableData.filter = filterValue.trim().toLowerCase();
+
       const searchResults = [];
-      page.backupapplicationsDatasource.forEach((row) => {
-        if (row.lastName.toLowerCase().includes(page.searchValue)) {
+      page.table.forEach((row) => {
+        if (
+          row.firstName.toLowerCase().includes(page.searchValue) ||
+          row.lastName.toLowerCase().includes(page.searchValue)
+        ) {
           searchResults.push(row);
-        } else if (row.firstName.toLowerCase().includes(page.searchValue)) {
+        } else if (
+          row.policyNumber.toLowerCase().includes(page.searchValue.toString())
+        ) {
           searchResults.push(row);
-        } else if (row.packageType.toLowerCase().includes(page.searchValue)) {
+        } else if (
+          row.packageType.toLowerCase().includes(page.searchValue.toString())
+        ) {
           searchResults.push(row);
         }
         // To add for date
       });
       page.table = searchResults;
-      //appendnew_next_sd_iBlFYTlpoczCmWts_4
+      console.log('table ==>', page.table);
+      //appendnew_next_sd_iBlFYTlpoczCmWts_5
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_tWYCZJe4tqZgrhZa');
+      return this.errorHandler(bh, e, 'sd_26B83wPaElPthlwe');
     }
   }
 

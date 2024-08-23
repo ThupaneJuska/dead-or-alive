@@ -6,7 +6,7 @@
         "label": "home",
         "disabled": false,
         "info": "",
-        "functionSeq": 4,
+        "functionSeq": 5,
         "generateNext": true,
         "serviceName": "homeComponent"
     },
@@ -82,7 +82,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.local.dataSource = new MatTableDataSource(page.table);",
+        "script": "// bh.local.dataSource = new MatTableDataSource(page.table);\nthis.page.tableData = new MatTableDataSource(this.page.table);",
         "functionName": "sd_eJuzOUTYKNgXaqdz_1",
         "category": "Function",
         "x": 525,
@@ -390,7 +390,7 @@
                 "textIp": "searchValue",
                 "typedIpValue": {
                     "type": "literal",
-                    "value": ""
+                    "value": "''"
                 }
             }
         ],
@@ -409,17 +409,17 @@
         "generated": true
     },
     {
-        "id": "sd_tWYCZJe4tqZgrhZa",
+        "id": "sd_26B83wPaElPthlwe",
         "type": "Script",
         "z": "sd_o4ikLTEW12PcNWYL",
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "const searchResults = [];\npage.backupapplicationsDatasource.forEach(row => {\n    if (row.lastName.toLowerCase().includes(page.searchValue)) {\n        searchResults.push(row)\n    } else if (row.firstName.toLowerCase().includes(page.searchValue)) {\n        searchResults.push(row);\n    } else if (row.packageType.toLowerCase().includes(page.searchValue)) {\n        searchResults.push(row);\n    }\n    // To add for date\n})\npage.table = searchResults;",
-        "functionName": "sd_iBlFYTlpoczCmWts_4",
+        "script": "// console.log(bh.input.filterEvent);\n// const filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;\n// // page.table.filter = filterValue.trim().toLowerCase();\n// this.page.tableData.filter = filterValue.trim().toLowerCase();\n\nconst searchResults = [];\npage.table.forEach(row => {\n    if (row.firstName.toLowerCase().includes(page.searchValue) || row.lastName.toLowerCase().includes(page.searchValue)) {\n        searchResults.push(row)\n    } else if (row.policyNumber.toLowerCase().includes(page.searchValue.toString())) {\n        searchResults.push(row);\n    } else if (row.packageType.toLowerCase().includes(page.searchValue.toString())) {\n        searchResults.push(row);\n    }\n    // To add for date\n})\npage.table = searchResults;\nconsole.log(\"table ==>\", page.table)",
+        "functionName": "sd_iBlFYTlpoczCmWts_5",
         "category": "Function",
         "x": 205,
-        "y": 300,
+        "y": 320,
         "wires": [
             []
         ],
@@ -429,12 +429,12 @@
         "generated": true
     },
     {
-        "id": "sd_E2uPo1sSilLp9szS",
+        "id": "sd_c9oNeYPHHXzRmfhx",
         "type": "PageStart",
         "z": "sd_o4ikLTEW12PcNWYL",
         "viewType": "pages",
         "nodeType": "start",
-        "name": "onFilter_4",
+        "name": "onFilter",
         "outputs": 1,
         "inputVariables": [
             {
@@ -448,13 +448,13 @@
         ],
         "localVariables": [],
         "flow_type": "sync",
-        "functionName": "onFilter_4",
+        "functionName": "onFilter",
         "category": "General",
         "x": 60,
-        "y": 300,
+        "y": 320,
         "wires": [
             [
-                "sd_tWYCZJe4tqZgrhZa"
+                "sd_26B83wPaElPthlwe"
             ]
         ],
         "__n_excludedFromValidation__": {},

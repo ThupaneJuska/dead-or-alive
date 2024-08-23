@@ -3276,9 +3276,16 @@
                     },
                     {
                         "_key": "(click)",
-                        "_value": "",
+                        "_value": "logout()",
                         "_type": "kv",
-                        "_attrDef": "p"
+                        "_attrDef": "p",
+                        "objValue": {
+                            "nodeID": "sd_1Hc7CpWDYjpI9LYE",
+                            "functionName": "logout",
+                            "activeTree": "pages",
+                            "z": "sd_5GPzHp6kREM9zmOq",
+                            "input": []
+                        }
                     },
                     {
                         "_key": "[disabled]",

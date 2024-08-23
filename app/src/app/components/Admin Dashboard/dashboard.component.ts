@@ -4,6 +4,7 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -97,6 +98,21 @@ export class dashboardComponent {
       //appendnew_next_getInitials
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_AXTFUrLCHdiuiemj');
+    }
+  }
+
+  logout(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_Fde7P8ntbklt8Rlj(bh);
+      //appendnew_next_logout
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_1Hc7CpWDYjpI9LYE');
     }
   }
   //appendnew_flow_dashboardComponent_start
@@ -198,6 +214,32 @@ export class dashboardComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_aSuB2dcKyxmaLU6f');
+    }
+  }
+
+  sd_Fde7P8ntbklt8Rlj(bh) {
+    try {
+      const page = this.page;
+      sessionStorage.clear();
+      bh = this.sd_6aBkqmJxzZVLrfOa(bh);
+      //appendnew_next_sd_Fde7P8ntbklt8Rlj
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Fde7P8ntbklt8Rlj');
+    }
+  }
+
+  async sd_6aBkqmJxzZVLrfOa(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/login');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_6aBkqmJxzZVLrfOa
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6aBkqmJxzZVLrfOa');
     }
   }
 

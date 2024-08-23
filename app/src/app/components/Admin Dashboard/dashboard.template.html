@@ -9,21 +9,21 @@
         </div>
       </div>
     </div>
-    <div fxLayout="row wrap" class="full-height width-20 margin-right-1em" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+    <div fxLayout="row wrap" class="width-25 full-height" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
       <div fxLayout="column wrap" class="relative" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon>notifications</mat-icon>
         <div class="height-10 width-10 notif-padding yellow-bg top-1 right-1 center-center flex radius-50 absolute">
           5</div>
       </div>
       <div fxLayout="column wrap" class="blue-color light-grey-bg height-35 width-10 radius-50" fxLayoutAlign="center center" [fxShow]="true">
         <div>
-          <h5><b>KT</b></h5>
+          <h5><b>{{page.name}}{{ page.surname}}</b></h5>
         </div>
       </div>
       <div fxLayout="column wrap" fxLayoutAlign="space-around center" [fxShow]="true">
         <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <div>
-              <h3 class="blue-color">Kimberly Tibane</h3>
+              <h3 class="blue-color">{{page.user.name}} {{page.user.surname}}</h3>
             </div>
           </div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="pointer" [matMenuTriggerFor]="menu">keyboard_arrow_down</mat-icon></div>
@@ -55,4 +55,13 @@
     </div>
   </div>
 </div>
-<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-menu #menu="matMenu"><button mat-menu-item class="blue-color yellow-bg"> LogOut </button></mat-menu></div>
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-menu #menu="matMenu"><button mat-menu-item class="blue-color" (click)="logout()">
+      <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="teal-color">exit_to_app</mat-icon></div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div>
+            <h3 class="blue-color no-margin">Logout</h3>
+          </div>
+        </div>
+      </div>
+    </button></mat-menu></div>

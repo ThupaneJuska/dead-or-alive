@@ -56,7 +56,7 @@ export class homeComponent implements AfterViewInit {
 
   sd_1t0DhsI5kAmqEWqm(bh) {
     try {
-      bh = this.sd_eJuzOUTYKNgXaqdz_1(bh);
+      bh = this.sd_E9QbOlnVduPNV5MO_1(bh);
       //appendnew_next_sd_1t0DhsI5kAmqEWqm
       return bh;
     } catch (e) {
@@ -76,7 +76,7 @@ export class homeComponent implements AfterViewInit {
     }
   }
 
-  onFilter_2(filterEvent: any = undefined, ...others) {
+  onFilter(filterEvent: any = undefined, ...others) {
     let bh: any = {};
     try {
       bh = this.__page_injector__
@@ -84,80 +84,91 @@ export class homeComponent implements AfterViewInit {
         .constructFlowObject(this);
       bh.input = { filterEvent };
       bh.local = {};
-      bh = this.sd_iBlFYTlpoczCmWts_2(bh);
-      //appendnew_next_onFilter_2
+      bh = this.sd_iBlFYTlpoczCmWts_5(bh);
+      //appendnew_next_onFilter
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_9sejeHG47pa1po8b');
+      return this.errorHandler(bh, e, 'sd_c9oNeYPHHXzRmfhx');
     }
   }
   //appendnew_flow_homeComponent_start
 
-  sd_eJuzOUTYKNgXaqdz_1(bh) {
+  sd_E9QbOlnVduPNV5MO_1(bh) {
+    try {
+      this.page.tableData = bh.local.dataSource;
+      this.page.table = [];
+      this.page.searchValue = '';
+      bh = this.sd_SqQamlbgHC0CMDv2(bh);
+      //appendnew_next_sd_E9QbOlnVduPNV5MO_1
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_lu9ZRRD821iOeI1F');
+    }
+  }
+
+  sd_SqQamlbgHC0CMDv2(bh) {
+    try {
+      this.page.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_7gioBFKVWHaZ95Yw(bh);
+      //appendnew_next_sd_SqQamlbgHC0CMDv2
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_SqQamlbgHC0CMDv2');
+    }
+  }
+
+  sd_7gioBFKVWHaZ95Yw(bh) {
     try {
       const page = this.page;
-      bh.local.dataSource = new MatTableDataSource([
-        {
-          position: 1,
-          name: 'Hydrogen',
-          weight: 1.0079,
-          symbol: 'H',
-        },
-        {
-          position: 2,
-          name: 'Helium',
-          weight: 4.0026,
-          symbol: 'He',
-        },
-        {
-          position: 3,
-          name: 'Lithium',
-          weight: 6.941,
-          symbol: 'Li',
-        },
-        {
-          position: 4,
-          name: 'Beryllium',
-          weight: 9.0122,
-          symbol: 'Be',
-        },
-        {
-          position: 5,
-          name: 'Boron',
-          weight: 10.811,
-          symbol: 'B',
-        },
-        {
-          position: 6,
-          name: 'Carbon',
-          weight: 12.0107,
-          symbol: 'C',
-        },
-        {
-          position: 7,
-          name: 'Nitrogen',
-          weight: 14.0067,
-          symbol: 'N',
-        },
-        {
-          position: 8,
-          name: 'Oxygen',
-          weight: 15.9994,
-          symbol: 'O',
-        },
-        {
-          position: 9,
-          name: 'Fluorine',
-          weight: 18.9984,
-          symbol: 'F',
-        },
-        {
-          position: 10,
-          name: 'Neon',
-          weight: 20.1797,
-          symbol: 'Ne',
-        },
-      ]);
-      bh = this.sd_E9QbOlnVduPNV5MO_1(bh);
+      bh.url = page.ssdURL + 'get-users';
+      bh = this.sd_RRKQV3ETWYI7Umxb(bh);
+      //appendnew_next_sd_7gioBFKVWHaZ95Yw
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_7gioBFKVWHaZ95Yw');
+    }
+  }
+
+  async sd_RRKQV3ETWYI7Umxb(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'get',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: undefined,
+      };
+      this.page.result = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_sQz2RUgYmK2eNRYZ(bh);
+      //appendnew_next_sd_RRKQV3ETWYI7Umxb
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_RRKQV3ETWYI7Umxb');
+    }
+  }
+
+  sd_sQz2RUgYmK2eNRYZ(bh) {
+    try {
+      const page = this.page;
+      bh.tableDataSource = page.result.filter((user: any) => {
+        return user.role == 'client';
+      });
+
+      page.table = bh.tableDataSource;
+      page.backupapplicationsDatasource = page.table;
+      bh = this.sd_eJuzOUTYKNgXaqdz_1(bh);
+      //appendnew_next_sd_sQz2RUgYmK2eNRYZ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_sQz2RUgYmK2eNRYZ');
+    }
+  }
+
+  sd_eJuzOUTYKNgXaqdz_1(bh) {
+    try {
+      const page = this.page; // bh.local.dataSource = new MatTableDataSource(page.table);
+      this.page.tableData = new MatTableDataSource(this.page.table);
+      bh = this.sd_XAIP7JuvVAj0wF4F(bh);
       //appendnew_next_sd_eJuzOUTYKNgXaqdz_1
       return bh;
     } catch (e) {
@@ -165,21 +176,11 @@ export class homeComponent implements AfterViewInit {
     }
   }
 
-  sd_E9QbOlnVduPNV5MO_1(bh) {
-    try {
-      this.page.tableData = bh.local.dataSource;
-      bh = this.sd_XAIP7JuvVAj0wF4F(bh);
-      //appendnew_next_sd_E9QbOlnVduPNV5MO_1
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_d6WZvsiE9esUyJaG');
-    }
-  }
-
   sd_XAIP7JuvVAj0wF4F(bh) {
     try {
       this.page.tableData.paginator = bh.pageViews.MatPaginator;
       this.page.tableData.sort = bh.pageViews.MatSort;
+      this.page.backupapplicationsDatasource = undefined;
       //appendnew_next_sd_XAIP7JuvVAj0wF4F
       return bh;
     } catch (e) {
@@ -203,7 +204,7 @@ export class homeComponent implements AfterViewInit {
   sd_2VNGqvcKee34lvOz_1(bh) {
     try {
       const page = this.page;
-      this.page.tableData.sort = this.MatSort;
+      this.page.table.sort = this.MatSort;
       bh = this.sd_xKCCTWKzvgDN0rx7_3(bh);
       //appendnew_next_sd_2VNGqvcKee34lvOz_1
       return bh;
@@ -229,7 +230,7 @@ export class homeComponent implements AfterViewInit {
   sd_2VNGqvcKee34lvOz_3(bh) {
     try {
       const page = this.page;
-      this.page.tableData.paginator = this.MatPaginator;
+      this.page.table.paginator = this.MatPaginator;
       //appendnew_next_sd_2VNGqvcKee34lvOz_3
       return bh;
     } catch (e) {
@@ -237,17 +238,37 @@ export class homeComponent implements AfterViewInit {
     }
   }
 
-  sd_iBlFYTlpoczCmWts_2(bh) {
+  sd_iBlFYTlpoczCmWts_5(bh) {
     try {
-      const page = this.page;
-      console.log(bh.input.filterEvent);
-      const filterValue = (bh.input.filterEvent.target as HTMLInputElement)
-        .value;
-      this.page.tableData.filter = filterValue.trim().toLowerCase();
-      //appendnew_next_sd_iBlFYTlpoczCmWts_2
+      const page = this.page; // console.log(bh.input.filterEvent);
+      // const filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;
+      // // page.table.filter = filterValue.trim().toLowerCase();
+      // this.page.tableData.filter = filterValue.trim().toLowerCase();
+
+      const searchResults = [];
+      page.table.forEach((row) => {
+        if (
+          row.firstName.toLowerCase().includes(page.searchValue) ||
+          row.lastName.toLowerCase().includes(page.searchValue)
+        ) {
+          searchResults.push(row);
+        } else if (
+          row.policyNumber.toLowerCase().includes(page.searchValue.toString())
+        ) {
+          searchResults.push(row);
+        } else if (
+          row.packageType.toLowerCase().includes(page.searchValue.toString())
+        ) {
+          searchResults.push(row);
+        }
+        // To add for date
+      });
+      page.table = searchResults;
+      console.log('table ==>', page.table);
+      //appendnew_next_sd_iBlFYTlpoczCmWts_5
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_u1TvqyzywHvaMyRm');
+      return this.errorHandler(bh, e, 'sd_26B83wPaElPthlwe');
     }
   }
 

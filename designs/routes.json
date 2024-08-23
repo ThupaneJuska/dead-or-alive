@@ -7,6 +7,10 @@
                 {
                     "path": "home",
                     "component": "homeComponent"
+                },
+                {
+                    "path": "schedules",
+                    "component": "schedulesComponent"
                 }
             ]
         },
@@ -33,6 +37,10 @@
         {
             "component": "reset_passwordComponent",
             "path": "reset-password"
+        },
+        {
+            "component": "registerComponent",
+            "path": "register"
         },
         {
             "path": "''",

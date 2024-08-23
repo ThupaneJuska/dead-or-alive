@@ -6,6 +6,7 @@
 import { Component, Injector } from '@angular/core'; //_splitter_
 import { FormBuilder } from '@angular/forms'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -201,6 +202,8 @@ export class loginComponent {
     try {
       const page = this.page;
       page.loading = false;
+
+      console.log('Result login', bh.result);
       bh = this.sd_buYzaxDxyjRaVxqv(bh);
       //appendnew_next_sd_R2or05KgG4F0SznO
       return bh;
@@ -209,7 +212,7 @@ export class loginComponent {
     }
   }
 
-  sd_buYzaxDxyjRaVxqv(bh) {
+  async sd_buYzaxDxyjRaVxqv(bh) {
     try {
       if (
         this.sdService.operators['eq'](
@@ -229,15 +232,8 @@ export class loginComponent {
         )
       ) {
         bh = this.sd_vl5FCxtDP6xLD1fe(bh);
-      } else if (
-        this.sdService.operators['eq'](
-          bh.result.message,
-          'Successfully logged in',
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_SGMcpcrY4y3UKTKj(bh);
+      } else {
+        bh = await this.sd_SGMcpcrY4y3UKTKj(bh);
       }
 
       return bh;
@@ -256,10 +252,22 @@ export class loginComponent {
           horizontalPosition: 'center',
           verticalPosition: 'bottom',
         });
+      bh = this.sd_i2Jgl31qwu3RHkJP(bh);
       //appendnew_next_sd_DrwpTKFaF2PfX0uE
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_DrwpTKFaF2PfX0uE');
+    }
+  }
+
+  sd_i2Jgl31qwu3RHkJP(bh) {
+    try {
+      const page = this.page;
+      console.log('res', bh.result);
+      //appendnew_next_sd_i2Jgl31qwu3RHkJP
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_i2Jgl31qwu3RHkJP');
     }
   }
 
@@ -271,10 +279,22 @@ export class loginComponent {
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
       });
+      bh = this.sd_Iqjr01FHlpRey07B(bh);
       //appendnew_next_sd_vl5FCxtDP6xLD1fe
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_vl5FCxtDP6xLD1fe');
+    }
+  }
+
+  sd_Iqjr01FHlpRey07B(bh) {
+    try {
+      const page = this.page;
+      console.log('res', bh.result);
+      //appendnew_next_sd_Iqjr01FHlpRey07B
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Iqjr01FHlpRey07B');
     }
   }
 
@@ -288,10 +308,50 @@ export class loginComponent {
           horizontalPosition: 'center',
           verticalPosition: 'bottom',
         });
+      bh = this.sd_iGycO4jnqKpix0R8(bh);
       //appendnew_next_sd_SGMcpcrY4y3UKTKj
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_SGMcpcrY4y3UKTKj');
+    }
+  }
+
+  async sd_iGycO4jnqKpix0R8(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/dashboard/home');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
+      bh = this.sd_AID4OaedpjFFkl1s(bh);
+      //appendnew_next_sd_iGycO4jnqKpix0R8
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_iGycO4jnqKpix0R8');
+    }
+  }
+
+  sd_AID4OaedpjFFkl1s(bh) {
+    try {
+      const page = this.page;
+      console.log('res', bh.result);
+      bh = this.sd_QCpkMADtxfSqgHXt(bh);
+      //appendnew_next_sd_AID4OaedpjFFkl1s
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_AID4OaedpjFFkl1s');
+    }
+  }
+
+  sd_QCpkMADtxfSqgHXt(bh) {
+    try {
+      sessionStorage.setItem('user', JSON.stringify(bh.result));
+      //appendnew_next_sd_QCpkMADtxfSqgHXt
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_QCpkMADtxfSqgHXt');
     }
   }
 

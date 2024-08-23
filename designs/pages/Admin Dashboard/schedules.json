@@ -1,0 +1,216 @@
+[
+    {
+        "id": "sd_PBwNMLXI1N7a2oTo",
+        "type": "tab",
+        "createdDate": "2024-08-22T01:17:33.498Z",
+        "label": "schedules",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "schedulesComponent"
+    },
+    {
+        "id": "sd_1wJes7dj0eqwIzcE",
+        "type": "OnInit",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_1wJes7dj0eqwIzcE",
+        "category": "Lifecycle Events",
+        "x": 25,
+        "y": 40,
+        "wires": [
+            [
+                "sd_D2LECCxuE48GweRQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "schedulesComponent"
+    },
+    {
+        "id": "sd_10GshSRIqokJRDnz",
+        "type": "PageVariables",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_10GshSRIqokJRDnz",
+        "category": "Function",
+        "x": 305,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6rBp6Sr2hhMRgx1O",
+        "type": "AfterViewInit",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "After View Init",
+        "functionName": "ngAfterViewInit",
+        "category": "Lifecycle Events",
+        "x": 80,
+        "y": 220,
+        "wires": [
+            [
+                "sd_x0AVTFDWsdElklrU"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "schedulesComponent"
+    },
+    {
+        "id": "sd_x0AVTFDWsdElklrU",
+        "type": "ViewPicker",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "str",
+                    "value": "scheduler_here"
+                },
+                "defaultValue": "ElementRef",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_x0AVTFDWsdElklrU",
+        "category": "Function",
+        "x": 165,
+        "y": 220,
+        "wires": [
+            [
+                "sd_wEsEz7gZSdYiHaIG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_D2LECCxuE48GweRQ",
+        "type": "UseDependency",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "scheduler",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "dhtmlx-scheduler",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_D2LECCxuE48GweRQ",
+        "category": "Function",
+        "x": 105,
+        "y": 40,
+        "wires": [
+            [
+                "sd_3W3ZKsmzsmz4x7Yf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3W3ZKsmzsmz4x7Yf",
+        "type": "UseDependency",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "ViewChild",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "viewChild"
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "ElementRef",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "elementRef"
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/core",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_3W3ZKsmzsmz4x7Yf",
+        "category": "Function",
+        "x": 205,
+        "y": 40,
+        "wires": [
+            [
+                "sd_10GshSRIqokJRDnz"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_wEsEz7gZSdYiHaIG",
+        "type": "Script",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "intialize",
+        "script": "  scheduler.config.xml_date = '%Y-%m-%d %H:%i';\n  // Set up time scale for day and week views\n    scheduler.config.first_hour = 8;  // Start at 8 AM\n    scheduler.config.last_hour = 18;  // End at 6 PM\n    scheduler.config.time_step = 30;  // 30-minute intervals\n\n    // Enable different views: day, week, and month\n    scheduler.config.multi_day = true;\n\n    // Initialize scheduler with month view\n    scheduler.init(this.scheduler_here.nativeElement, new Date(), \"month\");",
+        "functionName": "intialize",
+        "category": "Function",
+        "x": 265,
+        "y": 220,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    }
+]

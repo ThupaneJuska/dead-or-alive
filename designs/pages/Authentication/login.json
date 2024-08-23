@@ -183,7 +183,6 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
-        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -191,10 +190,8 @@
             "mapVarValue": "url"
         },
         "ret": "json",
-        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
-        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -210,11 +207,9 @@
         },
         "headers": {},
         "headersObj": [],
-        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
-        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_zTKl6k43D2GeisCd",
         "category": "HTTP",
@@ -276,10 +271,7 @@
                 "gv": "\"User not found\""
             },
             {
-                "t": "eq",
-                "v": "Successfully logged in",
-                "vt": "str",
-                "gv": "\"Successfully logged in\""
+                "t": "else"
             }
         ],
         "checkall": "false",
@@ -338,7 +330,9 @@
         "x": 705,
         "y": 100,
         "wires": [
-            []
+            [
+                "sd_i2Jgl31qwu3RHkJP"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -378,7 +372,9 @@
         "x": 705,
         "y": 180,
         "wires": [
-            []
+            [
+                "sd_Iqjr01FHlpRey07B"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -568,7 +564,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.loading = false",
+        "script": "page.loading = false\n\nconsole.log(\"Result login\", bh.result)",
         "functionName": "sd_R2or05KgG4F0SznO",
         "category": "Function",
         "x": 525,
@@ -591,9 +587,111 @@
         "nodeType": "flow",
         "name": "",
         "path": "/dashboard/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_iGycO4jnqKpix0R8",
         "category": "Navigation",
         "x": 800,
+        "y": 260,
+        "wires": [
+            [
+                "sd_AID4OaedpjFFkl1s"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "loginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_AID4OaedpjFFkl1s",
+        "type": "Script",
+        "z": "sd_fn8FAmmpAsSioSZv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"res\", bh.result)",
+        "functionName": "sd_AID4OaedpjFFkl1s",
+        "category": "Function",
+        "x": 900,
+        "y": 260,
+        "wires": [
+            [
+                "sd_QCpkMADtxfSqgHXt"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "loginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Iqjr01FHlpRey07B",
+        "type": "Script",
+        "z": "sd_fn8FAmmpAsSioSZv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"res\", bh.result)",
+        "functionName": "sd_Iqjr01FHlpRey07B",
+        "category": "Function",
+        "x": 825,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "loginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_i2Jgl31qwu3RHkJP",
+        "type": "Script",
+        "z": "sd_fn8FAmmpAsSioSZv",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"res\", bh.result)",
+        "functionName": "sd_i2Jgl31qwu3RHkJP",
+        "category": "Function",
+        "x": 825,
+        "y": 100,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "loginComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_QCpkMADtxfSqgHXt",
+        "type": "Storage",
+        "z": "sd_fn8FAmmpAsSioSZv",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "user"
+        },
+        "value": {
+            "type": "bh",
+            "value": "result"
+        },
+        "resultMapping": {},
+        "functionName": "sd_QCpkMADtxfSqgHXt",
+        "category": "Storage",
+        "x": 1020,
         "y": 260,
         "wires": [
             []

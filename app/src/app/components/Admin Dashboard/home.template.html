@@ -27,6 +27,7 @@
       </div>
     </div>
   </div>
+  <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.table.length &lt; 1"><img imgSrc="/Web/images/D.O.A-logo.png" width="90%"></div>
   <div fxLayout="row wrap" class="full-width" fxLayoutAlign="center stretch" [fxShow]="true">
     <div fxLayout="column" style="width:98%; border: 1.5px solid #124e52;">
 
@@ -37,7 +38,7 @@
           </mat-form-field>
         </div>
       </div>
-      <table mat-table [dataSource]="page.table" matSort class="table-width-fix">
+      <table mat-table [dataSource]="page.table" *ngIf="page.table.length &gt; 0" matSort class="table-width-fix">
         <tr mat-header-row *matHeaderRowDef="[&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;index&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;]"></tr>
         <tr mat-row *matRowDef="let row; columns: [&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;index&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;];"></tr>
 

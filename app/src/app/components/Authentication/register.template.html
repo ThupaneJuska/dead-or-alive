@@ -58,7 +58,8 @@
                 </div>
                 <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
                   <div (click)="upload()">
-                    <input type="file" id="upload">
+                    <input type="file" id="upload" required formControlName="file2">
+                    <mat-error *ngIf="page.clientForm.controls.file2.errors?.required">Please Upload File</mat-error>
                   </div>
                 </div>
                 <div fxLayout="row wrap" class="kg-margin-top-3em" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button class="kg-grey" matStepperNext [disabled]="page.clientForm.invalid">Next</button></div>

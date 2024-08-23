@@ -121,6 +121,11 @@ bh-home {
     width: 100% !important;
 }
 
+.landing-login:hover{
+    cursor: pointer;
+    background-color: $yellow;
+}
+
 body {
     font-family: "Open Sans", sans-serif;
 }

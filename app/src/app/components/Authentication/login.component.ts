@@ -6,6 +6,7 @@
 import { Component, Injector } from '@angular/core'; //_splitter_
 import { FormBuilder } from '@angular/forms'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -288,10 +289,25 @@ export class loginComponent {
           horizontalPosition: 'center',
           verticalPosition: 'bottom',
         });
+      bh = this.sd_iGycO4jnqKpix0R8(bh);
       //appendnew_next_sd_SGMcpcrY4y3UKTKj
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_SGMcpcrY4y3UKTKj');
+    }
+  }
+
+  async sd_iGycO4jnqKpix0R8(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/dashboard/home');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_iGycO4jnqKpix0R8
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_iGycO4jnqKpix0R8');
     }
   }
 

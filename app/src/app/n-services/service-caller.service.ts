@@ -2,11 +2,15 @@
 //append_imports_start
 
 import * as sd_otGe0ZttRfKuTfoN from 'app/sd-services/otp'; //_splitter_
+import * as sd_GBFfAkOjFZO1abZf from 'app/sd-services/randomNumber'; //_splitter_
 import { Injectable } from '@angular/core'; //_splitter_
 //append_imports_end
 @Injectable({ providedIn: 'root' })
 export class NeuServiceInvokerService {
-  constructor(private sd_otGe0ZttRfKuTfoN: sd_otGe0ZttRfKuTfoN.otp) {}
+  constructor(
+    private sd_otGe0ZttRfKuTfoN: sd_otGe0ZttRfKuTfoN.otp,
+    private sd_GBFfAkOjFZO1abZf: sd_GBFfAkOjFZO1abZf.randomNumber
+  ) {}
   invoke(
     injectedServiceId: string,
     methodName: string,

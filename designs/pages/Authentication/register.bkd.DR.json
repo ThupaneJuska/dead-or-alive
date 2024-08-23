@@ -3038,7 +3038,7 @@
                                                     },
                                                     {
                                                         "_key": "html",
-                                                        "_value": "<input type=\"file\" id=\"upload\">",
+                                                        "_value": "<input type=\"file\" id=\"upload\" required formControlName = \"file2\">\r\n<mat-error *ngIf =\"page.clientForm.controls.file2.errors?.required\">Please Upload File</mat-error>",
                                                         "_type": "a",
                                                         "_attrDef": "p"
                                                     }
@@ -8218,7 +8218,6 @@
                                 "ffbbfc94-1e46-ad12-2fc8-24ff5a454ab4": {
                                     "paletteKey": "NG-RaisedButton",
                                     "parentEditorKey": "4e778209-eb0d-6e9b-92c9-f5ae0e0f97f5",
-                                    "isCommented": "false",
                                     "commentid": null,
                                     "designerReference": [
                                         {
@@ -13027,7 +13026,6 @@
                                 "3c152295-4803-ada6-731c-69fcbd0f5a44": {
                                     "paletteKey": "NG-RaisedButton",
                                     "parentEditorKey": "85777785-4c82-c8d4-252f-0021b64b9dd3",
-                                    "isCommented": "false",
                                     "commentid": null,
                                     "designerReference": [
                                         {

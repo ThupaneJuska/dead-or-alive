@@ -12,9 +12,11 @@ import {
   Validators,
 } from '@angular/forms'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
+import { randomNumber } from 'app/sd-services/randomNumber'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -269,6 +271,7 @@ export class registerComponent {
         cellphone: new FormControl('', [Validators.required]),
         address: new FormControl('', [Validators.required]),
         packageType: new FormControl('', [Validators.required]),
+        file2: new FormControl('', [Validators.required]),
         file: page.fileForm,
       });
 
@@ -343,11 +346,29 @@ export class registerComponent {
   sd_5FvUEd3TbUxOODvU(bh) {
     try {
       this.page.ssdUrl = bh.system.environment.properties.ssdURL;
-      bh = this.sd_lL2rQ9BIoBqeZaCn(bh);
+      bh = this.sd_uaLP5pYLb4eJZafw(bh);
       //appendnew_next_sd_5FvUEd3TbUxOODvU
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_5FvUEd3TbUxOODvU');
+    }
+  }
+
+  async sd_uaLP5pYLb4eJZafw(bh) {
+    try {
+      const randomNumberInstance: randomNumber =
+        this.__page_injector__.get(randomNumber);
+
+      let outputVariables = await randomNumberInstance.generateRandomNumber(
+        this.page.clientForm.email
+      );
+      bh.random = outputVariables.local.random;
+
+      bh = this.sd_lL2rQ9BIoBqeZaCn(bh);
+      //appendnew_next_sd_uaLP5pYLb4eJZafw
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_uaLP5pYLb4eJZafw');
     }
   }
 
@@ -361,7 +382,12 @@ export class registerComponent {
 
       bh.url = page.ssdUrl + 'register';
 
+      delete page.clientForm.file2;
+
       bh.body = page.clientForm.value;
+      bh.body.role = 'client';
+      bh.body.policyNumber = bh.random;
+      bh.body.password = bh.random.toString();
       bh.body.beneficaries = [
         page.beneficaryForm.value,
         page.beneficaryForm2.value,
@@ -371,8 +397,6 @@ export class registerComponent {
         page.dependencyForm2.value,
         page.dependencyForm3.value,
       ];
-
-      console.log('form', bh.body);
 
       bh = this.sd_feAbYysgRL7fgGGm(bh);
       //appendnew_next_sd_lL2rQ9BIoBqeZaCn
@@ -409,10 +433,25 @@ export class registerComponent {
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
       });
+      bh = this.sd_IKDCeaKDglhchiOD(bh);
       //appendnew_next_sd_QnaW4yCDpoY9Cu3b
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_QnaW4yCDpoY9Cu3b');
+    }
+  }
+
+  async sd_IKDCeaKDglhchiOD(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/dashboard/home');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+      //appendnew_next_sd_IKDCeaKDglhchiOD
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_IKDCeaKDglhchiOD');
     }
   }
 

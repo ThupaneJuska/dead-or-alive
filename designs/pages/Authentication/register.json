@@ -161,7 +161,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.fileForm = new FormGroup({\n    _id: new FormControl(\"\"),\n    filename: new FormControl(\"\"),\n    chunkSize: new FormControl(\"\"),\n    length: new FormControl(\"\"),\n})\n\npage.beneficaryForm = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    email: new FormControl(\"\", [Validators.required, Validators.email]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n    cellphone: new FormControl(\"\", [Validators.required]),\n    relationship: new FormControl(\"\", [Validators.required]),\n})\n\npage.beneficaryForm2 = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    email: new FormControl(\"\", [Validators.required, Validators.email]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n    cellphone: new FormControl(\"\", [Validators.required]),\n    relationship: new FormControl(\"\", [Validators.required]),\n})\n\npage.dependencyForm = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n})\n\npage.dependencyForm2 = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n})\n\npage.dependencyForm3 = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n})\n\npage.clientForm = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    email: new FormControl(\"\", [Validators.required, Validators.email]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n    cellphone: new FormControl(\"\", [Validators.required]),\n    address: new FormControl(\"\", [Validators.required]),\n    packageType: new FormControl(\"\", [Validators.required]),\n    file: page.fileForm\n})\n\npage.package = [\n   {value: 'Package 1', viewValue: 'Package 1'},\n   {value: 'Package 2', viewValue: 'Package 2'},\n   {value: 'Package 3', viewValue: 'Package 3'}\n];\n\npage.genders = [\n   {value: 'Male', viewValue: 'Male'},\n   {value: 'Female', viewValue: 'Female'}\n];",
+        "script": "page.fileForm = new FormGroup({\n    _id: new FormControl(\"\"),\n    filename: new FormControl(\"\"),\n    chunkSize: new FormControl(\"\"),\n    length: new FormControl(\"\"),\n})\n\npage.beneficaryForm = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    email: new FormControl(\"\", [Validators.required, Validators.email]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n    cellphone: new FormControl(\"\", [Validators.required]),\n    relationship: new FormControl(\"\", [Validators.required]),\n})\n\npage.beneficaryForm2 = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    email: new FormControl(\"\", [Validators.required, Validators.email]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n    cellphone: new FormControl(\"\", [Validators.required]),\n    relationship: new FormControl(\"\", [Validators.required]),\n})\n\npage.dependencyForm = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n})\n\npage.dependencyForm2 = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n})\n\npage.dependencyForm3 = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n})\n\npage.clientForm = new FormGroup({\n    firstName: new FormControl(\"\", [Validators.required]),\n    lastName: new FormControl(\"\", [Validators.required]),\n    email: new FormControl(\"\", [Validators.required, Validators.email]),\n    gender: new FormControl(\"\", [Validators.required]),\n    idNumber: new FormControl(\"\", [Validators.required, Validators.maxLength(13), Validators.minLength(13)]),\n    cellphone: new FormControl(\"\", [Validators.required]),\n    address: new FormControl(\"\", [Validators.required]),\n    packageType: new FormControl(\"\", [Validators.required]),\n    file2: new FormControl(\"\", [Validators.required]),\n    file: page.fileForm\n})\n\npage.package = [\n   {value: 'Package 1', viewValue: 'Package 1'},\n   {value: 'Package 2', viewValue: 'Package 2'},\n   {value: 'Package 3', viewValue: 'Package 3'}\n];\n\npage.genders = [\n   {value: 'Male', viewValue: 'Male'},\n   {value: 'Female', viewValue: 'Female'}\n];",
         "functionName": "sd_qjesZ9T9zyxXQtfe",
         "category": "Function",
         "x": 365,
@@ -328,7 +328,7 @@
         "flow_type": "sync",
         "functionName": "confirm",
         "category": "General",
-        "x": 365,
+        "x": 325,
         "y": 400,
         "wires": [
             [
@@ -358,11 +358,11 @@
         ],
         "functionName": "sd_5FvUEd3TbUxOODvU",
         "category": "General",
-        "x": 485,
+        "x": 425,
         "y": 400,
         "wires": [
             [
-                "sd_lL2rQ9BIoBqeZaCn"
+                "sd_uaLP5pYLb4eJZafw"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -377,10 +377,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.clientForm.value.file._id = page.userFile._id\npage.clientForm.value.file.filename = page.userFile.filename\npage.clientForm.value.file.length = page.userFile.length\npage.clientForm.value.file.chunkSize = page.userFile.chunkSize\n\nbh.url = page.ssdUrl + 'register'\n\nbh.body = page.clientForm.value\nbh.body.beneficaries = [page.beneficaryForm.value, page.beneficaryForm2.value]\nbh.body.dependencies = [page.dependencyForm.value, page.dependencyForm2.value, page.dependencyForm3.value]\n\nconsole.log(\"form\", bh.body)\n",
+        "script": "page.clientForm.value.file._id = page.userFile._id\npage.clientForm.value.file.filename = page.userFile.filename\npage.clientForm.value.file.length = page.userFile.length\npage.clientForm.value.file.chunkSize = page.userFile.chunkSize\n\nbh.url = page.ssdUrl + 'register'\n\ndelete page.clientForm.file2\n\nbh.body = page.clientForm.value\nbh.body.role = \"client\"\nbh.body.policyNumber = bh.random\nbh.body.password = bh.random.toString()\nbh.body.beneficaries = [page.beneficaryForm.value, page.beneficaryForm2.value]\nbh.body.dependencies = [page.dependencyForm.value, page.dependencyForm2.value, page.dependencyForm3.value]\n\n\n",
         "functionName": "sd_lL2rQ9BIoBqeZaCn",
         "category": "Function",
-        "x": 585,
+        "x": 605,
         "y": 400,
         "wires": [
             [
@@ -453,6 +453,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -460,8 +461,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -477,9 +480,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_Z0u2uGd5YO9ydjps",
         "category": "HTTP",
@@ -644,6 +649,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -651,8 +657,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -668,9 +676,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_feAbYysgRL7fgGGm",
         "category": "HTTP",
@@ -706,7 +716,9 @@
             "value": "3000"
         },
         "horizontalPosition": "center",
+        "horizontalPositionMap": "",
         "verticalPosition": "bottom",
+        "verticalPositionMap": "",
         "panelClass": {
             "type": "str",
             "value": ""
@@ -714,7 +726,92 @@
         "direction": "ltr",
         "functionName": "sd_QnaW4yCDpoY9Cu3b",
         "category": "General",
-        "x": 820,
+        "x": 805,
+        "y": 400,
+        "wires": [
+            [
+                "sd_IKDCeaKDglhchiOD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "registerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_uaLP5pYLb4eJZafw",
+        "type": "PageCallService",
+        "z": "sd_uqB8Ta19yPAqB9Xq",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_GBFfAkOjFZO1abZf",
+            "type": "tab",
+            "createdDate": "2024-08-23T07:48:29.377Z",
+            "label": "randomNumber",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_oKopI3GY933HFwlo",
+            "flowName": "generateRandomNumber"
+        },
+        "inputVariables": [
+            {
+                "key": "email",
+                "map": true,
+                "valueType": "this.page",
+                "value": "clientForm.email"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "random",
+                "valueType": "bh",
+                "value": "random",
+                "mapVarName": "random",
+                "localVar": "bh.random"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/randomNumber",
+        "startName": "generateRandomNumber",
+        "inputParams": [
+            "this.page.clientForm.email"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_uaLP5pYLb4eJZafw",
+        "category": "General",
+        "x": 505,
+        "y": 400,
+        "wires": [
+            [
+                "sd_lL2rQ9BIoBqeZaCn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "registerComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_IKDCeaKDglhchiOD",
+        "type": "Navigation",
+        "z": "sd_uqB8Ta19yPAqB9Xq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/dashboard/home",
+        "functionName": "sd_IKDCeaKDglhchiOD",
+        "category": "Navigation",
+        "x": 925,
         "y": 400,
         "wires": [
             []

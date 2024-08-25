@@ -844,6 +844,21 @@
                                 "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
+                            },
+                            {
+                                "_key": "(click)",
+                                "_value": "cardsFilter('Package 1')",
+                                "_type": "kv",
+                                "_attrDef": "c",
+                                "objValue": {
+                                    "nodeID": "sd_k3j5KbTZTS6UvlPT",
+                                    "functionName": "cardsFilter",
+                                    "activeTree": "pages",
+                                    "z": "sd_o4ikLTEW12PcNWYL",
+                                    "input": [
+                                        "'Package 1'"
+                                    ]
+                                }
                             }
                         ],
                         "5d195e7e-943c-59f0-1924-2b7607544978": {
@@ -1125,6 +1140,21 @@
                                 "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
+                            },
+                            {
+                                "_key": "(click)",
+                                "_value": "cardsFilter('Package 2')",
+                                "_type": "kv",
+                                "_attrDef": "c",
+                                "objValue": {
+                                    "nodeID": "sd_k3j5KbTZTS6UvlPT",
+                                    "functionName": "cardsFilter",
+                                    "activeTree": "pages",
+                                    "z": "sd_o4ikLTEW12PcNWYL",
+                                    "input": [
+                                        "'Package 2'"
+                                    ]
+                                }
                             }
                         ],
                         "55eea5e0-28d7-b2ca-3cdf-fc7330ecf7ad": {
@@ -1406,6 +1436,21 @@
                                 "_value": "true",
                                 "_type": "kv",
                                 "_attrDef": "p"
+                            },
+                            {
+                                "_key": "(click)",
+                                "_value": "cardsFilter('Package 3')",
+                                "_type": "kv",
+                                "_attrDef": "c",
+                                "objValue": {
+                                    "nodeID": "sd_k3j5KbTZTS6UvlPT",
+                                    "functionName": "cardsFilter",
+                                    "activeTree": "pages",
+                                    "z": "sd_o4ikLTEW12PcNWYL",
+                                    "input": [
+                                        "'Package 3'"
+                                    ]
+                                }
                             }
                         ],
                         "9fc46f7e-900f-f87c-8ee8-512143110ca4": {
@@ -2203,7 +2248,7 @@
                         },
                         {
                             "_key": "Mapping",
-                            "_value": "9801115169080-01",
+                            "_value": "{{table.policyNumber}}",
                             "_type": "ma",
                             "_attrDef": "p",
                             "_useAsLabel": true

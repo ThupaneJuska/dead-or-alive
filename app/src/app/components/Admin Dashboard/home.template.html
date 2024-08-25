@@ -12,15 +12,15 @@
           <div>
             View by</div>
         </div>
-        <div fxLayout="column wrap" class="padding-5px filter-cards" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="padding-5px filter-cards" fxLayoutAlign="start stretch" [fxShow]="true" (click)="cardsFilter(&apos;Package 1&apos;)">
           <div class="padding-5px blue-color">
             Plan A</div>
         </div>
-        <div fxLayout="column wrap" class="filter-cards" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="filter-cards" fxLayoutAlign="start stretch" [fxShow]="true" (click)="cardsFilter(&apos;Package 2&apos;)">
           <div class="padding-5px blue-color">
             Plan B</div>
         </div>
-        <div fxLayout="column wrap" class="filter-cards" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="filter-cards" fxLayoutAlign="start stretch" [fxShow]="true" (click)="cardsFilter(&apos;Package 3&apos;)">
           <div class="padding-5px blue-color">
             Plan C</div>
         </div>
@@ -31,8 +31,8 @@
   <div fxLayout="row wrap" class="full-width" fxLayoutAlign="center stretch" [fxShow]="true">
     <div fxLayout="column" style="width:98%; border: 1.5px solid #124e52;">
       <table mat-table [dataSource]="page.table" *ngIf="page.table.length &gt; 0" matSort class="table-width-fix">
-        <tr mat-header-row *matHeaderRowDef="[&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;index&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;]"></tr>
-        <tr mat-row *matRowDef="let row; columns: [&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;index&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;];"></tr>
+        <tr mat-header-row *matHeaderRowDef="[&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;policyNumber&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;]"></tr>
+        <tr mat-row *matRowDef="let row; columns: [&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;policyNumber&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;];"></tr>
 
         <ng-container matColumnDef="firstName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
@@ -49,9 +49,9 @@
           <td mat-cell *matCellDef="let table; let i = index;">{{table.packageType}}</td>
         </ng-container>
 
-        <ng-container matColumnDef="index">
+        <ng-container matColumnDef="policyNumber">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Policy Number</th>
-          <td mat-cell *matCellDef="let table; let i = index;">9801115169080-01</td>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.policyNumber}}</td>
         </ng-container>
 
         <ng-container matColumnDef="af49d494-9b3b-db7d-6ff7-3c53fb4d255e">

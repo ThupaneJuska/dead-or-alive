@@ -6,7 +6,7 @@
         "label": "home",
         "disabled": false,
         "info": "",
-        "functionSeq": 5,
+        "functionSeq": 6,
         "generateNext": true,
         "serviceName": "homeComponent"
     },
@@ -65,7 +65,7 @@
         ],
         "functionName": "sd_XAIP7JuvVAj0wF4F",
         "category": "Function",
-        "x": 605,
+        "x": 685,
         "y": 40,
         "wires": [
             []
@@ -82,10 +82,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "// bh.local.dataSource = new MatTableDataSource(page.table);\nthis.page.tableData = new MatTableDataSource(this.page.table);",
+        "script": "// bh.local.dataSource = new MatTableDataSource(page.table);\n// this.page.tableData = new MatTableDataSource(this.page.table);",
         "functionName": "sd_eJuzOUTYKNgXaqdz_1",
         "category": "Function",
-        "x": 525,
+        "x": 605,
         "y": 40,
         "wires": [
             [
@@ -250,7 +250,7 @@
         ],
         "functionName": "sd_SqQamlbgHC0CMDv2",
         "category": "General",
-        "x": 205,
+        "x": 285,
         "y": 40,
         "wires": [
             [
@@ -272,7 +272,7 @@
         "script": "bh.url = page.ssdURL + \"get-users\"",
         "functionName": "sd_7gioBFKVWHaZ95Yw",
         "category": "Function",
-        "x": 285,
+        "x": 365,
         "y": 40,
         "wires": [
             [
@@ -327,7 +327,7 @@
         "paramMappingObj": {},
         "functionName": "sd_RRKQV3ETWYI7Umxb",
         "category": "HTTP",
-        "x": 360,
+        "x": 440,
         "y": 40,
         "wires": [
             [
@@ -349,7 +349,7 @@
         "script": "bh.tableDataSource = page.result.filter((user:any) =>{\nreturn    user.role == \"client\"\n})\n\npage.table = bh.tableDataSource \npage.backupapplicationsDatasource = page.table;",
         "functionName": "sd_sQz2RUgYmK2eNRYZ",
         "category": "Function",
-        "x": 445,
+        "x": 525,
         "y": 40,
         "wires": [
             [
@@ -392,6 +392,13 @@
                     "type": "literal",
                     "value": "''"
                 }
+            },
+            {
+                "textIp": "backupapplicationsDatasource",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_E9QbOlnVduPNV5MO_1",
@@ -400,7 +407,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_SqQamlbgHC0CMDv2"
+                "sd_MVMh0WBg4s6QqZUr"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -415,11 +422,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "// console.log(bh.input.filterEvent);\n// const filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;\n// // page.table.filter = filterValue.trim().toLowerCase();\n// this.page.tableData.filter = filterValue.trim().toLowerCase();\n\nconst searchResults = [];\npage.table.forEach(row => {\n    if (row.firstName.toLowerCase().includes(page.searchValue) || row.lastName.toLowerCase().includes(page.searchValue)) {\n        searchResults.push(row)\n    } else if (row.policyNumber.toLowerCase().includes(page.searchValue.toString())) {\n        searchResults.push(row);\n    } else if (row.packageType.toLowerCase().includes(page.searchValue.toString())) {\n        searchResults.push(row);\n    }\n    // To add for date\n})\npage.table = searchResults;\nconsole.log(\"table ==>\", page.table)",
+        "script": "if (!page.backupapplicationsDatasource) {\n    page.backupapplicationsDatasource = [...page.table];\n}\n\nconst searchValue = (bh.input.filterEvent.target as HTMLInputElement).value.trim().toLowerCase();\npage.searchValue = searchValue;\n\nif (searchValue) {\n    const searchResults = page.backupapplicationsDatasource.filter((row) => {\n        return (\n            (row.firstName && row.firstName.toLowerCase().includes(searchValue)) ||\n            (row.lastName && row.lastName.toLowerCase().includes(searchValue)) ||\n            (row.policyNumber && row.policyNumber.toString().toLowerCase().includes(searchValue)) ||  // Convert policyNumber to string\n            (row.packageType && row.packageType.toLowerCase().includes(searchValue))\n        );\n    });\n    page.table = searchResults;\n} else {\n    // Reset to original data if search value is empty\n    page.table = [...page.backupapplicationsDatasource];\n}\n",
         "functionName": "sd_iBlFYTlpoczCmWts_5",
         "category": "Function",
         "x": 205,
-        "y": 320,
+        "y": 280,
         "wires": [
             []
         ],
@@ -451,7 +458,7 @@
         "functionName": "onFilter",
         "category": "General",
         "x": 60,
-        "y": 320,
+        "y": 280,
         "wires": [
             [
                 "sd_26B83wPaElPthlwe"
@@ -460,5 +467,89 @@
         "__n_excludedFromValidation__": {},
         "generateNext": true,
         "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_k3j5KbTZTS6UvlPT",
+        "type": "PageStart",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "cards_filter",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "plan",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "cardsFilter",
+        "category": "General",
+        "x": 65,
+        "y": 360,
+        "wires": [
+            [
+                "sd_cDHK0KhL1bspOFcv"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_cDHK0KhL1bspOFcv",
+        "type": "Script",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\n    if (!page.backupapplicationsDatasource) {\n        page.backupapplicationsDatasource = [...page.table];\n    }\n\n    const filteredResults = page.backupapplicationsDatasource.filter((row) => {\n        return row.packageType && row.packageType.toLowerCase() === bh.input.plan.toLowerCase();\n    });\n\n    page.table = filteredResults;\n\n",
+        "functionName": "sd_cDHK0KhL1bspOFcv",
+        "category": "Function",
+        "x": 140,
+        "y": 360,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_MVMh0WBg4s6QqZUr",
+        "type": "UseDependency",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [],
+        "import_all": false,
+        "library": "@angular/material/paginator",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_MVMh0WBg4s6QqZUr",
+        "category": "Function",
+        "x": 205,
+        "y": 40,
+        "wires": [
+            [
+                "sd_SqQamlbgHC0CMDv2"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
     }
 ]

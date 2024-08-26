@@ -3,7 +3,7 @@
 //CORE_REFERENCE_IMPORTS
 //append_imports_start
 
-import { Component, Injector } from '@angular/core'; //_splitter_
+import { Component, Injector, OnChanges, SimpleChanges } from '@angular/core'; //_splitter_
 import { FormBuilder } from '@angular/forms'; //_splitter_
 import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
 import { Router } from '@angular/router'; //_splitter_
@@ -19,7 +19,7 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
     //appendnew_element_providers
   ],
 })
-export class reset_passwordComponent {
+export class reset_passwordComponent implements OnChanges {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -67,7 +67,7 @@ export class reset_passwordComponent {
         .constructFlowObject(this);
       bh.input = { form };
       bh.local = {};
-      bh = this.sd_qmHfZt6ba5eypNG2(bh);
+      bh = this.sd_DkHWNsyx5xolkmas(bh);
       //appendnew_next_resetPassword
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_35RD3DUq7Evt0GSA');
@@ -118,6 +118,19 @@ export class reset_passwordComponent {
       return this.errorHandler(bh, e, 'sd_XY0pSSMsBz3YQxey');
     }
   }
+  ngOnChanges(changes: SimpleChanges) {
+    try {
+      var bh: any = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.changes = changes;
+      bh = this.sd_QeAT0XeQLZxEPGF6(bh);
+      //appendnew_next_ngOnChanges
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_3vRs5TZ5upE7nkIh');
+    }
+  }
+
   //appendnew_flow_reset_passwordComponent_start
 
   sd_8Wh6qZngi0Z3LBpn(bh) {
@@ -159,16 +172,41 @@ export class reset_passwordComponent {
     }
   }
 
-  sd_qmHfZt6ba5eypNG2(bh) {
+  async sd_DkHWNsyx5xolkmas(bh) {
     try {
-      const page = this.page;
-      console.log('Rest form', bh.input.form.value);
+      if (
+        this.sdService.operators['eq'](
+          bh.input.form.form.status,
+          'INVALID',
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_iGU14hbsOOzOB2Ff(bh);
+      } else {
+        bh = await this.sd_ObnkNiNQlsFesDUc(bh);
+      }
 
-      bh = this.sd_ObnkNiNQlsFesDUc(bh);
-      //appendnew_next_sd_qmHfZt6ba5eypNG2
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_qmHfZt6ba5eypNG2');
+      return this.errorHandler(bh, e, 'sd_DkHWNsyx5xolkmas');
+    }
+  }
+
+  sd_iGU14hbsOOzOB2Ff(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('Please fill all required fields', 'Ok', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      //appendnew_next_sd_iGU14hbsOOzOB2Ff
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_iGU14hbsOOzOB2Ff');
     }
   }
 
@@ -372,6 +410,17 @@ export class reset_passwordComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_orUAejR5aljJtg1v');
+    }
+  }
+
+  sd_QeAT0XeQLZxEPGF6(bh) {
+    try {
+      const page = this.page;
+      console.log('Hello', page.resetPasswordForm);
+      //appendnew_next_sd_QeAT0XeQLZxEPGF6
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_QeAT0XeQLZxEPGF6');
     }
   }
 

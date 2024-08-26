@@ -383,5 +383,78 @@
         "generateNext": false,
         "serviceName": "dashboardComponent",
         "generated": true
+    },
+    {
+        "id": "sd_1Hc7CpWDYjpI9LYE",
+        "type": "PageStart",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "logout",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "logout",
+        "category": "General",
+        "x": 60,
+        "y": 420,
+        "wires": [
+            [
+                "sd_Fde7P8ntbklt8Rlj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dashboardComponent"
+    },
+    {
+        "id": "sd_Fde7P8ntbklt8Rlj",
+        "type": "Script",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "sessionStorage.clear()",
+        "functionName": "sd_Fde7P8ntbklt8Rlj",
+        "category": "Function",
+        "x": 145,
+        "y": 420,
+        "wires": [
+            [
+                "sd_6aBkqmJxzZVLrfOa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6aBkqmJxzZVLrfOa",
+        "type": "Navigation",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/login",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_6aBkqmJxzZVLrfOa",
+        "category": "Navigation",
+        "x": 225,
+        "y": 420,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
     }
 ]

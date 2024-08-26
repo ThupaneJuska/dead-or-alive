@@ -201,6 +201,34 @@ export class dashboardComponent {
     }
   }
 
+  sd_Fde7P8ntbklt8Rlj(bh) {
+    try {
+      const page = this.page;
+      sessionStorage.clear();
+      bh = this.sd_6aBkqmJxzZVLrfOa(bh);
+      //appendnew_next_sd_Fde7P8ntbklt8Rlj
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Fde7P8ntbklt8Rlj');
+    }
+  }
+
+  async sd_6aBkqmJxzZVLrfOa(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/login');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
+      //appendnew_next_sd_6aBkqmJxzZVLrfOa
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_6aBkqmJxzZVLrfOa');
+    }
+  }
+
   //appendnew_node
 
   ngOnDestroy() {

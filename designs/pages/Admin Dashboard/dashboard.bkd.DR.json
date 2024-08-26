@@ -2005,6 +2005,7 @@
                             {
                                 "_key": "class",
                                 "_value": [
+                                    "pointer",
                                     "full-width",
                                     "white-bg",
                                     "center-center",

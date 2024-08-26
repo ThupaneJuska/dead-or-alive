@@ -7,7 +7,6 @@ import { AfterViewInit, Component, Injector, ViewChild } from '@angular/core'; /
 import { FormBuilder } from '@angular/forms'; //_splitter_
 import { MatPaginator } from '@angular/material/paginator'; //_splitter_
 import { MatSort } from '@angular/material/sort'; //_splitter_
-import { MatTableDataSource } from '@angular/material/table'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -90,6 +89,21 @@ export class homeComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_c9oNeYPHHXzRmfhx');
     }
   }
+
+  cardsFilter(plan: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { plan };
+      bh.local = {};
+      bh = this.sd_cDHK0KhL1bspOFcv(bh);
+      //appendnew_next_cardsFilter
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_k3j5KbTZTS6UvlPT');
+    }
+  }
   //appendnew_flow_homeComponent_start
 
   sd_E9QbOlnVduPNV5MO_1(bh) {
@@ -97,11 +111,22 @@ export class homeComponent implements AfterViewInit {
       this.page.tableData = bh.local.dataSource;
       this.page.table = [];
       this.page.searchValue = '';
-      bh = this.sd_SqQamlbgHC0CMDv2(bh);
+      this.page.backupapplicationsDatasource = undefined;
+      bh = this.sd_MVMh0WBg4s6QqZUr(bh);
       //appendnew_next_sd_E9QbOlnVduPNV5MO_1
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_lu9ZRRD821iOeI1F');
+    }
+  }
+
+  sd_MVMh0WBg4s6QqZUr(bh) {
+    try {
+      bh = this.sd_SqQamlbgHC0CMDv2(bh);
+      //appendnew_next_sd_MVMh0WBg4s6QqZUr
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_MVMh0WBg4s6QqZUr');
     }
   }
 
@@ -167,7 +192,7 @@ export class homeComponent implements AfterViewInit {
   sd_eJuzOUTYKNgXaqdz_1(bh) {
     try {
       const page = this.page; // bh.local.dataSource = new MatTableDataSource(page.table);
-      this.page.tableData = new MatTableDataSource(this.page.table);
+      // this.page.tableData = new MatTableDataSource(this.page.table);
       bh = this.sd_XAIP7JuvVAj0wF4F(bh);
       //appendnew_next_sd_eJuzOUTYKNgXaqdz_1
       return bh;
@@ -240,35 +265,71 @@ export class homeComponent implements AfterViewInit {
 
   sd_iBlFYTlpoczCmWts_5(bh) {
     try {
-      const page = this.page; // console.log(bh.input.filterEvent);
-      // const filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;
-      // // page.table.filter = filterValue.trim().toLowerCase();
-      // this.page.tableData.filter = filterValue.trim().toLowerCase();
+      const page = this.page;
+      if (!page.backupapplicationsDatasource) {
+        page.backupapplicationsDatasource = [...page.table];
+      }
 
-      const searchResults = [];
-      page.table.forEach((row) => {
-        if (
-          row.firstName.toLowerCase().includes(page.searchValue) ||
-          row.lastName.toLowerCase().includes(page.searchValue)
-        ) {
-          searchResults.push(row);
-        } else if (
-          row.policyNumber.toLowerCase().includes(page.searchValue.toString())
-        ) {
-          searchResults.push(row);
-        } else if (
-          row.packageType.toLowerCase().includes(page.searchValue.toString())
-        ) {
-          searchResults.push(row);
-        }
-        // To add for date
-      });
-      page.table = searchResults;
-      console.log('table ==>', page.table);
+      const searchValue = (
+        bh.input.filterEvent.target as HTMLInputElement
+      ).value
+        .trim()
+        .toLowerCase();
+      page.searchValue = searchValue;
+
+      if (searchValue) {
+        const searchResults = page.backupapplicationsDatasource.filter(
+          (row) => {
+            return (
+              (row.firstName &&
+                row.firstName.toLowerCase().includes(searchValue)) ||
+              (row.lastName &&
+                row.lastName.toLowerCase().includes(searchValue)) ||
+              (row.policyNumber &&
+                row.policyNumber
+                  .toString()
+                  .toLowerCase()
+                  .includes(searchValue)) || // Convert policyNumber to string
+              (row.packageType &&
+                row.packageType.toLowerCase().includes(searchValue))
+            );
+          }
+        );
+        page.table = searchResults;
+      } else {
+        // Reset to original data if search value is empty
+        page.table = [...page.backupapplicationsDatasource];
+      }
+
       //appendnew_next_sd_iBlFYTlpoczCmWts_5
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_26B83wPaElPthlwe');
+    }
+  }
+
+  sd_cDHK0KhL1bspOFcv(bh) {
+    try {
+      const page = this.page;
+      if (!page.backupapplicationsDatasource) {
+        page.backupapplicationsDatasource = [...page.table];
+      }
+
+      const filteredResults = page.backupapplicationsDatasource.filter(
+        (row) => {
+          return (
+            row.packageType &&
+            row.packageType.toLowerCase() === bh.input.plan.toLowerCase()
+          );
+        }
+      );
+
+      page.table = filteredResults;
+
+      //appendnew_next_sd_cDHK0KhL1bspOFcv
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_cDHK0KhL1bspOFcv');
     }
   }
 

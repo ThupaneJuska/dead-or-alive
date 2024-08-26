@@ -328,7 +328,7 @@
         "flow_type": "sync",
         "functionName": "confirm",
         "category": "General",
-        "x": 325,
+        "x": 305,
         "y": 400,
         "wires": [
             [
@@ -358,7 +358,7 @@
         ],
         "functionName": "sd_5FvUEd3TbUxOODvU",
         "category": "General",
-        "x": 425,
+        "x": 385,
         "y": 400,
         "wires": [
             [
@@ -377,10 +377,10 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.clientForm.value.file._id = page.userFile._id\npage.clientForm.value.file.filename = page.userFile.filename\npage.clientForm.value.file.length = page.userFile.length\npage.clientForm.value.file.chunkSize = page.userFile.chunkSize\n\nbh.url = page.ssdUrl + 'register'\n\ndelete page.clientForm.file2\n\nbh.body = page.clientForm.value\nbh.body.role = \"client\"\nbh.body.policyNumber = bh.random\nbh.body.password = bh.random.toString()\nbh.body.beneficaries = [page.beneficaryForm.value, page.beneficaryForm2.value]\nbh.body.dependencies = [page.dependencyForm.value, page.dependencyForm2.value, page.dependencyForm3.value]\n\n\n",
+        "script": "page.clientForm.value.file._id = page.userFile._id\npage.clientForm.value.file.filename = page.userFile.filename\npage.clientForm.value.file.length = page.userFile.length\npage.clientForm.value.file.chunkSize = page.userFile.chunkSize\n\nbh.url = page.ssdUrl + 'register'\n\ndelete page.clientForm.file2\n\nbh.body = page.clientForm.value\nbh.body.role = \"client\"\nbh.body.policyNumber = bh.random\nbh.body.password = bh.random2.toString()\nbh.body.beneficaries = [page.beneficaryForm.value, page.beneficaryForm2.value]\nbh.body.dependencies = [page.dependencyForm.value, page.dependencyForm2.value, page.dependencyForm3.value]\n\n\n",
         "functionName": "sd_lL2rQ9BIoBqeZaCn",
         "category": "Function",
-        "x": 605,
+        "x": 625,
         "y": 400,
         "wires": [
             [
@@ -688,8 +688,7 @@
         "y": 400,
         "wires": [
             [
-                "sd_QnaW4yCDpoY9Cu3b",
-                "sd_6MdVVDqzAq0WC6Th"
+                "sd_QnaW4yCDpoY9Cu3b"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -790,11 +789,11 @@
         "accept_csd": true,
         "functionName": "sd_uaLP5pYLb4eJZafw",
         "category": "General",
-        "x": 505,
+        "x": 465,
         "y": 400,
         "wires": [
             [
-                "sd_lL2rQ9BIoBqeZaCn"
+                "sd_E3iTiEBecw7LpUwh"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -810,6 +809,13 @@
         "nodeType": "flow",
         "name": "",
         "path": "/dashboard/home",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
         "functionName": "sd_IKDCeaKDglhchiOD",
         "category": "Navigation",
         "x": 925,
@@ -823,26 +829,63 @@
         "generated": true
     },
     {
-        "id": "sd_6MdVVDqzAq0WC6Th",
-        "type": "Log",
+        "id": "sd_E3iTiEBecw7LpUwh",
+        "type": "PageCallService",
         "z": "sd_uqB8Ta19yPAqB9Xq",
-        "viewType": "client-pages",
+        "viewType": "pages",
         "nodeType": "flow",
         "name": "",
-        "outputs": 0,
-        "logObject": "this.page.result",
-        "functionName": "sd_6MdVVDqzAq0WC6Th",
-        "category": "General",
-        "x": 780,
-        "y": 340,
-        "wires": [],
-        "__ssdTypeInputs__": {
-            "logObject": {
-                "type": "this.page",
-                "value": "result",
-                "constant": false
-            }
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_GBFfAkOjFZO1abZf",
+            "type": "tab",
+            "createdDate": "2024-08-23T07:48:29.377Z",
+            "label": "randomNumber",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
         },
+        "flow": {
+            "flowId": "sd_2rOgF8DvS525MYfE",
+            "flowName": "generateRandomNumber2"
+        },
+        "inputVariables": [
+            {
+                "key": "email",
+                "map": true,
+                "valueType": "this.page",
+                "value": "clientForm.email"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "random",
+                "valueType": "bh",
+                "value": "random2",
+                "mapVarName": "random",
+                "localVar": "bh.random2"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/randomNumber",
+        "startName": "generateRandomNumber2",
+        "inputParams": [
+            "this.page.clientForm.email"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_E3iTiEBecw7LpUwh",
+        "category": "General",
+        "x": 545,
+        "y": 400,
+        "wires": [
+            [
+                "sd_lL2rQ9BIoBqeZaCn"
+            ]
+        ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "registerComponent",

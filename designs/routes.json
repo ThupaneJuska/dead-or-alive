@@ -16,19 +16,31 @@
                     "path": "claims",
                     "component": "claims_tableComponent"
                 }
-            ]
+            ],
+            "canActivate": {
+                "edited": true,
+                "value": "authorizationService"
+            }
         },
         {
             "path": "DOAServices",
-            "component": "landingComponent"
+            "component": "landingComponent",
+            "canActivate": {
+                "edited": true,
+                "value": ""
+            }
         },
         {
-            "path": "call",
+            "path": "contact-us",
             "component": "contact_usComponent"
         },
         {
             "path": "login",
-            "component": "loginComponent"
+            "component": "loginComponent",
+            "canActivate": {
+                "edited": true,
+                "value": ""
+            }
         },
         {
             "path": "forgot-password",

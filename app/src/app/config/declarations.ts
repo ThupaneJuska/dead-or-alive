@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-authorizationService
+import { authorizationService } from '../services/authorization/authorization.service';
 //CORE_REFERENCE_IMPORT-claims_tableComponent
 import { claims_tableComponent } from '../components/Admin claims/claims_table.component';
 //CORE_REFERENCE_IMPORT-schedulesComponent
@@ -117,7 +119,9 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
-  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-randomNumber
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-authorizationService
+authorizationService,
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-randomNumber
   randomNumber,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-otp
   otp,
@@ -132,6 +136,7 @@ export const appRoutes = [
   {
     path: 'dashboard',
     component: dashboardComponent,
+    canActivate: [authorizationService],
     children: [
       { path: 'home', component: homeComponent },
       { path: 'schedules', component: schedulesComponent },
@@ -139,7 +144,7 @@ export const appRoutes = [
     ],
   },
   { path: 'DOAServices', component: landingComponent },
-  { path: 'call', component: contact_usComponent },
+  { path: 'contact-us', component: contact_usComponent },
   { path: 'login', component: loginComponent },
   { path: 'forgot-password', component: forgot_passwordComponent },
   { path: 'verify-code', component: verify_codeComponent },

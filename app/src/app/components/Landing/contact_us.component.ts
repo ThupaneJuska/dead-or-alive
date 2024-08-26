@@ -10,6 +10,8 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms'; //_splitter_
+import { MatSnackBar } from '@angular/material/snack-bar'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
@@ -75,7 +77,7 @@ export class contact_usComponent {
     }
   }
 
-  massege(...others) {
+  sendMessage(...others) {
     let bh: any = {};
     try {
       bh = this.__page_injector__
@@ -84,7 +86,7 @@ export class contact_usComponent {
       bh.input = {};
       bh.local = {};
       bh = this.sd_nGFKFjLdJumHKzuI(bh);
-      //appendnew_next_massege
+      //appendnew_next_sendMessage
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_ApSpYIma5PeptqEU');
     }
@@ -118,7 +120,7 @@ export class contact_usComponent {
       page.formContact = new FormGroup({
         email: new FormControl('', Validators.required),
         title: new FormControl(''),
-        massege: new FormControl('', Validators.required),
+        message: new FormControl('', Validators.required),
       });
       //appendnew_next_sd_D4WnzTN0EiFEzzs2
       return bh;
@@ -149,11 +151,139 @@ export class contact_usComponent {
   sd_nGFKFjLdJumHKzuI(bh) {
     try {
       const page = this.page;
-      console.log(page.formContact);
+      console.log('Form of contact us', page.formContact.invalid);
+      bh = this.sd_88fZOmalHjiMZPqO(bh);
       //appendnew_next_sd_nGFKFjLdJumHKzuI
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_nGFKFjLdJumHKzuI');
+    }
+  }
+
+  async sd_88fZOmalHjiMZPqO(bh) {
+    try {
+      if (
+        this.sdService.operators['true'](
+          this.page.formContact.invalid,
+          undefined,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_Dpc1pJSwsHY8XYAM(bh);
+      } else {
+        bh = await this.sd_EIrEnueVaA5tIDVX(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_88fZOmalHjiMZPqO');
+    }
+  }
+
+  sd_Dpc1pJSwsHY8XYAM(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('Please fill all required fields', 'Ok', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      //appendnew_next_sd_Dpc1pJSwsHY8XYAM
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Dpc1pJSwsHY8XYAM');
+    }
+  }
+
+  sd_EIrEnueVaA5tIDVX(bh) {
+    try {
+      this.page.ssdUrl = bh.system.environment.properties.ssdURL;
+      bh = this.sd_pno9V6rSOhsgflTA(bh);
+      //appendnew_next_sd_EIrEnueVaA5tIDVX
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_EIrEnueVaA5tIDVX');
+    }
+  }
+
+  sd_pno9V6rSOhsgflTA(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdUrl + 'send-message';
+      bh = this.sd_0OoQ61HMv4DdUhlx(bh);
+      //appendnew_next_sd_pno9V6rSOhsgflTA
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_pno9V6rSOhsgflTA');
+    }
+  }
+
+  async sd_0OoQ61HMv4DdUhlx(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: this.page.formContact.value,
+      };
+      this.page.results = await this.sdService.nHttpRequest(requestOptions);
+      bh = this.sd_0V4RBAmL1MP1XOzC(bh);
+      //appendnew_next_sd_0OoQ61HMv4DdUhlx
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_0OoQ61HMv4DdUhlx');
+    }
+  }
+
+  sd_0V4RBAmL1MP1XOzC(bh) {
+    try {
+      const page = this.page;
+      console.log('Sent message', page.results);
+      page.formContact.reset();
+      bh = this.sd_0CO7LXCCjcyRhTGJ(bh);
+      //appendnew_next_sd_0V4RBAmL1MP1XOzC
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_0V4RBAmL1MP1XOzC');
+    }
+  }
+
+  sd_0CO7LXCCjcyRhTGJ(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open('Enquiry successfully sent', 'Ok', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      bh = this.sd_0Yx53dxzhkmbNNcf(bh);
+      //appendnew_next_sd_0CO7LXCCjcyRhTGJ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_0CO7LXCCjcyRhTGJ');
+    }
+  }
+
+  async sd_0Yx53dxzhkmbNNcf(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/DOAServices');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
+      //appendnew_next_sd_0Yx53dxzhkmbNNcf
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_0Yx53dxzhkmbNNcf');
     }
   }
 

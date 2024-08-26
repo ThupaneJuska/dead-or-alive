@@ -18,6 +18,8 @@ window['neutrinos'] = {
 //CORE_REFERENCE_IMPORTS
 //CORE_REFERENCE_IMPORT-authorizationService
 import { authorizationService } from '../services/authorization/authorization.service';
+//CORE_REFERENCE_IMPORT-claims_tableComponent
+import { claims_tableComponent } from '../components/Admin claims/claims_table.component';
 //CORE_REFERENCE_IMPORT-schedulesComponent
 import { schedulesComponent } from '../components/Admin Dashboard/schedules.component';
 //CORE_REFERENCE_IMPORT-randomNumber
@@ -76,6 +78,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claims_tableComponent
+  claims_tableComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-schedulesComponent
   schedulesComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
@@ -115,10 +119,10 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
-//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-authorizationService
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-authorizationService
 authorizationService,
 //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-randomNumber
-randomNumber,
+  randomNumber,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-otp
   otp,
 ];
@@ -136,6 +140,7 @@ export const appRoutes = [
     children: [
       { path: 'home', component: homeComponent },
       { path: 'schedules', component: schedulesComponent },
+      { path: 'claims', component: claims_tableComponent },
     ],
   },
   { path: 'DOAServices', component: landingComponent },
@@ -145,6 +150,7 @@ export const appRoutes = [
   { path: 'verify-code', component: verify_codeComponent },
   { path: 'reset-password', component: reset_passwordComponent },
   { path: 'register', component: registerComponent },
+  { path: 'claims', component: claims_tableComponent },
   { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

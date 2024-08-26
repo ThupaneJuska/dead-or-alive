@@ -15,7 +15,7 @@ body {
 $yellow: #f7dd71;
 $light-grey: #edf5f5;
 $light-blue: #124e52;
-// angel
+// angel //////////////////////////////////////
 bh-contact_us{
     // background-color:#edf5f5 ;
     height: 100vh !important;
@@ -44,7 +44,8 @@ bh-contact_us{
 .box-shadow {
     border-bottom: 5.5px solid #124e52 !important;
     border-right: 5.5px solid #124e52 !important;
-    border-radius: 10px !important;
+    border-radius: 10px !important ;
+
 }
 
 .small-weight{
@@ -58,7 +59,7 @@ bh-contact_us{
 .CARDS{
     border: solid 1px #124e5285;
      border-radius: 10px !important;
-    height: 390px;
+    height: 390px !important;
 overflow: hidden;
 margin-bottom: 10px;
 }
@@ -100,6 +101,7 @@ margin-bottom: 10px;
 .cdk-text-field-autofill-monitored:not(:-webkit-autofill){
     max-height: 80px;
 }
+
 // angel
 
 //colors

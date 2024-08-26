@@ -1129,13 +1129,13 @@
                         },
                         {
                             "_key": "layoutAlign",
-                            "_value": "start",
+                            "_value": "center",
                             "_type": "a",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "pLayoutAlign",
-                            "_value": "stretch",
+                            "_value": "center",
                             "_type": "a",
                             "_attrDef": "p"
                         },
@@ -1160,7 +1160,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "CLAIMSCART"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -1405,13 +1407,13 @@
                         },
                         {
                             "_key": "layoutAlign",
-                            "_value": "start",
+                            "_value": "center",
                             "_type": "a",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "pLayoutAlign",
-                            "_value": "stretch",
+                            "_value": "center",
                             "_type": "a",
                             "_attrDef": "p"
                         },
@@ -1436,7 +1438,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "CLAIMSCART"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -1681,13 +1685,13 @@
                         },
                         {
                             "_key": "layoutAlign",
-                            "_value": "start",
+                            "_value": "center",
                             "_type": "a",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "pLayoutAlign",
-                            "_value": "stretch",
+                            "_value": "center",
                             "_type": "a",
                             "_attrDef": "p"
                         },
@@ -1712,7 +1716,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "CLAIMSCART"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -1933,7 +1939,9 @@
                         },
                         {
                             "_key": "class",
-                            "_value": "",
+                            "_value": [
+                                "CLAIMSCART"
+                            ],
                             "_type": "dav",
                             "_attrDef": "p"
                         },
@@ -1957,13 +1965,13 @@
                         },
                         {
                             "_key": "layoutAlign",
-                            "_value": "start",
+                            "_value": "center",
                             "_type": "a",
                             "_attrDef": "p"
                         },
                         {
                             "_key": "pLayoutAlign",
-                            "_value": "stretch",
+                            "_value": "center",
                             "_type": "a",
                             "_attrDef": "p"
                         },
@@ -1988,7 +1996,9 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [
+                                    "CLAIMSCART"
+                                ],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },

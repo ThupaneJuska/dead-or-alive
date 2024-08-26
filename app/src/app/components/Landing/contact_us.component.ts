@@ -119,6 +119,10 @@ export class contact_usComponent {
       const page = this.page;
       page.formContact = new FormGroup({
         email: new FormControl('', Validators.required),
+        cellPhone: new FormControl('', [
+          Validators.required,
+          Validators.maxLength(10),
+        ]),
         title: new FormControl(''),
         message: new FormControl('', Validators.required),
       });

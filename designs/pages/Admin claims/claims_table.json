@@ -1,0 +1,56 @@
+[
+    {
+        "id": "sd_N4CyuOQSKrbNKzFe",
+        "type": "tab",
+        "createdDate": "2024-08-25T14:37:24.681Z",
+        "label": "claims_table",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "claims_tableComponent"
+    },
+    {
+        "id": "sd_WDAEQKzleIjERFxE",
+        "type": "OnInit",
+        "z": "sd_N4CyuOQSKrbNKzFe",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_WDAEQKzleIjERFxE",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_8uegiEQyOnacegW8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "claims_tableComponent"
+    },
+    {
+        "id": "sd_8uegiEQyOnacegW8",
+        "type": "PageVariables",
+        "z": "sd_N4CyuOQSKrbNKzFe",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_8uegiEQyOnacegW8",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "claims_tableComponent",
+        "generated": true
+    }
+]

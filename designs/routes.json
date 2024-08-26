@@ -11,6 +11,10 @@
                 {
                     "path": "schedules",
                     "component": "schedulesComponent"
+                },
+                {
+                    "path": "claims",
+                    "component": "claims_tableComponent"
                 }
             ]
         },
@@ -41,6 +45,10 @@
         {
             "component": "registerComponent",
             "path": "register"
+        },
+        {
+            "path": "claims",
+            "component": "claims_tableComponent"
         },
         {
             "path": "''",

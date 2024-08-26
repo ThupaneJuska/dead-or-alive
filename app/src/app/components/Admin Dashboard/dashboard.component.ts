@@ -174,6 +174,7 @@ export class dashboardComponent {
         { label: 'Register Client', icon: 'edit', route: '/register' },
         { label: 'Schedules', icon: 'today', route: '/dashboard/schedules' },
         { label: 'Reports', icon: 'folder_open' },
+        { label: 'Audit Logs', icon: 'trending_up' },
       ];
       //appendnew_next_sd_72RyqGrd9xSHuPJ4
       return bh;
@@ -234,7 +235,9 @@ export class dashboardComponent {
         this.sdService.getPathAndQParamsObj('/login');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_6aBkqmJxzZVLrfOa
       return bh;
     } catch (e) {

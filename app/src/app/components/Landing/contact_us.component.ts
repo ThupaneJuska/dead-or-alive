@@ -106,6 +106,7 @@ export class contact_usComponent {
   sd_UJhEms9XJlOq7Ybs(bh) {
     try {
       this.page.isScrolled = false;
+      this.page.loader = undefined;
       bh = this.sd_D4WnzTN0EiFEzzs2(bh);
       //appendnew_next_sd_UJhEms9XJlOq7Ybs
       return bh;
@@ -217,6 +218,7 @@ export class contact_usComponent {
     try {
       const page = this.page;
       bh.url = page.ssdUrl + 'send-message';
+      page.loader = true;
       bh = this.sd_0OoQ61HMv4DdUhlx(bh);
       //appendnew_next_sd_pno9V6rSOhsgflTA
       return bh;
@@ -249,6 +251,7 @@ export class contact_usComponent {
       const page = this.page;
       console.log('Sent message', page.results);
       page.formContact.reset();
+      page.loader = false;
       bh = this.sd_0CO7LXCCjcyRhTGJ(bh);
       //appendnew_next_sd_0V4RBAmL1MP1XOzC
       return bh;

@@ -1,4 +1,5 @@
 <div fxLayout="column wrap" class="bg-ligth" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="column wrap" style="background-color: #0000002e" class="full-width full-height absolute" fxLayoutAlign="center center" [fxShow]="true" *ngIf="page.loader"><bh-loader></bh-loader></div>
   <div fxLayout="row wrap" style="background:red;" fxLayoutAlign="start stretch" [fxShow]="true"><mat-toolbar [ngClass]="{&apos;scrolled&apos;:page.isScrolled,&apos;bg-light&apos;:!page.isScrolled}" class="toolbar true GREENISH-COLOR fullWidth">
       <div fxLayout="column wrap" fxFlex="9" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/image/dead_0r_alive-removebg-preview.png" routerLink="/DOAServices" class="FullHeight fullWidth"></div>
       <div fxLayout="column wrap" fxFlex="13" fxLayoutAlign="start stretch" [fxShow]="true">

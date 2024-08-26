@@ -47,6 +47,13 @@
                     "type": "literal",
                     "value": "false"
                 }
+            },
+            {
+                "textIp": "loader",
+                "typedIpValue": {
+                    "type": "bh",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_UJhEms9XJlOq7Ybs",
@@ -272,7 +279,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdUrl + 'send-message'",
+        "script": "bh.url = page.ssdUrl + 'send-message'\npage.loader = true",
         "functionName": "sd_pno9V6rSOhsgflTA",
         "category": "Function",
         "x": 405,
@@ -344,7 +351,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"Sent message\", page.results)\npage.formContact.reset()",
+        "script": "console.log(\"Sent message\", page.results)\npage.formContact.reset()\npage.loader = false",
         "functionName": "sd_0V4RBAmL1MP1XOzC",
         "category": "Function",
         "x": 565,

@@ -73,12 +73,62 @@ export class reset_passwordComponent {
       return this.errorHandler(bh, e, 'sd_35RD3DUq7Evt0GSA');
     }
   }
+
+  countCharacters(e: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { e };
+      bh.local = {};
+      bh = this.sd_5u1T3qXyJGc45UDE(bh);
+      //appendnew_next_countCharacters
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_X2GHVvCOi4npmMn1');
+    }
+  }
+
+  viewPassword(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_UTuSKzS27Py5RzFg(bh);
+      //appendnew_next_viewPassword
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_NL7HNZ3CjYVk4NvE');
+    }
+  }
+
+  viewPass(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_orUAejR5aljJtg1v(bh);
+      //appendnew_next_viewPass
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_XY0pSSMsBz3YQxey');
+    }
+  }
   //appendnew_flow_reset_passwordComponent_start
 
   sd_8Wh6qZngi0Z3LBpn(bh) {
     try {
       this.page.resetPasswordForm = {};
       this.page.loading = false;
+      this.page.characterCount = 0;
+      this.page.inputType = 'password';
+      this.page.icon = 'visibility';
+      this.page.confirmPassType = 'password';
+      this.page.confirmIcon = 'visibility';
       bh = this.sd_crcaO18Y2ibturmY(bh);
       //appendnew_next_sd_8Wh6qZngi0Z3LBpn
       return bh;
@@ -112,12 +162,50 @@ export class reset_passwordComponent {
   sd_qmHfZt6ba5eypNG2(bh) {
     try {
       const page = this.page;
-      console.log('Rest form', bh.input.form.value.password);
-      bh = this.sd_89Oli2iDypd98IWc(bh);
+      console.log('Rest form', bh.input.form.value);
+
+      bh = this.sd_ObnkNiNQlsFesDUc(bh);
       //appendnew_next_sd_qmHfZt6ba5eypNG2
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_qmHfZt6ba5eypNG2');
+    }
+  }
+
+  async sd_ObnkNiNQlsFesDUc(bh) {
+    try {
+      if (
+        this.sdService.operators['eq'](
+          bh.input.form.value.password,
+          bh.input.form.value.confirmPassword,
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_koUjCuljGrbje46w(bh);
+      } else {
+        bh = await this.sd_tu9ddPwVqoteuhlJ(bh);
+      }
+
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ObnkNiNQlsFesDUc');
+    }
+  }
+
+  sd_koUjCuljGrbje46w(bh) {
+    try {
+      this.__page_injector__.get(MatSnackBar).open('Passwords Match!!', 'Ok', {
+        duration: 3000,
+        direction: 'ltr',
+        horizontalPosition: 'center',
+        verticalPosition: 'bottom',
+      });
+      bh = this.sd_89Oli2iDypd98IWc(bh);
+      //appendnew_next_sd_koUjCuljGrbje46w
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_koUjCuljGrbje46w');
     }
   }
 
@@ -219,6 +307,71 @@ export class reset_passwordComponent {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_JXhJ5aozTOIOXF6H');
+    }
+  }
+
+  sd_tu9ddPwVqoteuhlJ(bh) {
+    try {
+      this.__page_injector__
+        .get(MatSnackBar)
+        .open("Passwords Don't Match!!", 'Ok', {
+          duration: 3000,
+          direction: 'ltr',
+          horizontalPosition: 'center',
+          verticalPosition: 'bottom',
+        });
+      //appendnew_next_sd_tu9ddPwVqoteuhlJ
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_tu9ddPwVqoteuhlJ');
+    }
+  }
+
+  sd_5u1T3qXyJGc45UDE(bh) {
+    try {
+      const page = this.page;
+      page.characterCount = bh.input.e.target.value.length;
+
+      console.log('Character', page.characterCount);
+      //appendnew_next_sd_5u1T3qXyJGc45UDE
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_5u1T3qXyJGc45UDE');
+    }
+  }
+
+  sd_UTuSKzS27Py5RzFg(bh) {
+    try {
+      const page = this.page;
+      if (page.inputType == 'password') {
+        page.inputType = 'text';
+        page.icon = 'visibility_off';
+      } else {
+        page.inputType = 'password';
+        page.icon = 'visibility';
+      }
+
+      //appendnew_next_sd_UTuSKzS27Py5RzFg
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_UTuSKzS27Py5RzFg');
+    }
+  }
+
+  sd_orUAejR5aljJtg1v(bh) {
+    try {
+      const page = this.page;
+      if (page.confirmPassType == 'password') {
+        page.confirmPassType = 'text';
+        page.confirmIcon = 'visibility_off';
+      } else {
+        page.confirmPassType = 'password';
+        page.confirmIcon = 'visibility';
+      }
+      //appendnew_next_sd_orUAejR5aljJtg1v
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_orUAejR5aljJtg1v');
     }
   }
 

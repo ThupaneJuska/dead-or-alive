@@ -277,7 +277,9 @@ export class contact_usComponent {
         this.sdService.getPathAndQParamsObj('/DOAServices');
       await this.__page_injector__
         .get(Router)
-        .navigate([this.sdService.formatPathWithParams(path, undefined)]);
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
       //appendnew_next_sd_0Yx53dxzhkmbNNcf
       return bh;
     } catch (e) {

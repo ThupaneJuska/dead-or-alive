@@ -1,4 +1,5 @@
 <div fxLayout="column wrap" class="bg-ligth" fxLayoutAlign="center center" [fxShow]="true">
+  <div fxLayout="column wrap" style="background-color: #0000002e" class="full-width full-height absolute" fxLayoutAlign="center center" [fxShow]="true" *ngIf="page.loader"><bh-loader></bh-loader></div>
   <div fxLayout="row wrap" style="background:red;" fxLayoutAlign="start stretch" [fxShow]="true"><mat-toolbar [ngClass]="{&apos;scrolled&apos;:page.isScrolled,&apos;bg-light&apos;:!page.isScrolled}" class="toolbar true GREENISH-COLOR fullWidth">
       <div fxLayout="column wrap" fxFlex="9" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/image/dead_0r_alive-removebg-preview.png" routerLink="/DOAServices" class="FullHeight fullWidth"></div>
       <div fxLayout="column wrap" fxFlex="13" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -11,7 +12,7 @@
             Plans</div>
         </div>
         <div fxLayout="row wrap" fxLayoutGap="10px" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="column wrap" style="border: 2px solid ; padding-left:7px;padding-right:7px;border-radius:15px" class="landing-login" fxLayoutAlign="start stretch" [fxShow]="true" routerLink="/login">
             <div>
               Login</div>
           </div>
@@ -29,16 +30,16 @@
       <form [formGroup]="page.formContact">
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput placeholder="Your email address" [required]="false" FormControlName="email">
+            <input matInput name="email" placeholder="Your email address" [required]="false" formControlName="email">
             <mat-error align="start" *ngIf="page.formContact.email?.error?.required">Email is required</mat-error> <mat-label>Email</mat-label>
           </mat-form-field>
           <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-            <input matInput placeholder="Subject" [required]="false" FormControlName="title">
+            <input matInput name="title" placeholder="Subject" [required]="false" formControlName="title">
             <mat-label>Title</mat-label>
           </mat-form-field><mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
             <mat-label>massege</mat-label>
-            <textarea matInput FormControlName="massege" placeholder="Type your massege here...." [required]="false"></textarea>
-          </mat-form-field><button mat-raised-button style="margin-bottom:15px" routerLink="call" class="box-shadow yellow-bg" (click)="massege()">Send</button>
+            <textarea matInput formControlName="message" name="message" placeholder="Type your massege here...." [required]="false"></textarea>
+          </mat-form-field><button mat-raised-button style="margin-bottom:15px" class="box-shadow yellow-bg" (click)="sendMessage()">Send</button>
         </div>
       </form>
     </div>

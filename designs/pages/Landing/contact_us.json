@@ -19,8 +19,8 @@
         "name": "",
         "functionName": "sd_hd5ID4SyAIDQ6ziH",
         "category": "Lifecycle Events",
-        "x": 30,
-        "y": 30,
+        "x": 45,
+        "y": 40,
         "wires": [
             [
                 "sd_iNYxRsu8lErBTFfW"
@@ -51,8 +51,8 @@
         ],
         "functionName": "sd_UJhEms9XJlOq7Ybs",
         "category": "Function",
-        "x": 180,
-        "y": 30,
+        "x": 245,
+        "y": 40,
         "wires": [
             [
                 "sd_D4WnzTN0EiFEzzs2"
@@ -119,11 +119,11 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.formContact = new FormGroup({\n    email:new FormControl(\"\",Validators.required),\n    title:new FormControl(\"\"),\n    massege:new FormControl(\"\",Validators.required)\n})",
+        "script": "page.formContact = new FormGroup({\n    email:new FormControl(\"\",Validators.required),\n    title:new FormControl(\"\"),\n    message:new FormControl(\"\",Validators.required)\n})",
         "functionName": "sd_D4WnzTN0EiFEzzs2",
         "category": "Function",
-        "x": 300,
-        "y": 100,
+        "x": 325,
+        "y": 40,
         "wires": [
             []
         ],
@@ -153,6 +153,22 @@
                     "value": ""
                 },
                 "injectable": false
+            },
+            {
+                "textIp": "FormControlName",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "Validators",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
             }
         ],
         "import_all": false,
@@ -160,7 +176,7 @@
         "serviceDesignerType": "pages",
         "functionName": "sd_iNYxRsu8lErBTFfW",
         "category": "Function",
-        "x": 120,
+        "x": 165,
         "y": 40,
         "wires": [
             [
@@ -178,14 +194,14 @@
         "z": "sd_YuwrB9kbk8y0g2BR",
         "viewType": "pages",
         "nodeType": "start",
-        "name": "massege",
+        "name": "send message",
         "outputs": 1,
         "inputVariables": [],
         "localVariables": [],
         "flow_type": "sync",
-        "functionName": "massege",
+        "functionName": "sendMessage",
         "category": "General",
-        "x": 105,
+        "x": 65,
         "y": 340,
         "wires": [
             [
@@ -203,11 +219,274 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(page.formContact)",
+        "script": "console.log(\"Form of contact us\",page.formContact.invalid)",
         "functionName": "sd_nGFKFjLdJumHKzuI",
         "category": "Function",
-        "x": 240,
+        "x": 145,
         "y": 340,
+        "wires": [
+            [
+                "sd_88fZOmalHjiMZPqO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_EIrEnueVaA5tIDVX",
+        "type": "Environment",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_EIrEnueVaA5tIDVX",
+        "category": "General",
+        "x": 325,
+        "y": 380,
+        "wires": [
+            [
+                "sd_pno9V6rSOhsgflTA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_pno9V6rSOhsgflTA",
+        "type": "Script",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdUrl + 'send-message'",
+        "functionName": "sd_pno9V6rSOhsgflTA",
+        "category": "Function",
+        "x": 405,
+        "y": 380,
+        "wires": [
+            [
+                "sd_0OoQ61HMv4DdUhlx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0OoQ61HMv4DdUhlx",
+        "type": "HttpRequest",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.formContact.value",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "formContact.value"
+        },
+        "resultMapping": "this.page.results",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_0OoQ61HMv4DdUhlx",
+        "category": "HTTP",
+        "x": 485,
+        "y": 380,
+        "wires": [
+            [
+                "sd_0V4RBAmL1MP1XOzC"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0V4RBAmL1MP1XOzC",
+        "type": "Script",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"Sent message\", page.results)\npage.formContact.reset()",
+        "functionName": "sd_0V4RBAmL1MP1XOzC",
+        "category": "Function",
+        "x": 565,
+        "y": 380,
+        "wires": [
+            [
+                "sd_0CO7LXCCjcyRhTGJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_88fZOmalHjiMZPqO",
+        "type": "PageSwitch",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "formContact.invalid",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.formContact.invalid",
+        "rules": [
+            {
+                "t": "true"
+            },
+            {
+                "t": "else"
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_88fZOmalHjiMZPqO",
+        "category": "Function",
+        "x": 225,
+        "y": 340,
+        "wires": [
+            [
+                "sd_Dpc1pJSwsHY8XYAM"
+            ],
+            [
+                "sd_EIrEnueVaA5tIDVX"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Dpc1pJSwsHY8XYAM",
+        "type": "SnackBar",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "Please fill all required fields"
+        },
+        "action": {
+            "type": "str",
+            "value": "Ok"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_Dpc1pJSwsHY8XYAM",
+        "category": "General",
+        "x": 320,
+        "y": 300,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0CO7LXCCjcyRhTGJ",
+        "type": "SnackBar",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "message": {
+            "type": "str",
+            "value": "Enquiry successfully sent"
+        },
+        "action": {
+            "type": "str",
+            "value": "Ok"
+        },
+        "duration": {
+            "type": "num",
+            "value": "3000"
+        },
+        "horizontalPosition": "center",
+        "verticalPosition": "bottom",
+        "panelClass": {
+            "type": "str",
+            "value": ""
+        },
+        "direction": "ltr",
+        "functionName": "sd_0CO7LXCCjcyRhTGJ",
+        "category": "General",
+        "x": 660,
+        "y": 380,
+        "wires": [
+            [
+                "sd_0Yx53dxzhkmbNNcf"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "contact_usComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0Yx53dxzhkmbNNcf",
+        "type": "Navigation",
+        "z": "sd_YuwrB9kbk8y0g2BR",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/DOAServices",
+        "functionName": "sd_0Yx53dxzhkmbNNcf",
+        "category": "Navigation",
+        "x": 760,
+        "y": 380,
         "wires": [
             []
         ],

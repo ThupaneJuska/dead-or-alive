@@ -1023,13 +1023,15 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "",
+                                    "_value": "border: 2px solid ; padding-left:7px;padding-right:7px;border-radius:15px",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "class",
-                                    "_value": "",
+                                    "_value": [
+                                        "landing-login"
+                                    ],
                                     "_type": "dav",
                                     "_attrDef": "p"
                                 },
@@ -1068,6 +1070,12 @@
                                     "_value": "true",
                                     "_type": "kv",
                                     "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "routerLink",
+                                    "_value": "/login",
+                                    "_type": "kv",
+                                    "_attrDef": "c"
                                 }
                             ],
                             "7456f98c-691d-f27a-16ee-103a0f178a34": {
@@ -2133,7 +2141,7 @@
                                 },
                                 {
                                     "_key": "name",
-                                    "_value": "",
+                                    "_value": "email",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -2253,7 +2261,7 @@
                                     "_visibility": true
                                 },
                                 {
-                                    "_key": "FormControlName",
+                                    "_key": "formControlName",
                                     "_value": "email",
                                     "_type": "kv",
                                     "_attrDef": "c"
@@ -2317,7 +2325,7 @@
                                 },
                                 {
                                     "_key": "name",
-                                    "_value": "",
+                                    "_value": "title",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -2428,7 +2436,7 @@
                                     "_visibility": true
                                 },
                                 {
-                                    "_key": "FormControlName",
+                                    "_key": "formControlName",
                                     "_value": "title",
                                     "_type": "kv",
                                     "_attrDef": "c"
@@ -2503,7 +2511,7 @@
                                 },
                                 {
                                     "_key": "name",
-                                    "_value": "",
+                                    "_value": "message",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -2520,8 +2528,8 @@
                                     "_attrDef": "p"
                                 },
                                 {
-                                    "_key": "FormControlName",
-                                    "_value": "massege",
+                                    "_key": "formControlName",
+                                    "_value": "message",
                                     "_type": "kv",
                                     "_attrDef": "c"
                                 }
@@ -2562,12 +2570,12 @@
                                 },
                                 {
                                     "_key": "(click)",
-                                    "_value": "massege()",
+                                    "_value": "sendMessage()",
                                     "_type": "kv",
                                     "_attrDef": "p",
                                     "objValue": {
                                         "nodeID": "sd_ApSpYIma5PeptqEU",
-                                        "functionName": "massege",
+                                        "functionName": "sendMessage",
                                         "activeTree": "pages",
                                         "z": "sd_YuwrB9kbk8y0g2BR",
                                         "input": []
@@ -2594,7 +2602,7 @@
                                 },
                                 {
                                     "_key": "routerLink",
-                                    "_value": "call",
+                                    "_value": "",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 }

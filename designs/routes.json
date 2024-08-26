@@ -11,6 +11,10 @@
                 {
                     "path": "schedules",
                     "component": "schedulesComponent"
+                },
+                {
+                    "path": "claims",
+                    "component": "claimsComponent"
                 }
             ]
         },

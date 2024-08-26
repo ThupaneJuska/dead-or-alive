@@ -8228,7 +8228,9 @@
                                         },
                                         {
                                             "_key": "class",
-                                            "_value": "",
+                                            "_value": [
+                                                "kg-yellow"
+                                            ],
                                             "_type": "dav",
                                             "_attrDef": "p"
                                         },
@@ -8241,7 +8243,7 @@
                                         },
                                         {
                                             "_key": "color",
-                                            "_value": "warn",
+                                            "_value": "",
                                             "_type": "kv",
                                             "_attrDef": "p"
                                         },
@@ -13036,7 +13038,9 @@
                                         },
                                         {
                                             "_key": "class",
-                                            "_value": "",
+                                            "_value": [
+                                                "kg-yellow"
+                                            ],
                                             "_type": "dav",
                                             "_attrDef": "p"
                                         },
@@ -13049,7 +13053,7 @@
                                         },
                                         {
                                             "_key": "color",
-                                            "_value": "warn",
+                                            "_value": "",
                                             "_type": "kv",
                                             "_attrDef": "p"
                                         },
@@ -13725,7 +13729,7 @@
                                             },
                                             {
                                                 "_key": "[expanded]",
-                                                "_value": "",
+                                                "_value": "true",
                                                 "_type": "kv",
                                                 "_attrDef": "p"
                                             },
@@ -15607,7 +15611,7 @@
                                             },
                                             {
                                                 "_key": "[expanded]",
-                                                "_value": "",
+                                                "_value": "true",
                                                 "_type": "kv",
                                                 "_attrDef": "p"
                                             },
@@ -18969,7 +18973,7 @@
                                             },
                                             {
                                                 "_key": "[expanded]",
-                                                "_value": "",
+                                                "_value": "true",
                                                 "_type": "kv",
                                                 "_attrDef": "p"
                                             },
@@ -21811,7 +21815,9 @@
                                         },
                                         {
                                             "_key": "class",
-                                            "_value": "",
+                                            "_value": [
+                                                "kg-yellow"
+                                            ],
                                             "_type": "dav",
                                             "_attrDef": "p"
                                         },
@@ -21824,7 +21830,7 @@
                                         },
                                         {
                                             "_key": "color",
-                                            "_value": "warn",
+                                            "_value": "",
                                             "_type": "kv",
                                             "_attrDef": "p"
                                         },
@@ -21880,7 +21886,7 @@
                                         {
                                             "_key": "class",
                                             "_value": [
-                                                "kg-yellow"
+                                                "kg-grey"
                                             ],
                                             "_type": "dav",
                                             "_attrDef": "p"

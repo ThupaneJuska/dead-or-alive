@@ -626,6 +626,22 @@ body{
     margin-top: 3em;
 }
 
+.kg-border-box {
+    box-sizing: border-box;
+}
+
+.kg-padding-5px {
+    padding: 5px;
+}
+
+.kg-padding-10px {
+    padding: 10px;
+}
+
+.kg-padding-20px {
+    padding: 20px;
+}
+
 .kg-grey {
     background-color: $light-grey !important;
 }

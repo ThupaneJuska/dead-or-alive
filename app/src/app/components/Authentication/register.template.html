@@ -62,7 +62,7 @@
                     <mat-error *ngIf="page.clientForm.controls.file2.errors?.required">Please Upload File</mat-error>
                   </div>
                 </div>
-                <div fxLayout="row wrap" class="kg-margin-top-3em" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button class="kg-grey" matStepperNext [disabled]="page.clientForm.invalid">Next</button></div>
+                <div fxLayout="row wrap" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button class="kg-grey" matStepperNext [disabled]="page.clientForm.invalid">Next</button></div>
               </form>
             </mat-card-content>
           </mat-card></mat-step><mat-step label="Beneficary Details" [stepControl]="page.beneficaryForm" editable="true" Disabled="page.clientForm.invalid">

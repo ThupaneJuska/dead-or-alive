@@ -284,7 +284,7 @@
                             },
                             {
                                 "_key": "class",
-                                "_value": "",
+                                "_value": [],
                                 "_type": "dav",
                                 "_attrDef": "p"
                             },
@@ -3066,9 +3066,7 @@
                                             },
                                             {
                                                 "_key": "class",
-                                                "_value": [
-                                                    "kg-margin-top-3em"
-                                                ],
+                                                "_value": [],
                                                 "_type": "dav",
                                                 "_attrDef": "p"
                                             },

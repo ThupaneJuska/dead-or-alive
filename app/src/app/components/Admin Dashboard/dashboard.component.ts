@@ -155,7 +155,11 @@ export class dashboardComponent {
       page.sideNav = [
         { label: 'Home', icon: 'home', route: '/dashboard/home' },
         { label: 'Claims', icon: 'description', route: '/dashboard/claims' },
-        { label: 'Register Client', icon: 'edit', route: '/register' },
+        {
+          label: 'Register Client',
+          icon: 'edit',
+          route: '/dashboard/register',
+        },
         { label: 'Schedules', icon: 'today', route: '/dashboard/schedules' },
         { label: 'Reports', icon: 'folder_open' },
         { label: 'Audit Logs', icon: 'trending_up' },

@@ -8,7 +8,6 @@
         "GREENISH-COLOR",
         "COLOR-WHITE",
         "box-shadow",
-        "small-weight",
         "CARDS",
         "toolbar",
         "bg-ligth",
@@ -112,6 +111,10 @@
         "kg-padding-10px",
         "kg-padding-20px",
         "kg-grey",
-        "kg-yellow"
+        "kg-yellow",
+        "mat-step-header",
+        "mat-step-icon-selected",
+        "mat-step-icon-state-done",
+        "mat-step-icon-state-edit"
     ]
 }

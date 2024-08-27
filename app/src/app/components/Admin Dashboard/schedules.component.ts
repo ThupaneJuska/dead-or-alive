@@ -105,6 +105,36 @@ export class schedulesComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_G8YN2Rq1FHiszlWV');
     }
   }
+
+  editSchedule(event: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { event };
+      bh.local = {};
+      bh = this.sd_bgj0MEdiE4Tv6reS(bh);
+      //appendnew_next_editSchedule
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_c6G1OGckcY4fA0Pe');
+    }
+  }
+
+  deleteSchedule(event: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { event };
+      bh.local = {};
+      bh = this.sd_aeiaDG1cBQidkd3O(bh);
+      //appendnew_next_deleteSchedule
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Gfd9El1eZllQsfCX');
+    }
+  }
   //appendnew_flow_schedulesComponent_start
 
   sd_D2LECCxuE48GweRQ(bh) {
@@ -132,6 +162,8 @@ export class schedulesComponent implements AfterViewInit {
   sd_10GshSRIqokJRDnz(bh) {
     try {
       this.page.dates = undefined;
+      this.page.editDates = undefined;
+      this.page.id = undefined;
       bh = this.sd_oTnwqN7gr5BF6zF1(bh);
       //appendnew_next_sd_10GshSRIqokJRDnz
       return bh;
@@ -202,6 +234,23 @@ export class schedulesComponent implements AfterViewInit {
         page.dates = ev;
         this.post();
       });
+
+      scheduler.attachEvent('onEventChanged', (id, ev) => {
+        this.editSchedule(ev);
+      });
+
+      scheduler.attachEvent('onEventSave', (id, ev, is_new) => {
+        if (!is_new) {
+          this.editSchedule(ev);
+        }
+        return true;
+      });
+
+      scheduler.attachEvent('onEventDeleted', (id, ev) => {
+        console.log('Deleted Event ID:', id); // Log the id to verify it
+        this.deleteSchedule({ id }); // Pass the id properly to the deleteSchedule method
+      });
+
       //appendnew_next_intialized
       return bh;
     } catch (e) {
@@ -300,6 +349,117 @@ export class schedulesComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_50SK5Qz8OnvjnZ3v');
+    }
+  }
+
+  sd_bgj0MEdiE4Tv6reS(bh) {
+    try {
+      this.page.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_ESApyGL1mX9CQXgA(bh);
+      //appendnew_next_sd_bgj0MEdiE4Tv6reS
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_bgj0MEdiE4Tv6reS');
+    }
+  }
+
+  sd_ESApyGL1mX9CQXgA(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdURL + 'edit-schedule';
+      bh.payload = {
+        id: bh.input.event.id,
+        start_date: bh.input.event.start_date,
+        end_date: bh.input.event.end_date,
+        text: bh.input.event.text,
+      };
+
+      bh = this.sd_ptm2QeIOHrKrY3py(bh);
+      //appendnew_next_sd_ESApyGL1mX9CQXgA
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ESApyGL1mX9CQXgA');
+    }
+  }
+
+  async sd_ptm2QeIOHrKrY3py(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'put',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.payload,
+      };
+      this.page.result = await this.sdService.nHttpRequest(requestOptions);
+      //appendnew_next_sd_ptm2QeIOHrKrY3py
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ptm2QeIOHrKrY3py');
+    }
+  }
+
+  sd_aeiaDG1cBQidkd3O(bh) {
+    try {
+      this.page.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_iB2ZFlixADhzWvXA(bh);
+      //appendnew_next_sd_aeiaDG1cBQidkd3O
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_aeiaDG1cBQidkd3O');
+    }
+  }
+
+  sd_iB2ZFlixADhzWvXA(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdURL + `delete-schedule/${bh.input.event.id}`;
+
+      bh.payload = {
+        id: bh.input.event.id,
+      };
+
+      page.id = bh.payload.id;
+      console.log('variable id ==>', page.id);
+
+      console.log('Deleting event with id -->:', bh.payload);
+      console.log('Url ==>', bh.url);
+
+      bh = this.sd_TlUvdSEpFmLp9TU5(bh);
+      //appendnew_next_sd_iB2ZFlixADhzWvXA
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_iB2ZFlixADhzWvXA');
+    }
+  }
+
+  async sd_TlUvdSEpFmLp9TU5(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'delete',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.payload,
+      };
+      this.page.result = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_xA8KprZry4Y82QAO(bh);
+      //appendnew_next_sd_TlUvdSEpFmLp9TU5
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_TlUvdSEpFmLp9TU5');
+    }
+  }
+
+  sd_xA8KprZry4Y82QAO(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.result);
+      //appendnew_next_sd_xA8KprZry4Y82QAO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_xA8KprZry4Y82QAO');
     }
   }
 

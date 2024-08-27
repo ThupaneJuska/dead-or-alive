@@ -13,8 +13,8 @@
                     "component": "schedulesComponent"
                 },
                 {
-                    "path": "claims",
-                    "component": "claims_tableComponent"
+                    "path": "claim_form",
+                    "component": "claims_registerComponent"
                 }
             ],
             "canActivate": {
@@ -57,10 +57,6 @@
         {
             "component": "registerComponent",
             "path": "register"
-        },
-        {
-            "path": "claims",
-            "component": "claims_tableComponent"
         },
         {
             "path": "''",

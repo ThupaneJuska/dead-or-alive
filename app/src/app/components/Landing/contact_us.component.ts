@@ -119,10 +119,14 @@ export class contact_usComponent {
     try {
       const page = this.page;
       page.formContact = new FormGroup({
-        email: new FormControl('', Validators.required),
+        email: new FormControl('', [
+          Validators.required,
+          Validators.pattern(/^[^\s@]+@([^\s@.,]+\.)+[^\s@.,]{2,}$/),
+        ]),
         cellPhone: new FormControl('', [
           Validators.required,
           Validators.maxLength(10),
+          Validators.pattern(/^0(6|7|8){1}[0-9]{1}[0-9]{7}$/),
         ]),
         title: new FormControl(''),
         message: new FormControl('', Validators.required),

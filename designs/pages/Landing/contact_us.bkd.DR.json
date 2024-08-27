@@ -2290,8 +2290,16 @@
                                     "_key": "matError",
                                     "_value": [
                                         {
-                                            "input1": "page.formContact.email?.error?.required",
+                                            "input1": "page.formContact.controls.email?.errors?.required",
                                             "input2": "Email is required",
+                                            "toggle": {
+                                                "toggleData": [],
+                                                "selected": "start"
+                                            }
+                                        },
+                                        {
+                                            "input1": "page.formContact.controls.email?.errors?.pattern",
+                                            "input2": "Enter a valid email Address",
                                             "toggle": {
                                                 "toggleData": [],
                                                 "selected": "start"
@@ -2472,7 +2480,24 @@
                                 },
                                 {
                                     "_key": "matError",
-                                    "_value": [],
+                                    "_value": [
+                                        {
+                                            "input1": "page.formContact.controls.cellPhone?.errors?.required",
+                                            "input2": "Cellphone number is required",
+                                            "toggle": {
+                                                "toggleData": [],
+                                                "selected": "start"
+                                            }
+                                        },
+                                        {
+                                            "input1": "page.formContact.controls.cellPhone?.errors?.pattern",
+                                            "input2": "Enter a valid South African celphone number",
+                                            "toggle": {
+                                                "toggleData": [],
+                                                "selected": "start"
+                                            }
+                                        }
+                                    ],
                                     "_type": "a",
                                     "_attrDef": "p",
                                     "_visibility": true

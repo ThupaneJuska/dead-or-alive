@@ -27,7 +27,7 @@
             "component": "landingComponent"
         },
         {
-            "path": "call",
+            "path": "contact-us",
             "component": "contact_usComponent"
         },
         {

@@ -988,7 +988,7 @@
                                 },
                                 {
                                     "_key": "html",
-                                    "_value": "5",
+                                    "_value": "0",
                                     "_type": "a",
                                     "_attrDef": "p"
                                 }
@@ -3120,6 +3120,12 @@
                                     "_value": "",
                                     "_type": "kv",
                                     "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "style",
+                                    "_value": "",
+                                    "_type": "kv",
+                                    "_attrDef": "c"
                                 }
                             ]
                         }

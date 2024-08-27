@@ -40,13 +40,23 @@
         "inputs": 1,
         "outputs": 1,
         "operation": "set",
-        "globalVariables": [],
+        "globalVariables": [
+            {
+                "textIp": "dates",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
         "functionName": "sd_10GshSRIqokJRDnz",
         "category": "Function",
         "x": 305,
         "y": 40,
         "wires": [
-            []
+            [
+                "sd_oTnwqN7gr5BF6zF1"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -62,8 +72,8 @@
         "name": "After View Init",
         "functionName": "ngAfterViewInit",
         "category": "Lifecycle Events",
-        "x": 80,
-        "y": 220,
+        "x": 45,
+        "y": 140,
         "wires": [
             [
                 "sd_x0AVTFDWsdElklrU"
@@ -93,8 +103,8 @@
         ],
         "functionName": "sd_x0AVTFDWsdElklrU",
         "category": "Function",
-        "x": 165,
-        "y": 220,
+        "x": 130,
+        "y": 140,
         "wires": [
             [
                 "sd_wEsEz7gZSdYiHaIG"
@@ -199,12 +209,346 @@
         "z": "sd_PBwNMLXI1N7a2oTo",
         "viewType": "common",
         "nodeType": "flow",
-        "name": "intialize",
-        "script": "  scheduler.config.xml_date = '%Y-%m-%d %H:%i';\n  // Set up time scale for day and week views\n    scheduler.config.first_hour = 8;  // Start at 8 AM\n    scheduler.config.last_hour = 18;  // End at 6 PM\n    scheduler.config.time_step = 30;  // 30-minute intervals\n\n    // Enable different views: day, week, and month\n    scheduler.config.multi_day = true;\n\n    // Initialize scheduler with month view\n    scheduler.init(this.scheduler_here.nativeElement, new Date(), \"month\");",
-        "functionName": "intialize",
+        "name": "intializer",
+        "script": " // Date format\n    scheduler.config.xml_date = '%Y-%m-%d %H:%i';\n\n    // Set up time scale for day and week views\n    scheduler.config.first_hour = 8; // Start at 8 AM\n    scheduler.config.last_hour = 18; // End at 6 PM\n    scheduler.config.time_step = 30; // 30-minute intervals\n\n    // Enable the display of time on the y-axis\n    scheduler.config.hour_size_px = 42; // Controls the height of each hour row (default is 42px)\n\n    // Enable different views: day, week, and month\n    scheduler.config.multi_day = true;\n    scheduler.config.month_date = '%d %M %Y'; // Customize month view display format if needed\nscheduler.config.month_day = '%d'; // Customize day display format\n\n    // Initialize scheduler with week view\n    scheduler.init(this.scheduler_here.nativeElement, new Date(), 'week');\n\n     scheduler.parse(this.page.result);\n\n\n\n \n",
+        "functionName": "intializer",
         "category": "Function",
-        "x": 265,
-        "y": 220,
+        "x": 230,
+        "y": 140,
+        "wires": [
+            [
+                "sd_I25aKviKxJIfbnnY"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_I25aKviKxJIfbnnY",
+        "type": "Script",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "intialized",
+        "script": "scheduler.attachEvent('onEventAdded', (id, ev) => {\n page.dates = ev\n this.post()\n})",
+        "functionName": "intialized",
+        "category": "Function",
+        "x": 310,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yooPhpzfRF9ArlKM",
+        "type": "HttpRequest",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.dates",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "dates"
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_yooPhpzfRF9ArlKM",
+        "category": "HTTP",
+        "x": 305,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Pq0Yxl5XIWgI4p7B",
+        "type": "Environment",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_Pq0Yxl5XIWgI4p7B",
+        "category": "General",
+        "x": 140,
+        "y": 240,
+        "wires": [
+            [
+                "sd_d9kg0OfMw2kZnLs5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_d9kg0OfMw2kZnLs5",
+        "type": "Script",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdURL + \"addSchedule\"",
+        "functionName": "sd_d9kg0OfMw2kZnLs5",
+        "category": "Function",
+        "x": 220,
+        "y": 240,
+        "wires": [
+            [
+                "sd_yooPhpzfRF9ArlKM"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_L4dULfUlP5xuWsPE",
+        "type": "PageStart",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "post",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "post",
+        "category": "General",
+        "x": 40,
+        "y": 240,
+        "wires": [
+            [
+                "sd_Pq0Yxl5XIWgI4p7B"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "schedulesComponent"
+    },
+    {
+        "id": "sd_oTnwqN7gr5BF6zF1",
+        "type": "PageCallService",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_PBwNMLXI1N7a2oTo",
+            "type": "tab",
+            "createdDate": "2024-08-22T01:17:33.498Z",
+            "label": "schedules",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_G8YN2Rq1FHiszlWV",
+            "flowName": "getSchedules"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "getSchedules",
+        "inputParams": [],
+        "accept_csd": false,
+        "functionName": "sd_oTnwqN7gr5BF6zF1",
+        "category": "General",
+        "x": 385,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_G8YN2Rq1FHiszlWV",
+        "type": "PageStart",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "getSchedules",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getSchedules",
+        "category": "General",
+        "x": 45,
+        "y": 340,
+        "wires": [
+            [
+                "sd_Y8r5GKqnm2ujxEoL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "schedulesComponent"
+    },
+    {
+        "id": "sd_lWLxkvHgBt0cwZ0j",
+        "type": "HttpRequest",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": ""
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_lWLxkvHgBt0cwZ0j",
+        "category": "HTTP",
+        "x": 290,
+        "y": 340,
+        "wires": [
+            [
+                "sd_50SK5Qz8OnvjnZ3v"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Y8r5GKqnm2ujxEoL",
+        "type": "Environment",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_Y8r5GKqnm2ujxEoL",
+        "category": "General",
+        "x": 125,
+        "y": 340,
+        "wires": [
+            [
+                "sd_eNR5yjLK8QWsYxa3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_eNR5yjLK8QWsYxa3",
+        "type": "Script",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdURL + \"getSchedules\"",
+        "functionName": "sd_eNR5yjLK8QWsYxa3",
+        "category": "Function",
+        "x": 205,
+        "y": 340,
+        "wires": [
+            [
+                "sd_lWLxkvHgBt0cwZ0j"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_50SK5Qz8OnvjnZ3v",
+        "type": "Script",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "scheduler.parse(page.result)",
+        "functionName": "sd_50SK5Qz8OnvjnZ3v",
+        "category": "Function",
+        "x": 370,
+        "y": 340,
         "wires": [
             []
         ],

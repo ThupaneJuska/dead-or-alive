@@ -8,7 +8,6 @@
         "GREENISH-COLOR",
         "COLOR-WHITE",
         "box-shadow",
-        "small-weight",
         "CARDS",
         "toolbar",
         "bg-ligth",
@@ -17,6 +16,7 @@
         "image-call",
         "cdk-text-field-autofill-monitored",
         "CLAIMSCART",
+        "dhx_cal_event",
         "pad",
         "landing-login",
         "yellow-color",
@@ -108,7 +108,15 @@
         "kg-text-center",
         "kg-pointer",
         "kg-margin-top-3em",
+        "kg-border-box",
+        "kg-padding-5px",
+        "kg-padding-10px",
+        "kg-padding-20px",
         "kg-grey",
-        "kg-yellow"
+        "kg-yellow",
+        "mat-step-header",
+        "mat-step-icon-selected",
+        "mat-step-icon-state-done",
+        "mat-step-icon-state-edit"
     ]
 }

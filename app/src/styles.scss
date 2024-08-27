@@ -15,7 +15,7 @@ body {
 $yellow: #f7dd71;
 $light-grey: #edf5f5;
 $light-blue: #124e52;
-// angel //////////////////////////////////////
+// angel
 bh-contact_us{
     // background-color:#edf5f5 ;
     height: 100vh !important;
@@ -44,22 +44,15 @@ bh-contact_us{
 .box-shadow {
     border-bottom: 5.5px solid #124e52 !important;
     border-right: 5.5px solid #124e52 !important;
-    border-radius: 10px !important ;
-
+    border-radius: 10px !important;
 }
-
-.small-weight{
-    font-weight: 50 !important;
-    font-size: .5em !important;
-}
-
 .box-shadow:hover {
     border: 3px solid #124e52 !important;
 }
 .CARDS{
     border: solid 1px #124e5285;
      border-radius: 10px !important;
-    height: 390px !important;
+    height: 390px;
 overflow: hidden;
 margin-bottom: 10px;
 }
@@ -105,7 +98,6 @@ margin-bottom: 10px;
     border-bottom: solid 1px lightgrey;
     color: lightgrey;
 }
-
 // angel
 
 //colors
@@ -120,6 +112,10 @@ $teal-blue: #228bc4;
     position: relative;
     height: 100%;
     width: 100%;
+}
+
+.dhx_cal_event {
+    background: $teal_blue !important;
 }
 
 .pad{
@@ -638,10 +634,31 @@ body{
     margin-top: 3em;
 }
 
+.kg-border-box {
+    box-sizing: border-box;
+}
+
+.kg-padding-5px {
+    padding: 5px;
+}
+
+.kg-padding-10px {
+    padding: 10px;
+}
+
+.kg-padding-20px {
+    padding: 20px;
+}
+
 .kg-grey {
     background-color: $light-grey !important;
 }
 
 .kg-yellow {
     background-color: $yellow !important;
+}
+
+.mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
+    background-color: $yellow;
+    color: #fff;
 }

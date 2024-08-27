@@ -20,6 +20,8 @@ window['neutrinos'] = {
 import { claims_registerComponent } from '../components/Admin claims/claims_register.component';
 //CORE_REFERENCE_IMPORT-authorizationService
 import { authorizationService } from '../services/authorization/authorization.service';
+//CORE_REFERENCE_IMPORT-claimsComponent
+import { claimsComponent } from '../components/Admin Dashboard/claims.component';
 //CORE_REFERENCE_IMPORT-schedulesComponent
 import { schedulesComponent } from '../components/Admin Dashboard/schedules.component';
 //CORE_REFERENCE_IMPORT-randomNumber
@@ -80,6 +82,8 @@ export const appDeclarations = [
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claims_registerComponent
   claims_registerComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claimsComponent
+  claimsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-schedulesComponent
   schedulesComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-homeComponent
@@ -136,15 +140,15 @@ export const appRoutes = [
   {
     path: 'dashboard',
     component: dashboardComponent,
-    canActivate: [authorizationService],
     children: [
       { path: 'home', component: homeComponent },
       { path: 'schedules', component: schedulesComponent },
-      { path: 'claim_form', component: claims_registerComponent },
+      { path: 'claims', component: claimsComponent },
+      { path: 'register', component: registerComponent },
     ],
   },
   { path: 'DOAServices', component: landingComponent },
-  { path: 'contact-us', component: contact_usComponent },
+  { path: 'call', component: contact_usComponent },
   { path: 'login', component: loginComponent },
   { path: 'forgot-password', component: forgot_passwordComponent },
   { path: 'verify-code', component: verify_codeComponent },

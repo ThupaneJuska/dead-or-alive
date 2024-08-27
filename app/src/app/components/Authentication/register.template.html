@@ -62,7 +62,7 @@
                     <mat-error *ngIf="page.clientForm.controls.file2.errors?.required">Please Upload File</mat-error>
                   </div>
                 </div>
-                <div fxLayout="row wrap" class="kg-margin-top-3em" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button class="kg-grey" matStepperNext [disabled]="page.clientForm.invalid">Next</button></div>
+                <div fxLayout="row wrap" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button class="kg-grey" matStepperNext [disabled]="page.clientForm.invalid">Next</button></div>
               </form>
             </mat-card-content>
           </mat-card></mat-step><mat-step label="Beneficary Details" [stepControl]="page.beneficaryForm" editable="true" Disabled="page.clientForm.invalid">
@@ -176,7 +176,7 @@
                   </form>
                 </mat-expansion-panel></mat-accordion></div>
             <div fxLayout="row wrap" fxLayoutAlign="end stretch" [fxShow]="true" *ngIf="page.hideIcon"><mat-icon class="kg-pointer" (click)="showBeneficaryForm2()">add_circle</mat-icon></div>
-            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button matStepperPrevious color="warn">Back</button><button mat-raised-button class="kg-grey" matStepperNext [disabled]="page.beneficaryForm.invalid">Next</button></div>
+            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button class="kg-yellow" matStepperPrevious>Back</button><button mat-raised-button class="kg-grey" matStepperNext [disabled]="page.beneficaryForm.invalid">Next</button></div>
           </div>
         </mat-step><mat-step label="Dependency Details" [stepControl]="page.dependencyForm" optional="true" editable="true">
           <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -289,7 +289,7 @@
                   </form>
                 </mat-expansion-panel></mat-accordion></div>
             <div fxLayout="row wrap" fxLayoutAlign="end stretch" [fxShow]="true" *ngIf="page.hideIcon2"><mat-icon class="kg-pointer" (click)="showDependencyForm2()" [hidden]="page.showDependencyForm">add_circle</mat-icon></div>
-            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button matStepperPrevious color="warn">Back</button><button mat-raised-button class="kg-grey" matStepperNext>Next</button></div>
+            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="end stretch" [fxShow]="true"><button mat-raised-button class="kg-yellow" matStepperPrevious>Back</button><button mat-raised-button class="kg-grey" matStepperNext>Next</button></div>
           </div>
         </mat-step><mat-step label="Summary">
           <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
@@ -298,7 +298,7 @@
                 Summary</h3>
             </div>
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-accordion class="kg-full-width">
-                <mat-expansion-panel>
+                <mat-expansion-panel [expanded]="true">
                   <mat-expansion-panel-header>
 
                     <mat-panel-title>
@@ -346,7 +346,7 @@
                   </div>
                 </mat-expansion-panel></mat-accordion></div>
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-accordion class="kg-full-width">
-                <mat-expansion-panel>
+                <mat-expansion-panel [expanded]="true">
                   <mat-expansion-panel-header>
 
                     <mat-panel-title>
@@ -432,7 +432,7 @@
                   </div>
                 </mat-expansion-panel></mat-accordion></div>
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.dependencyForm.valid"><mat-accordion class="kg-full-width">
-                <mat-expansion-panel>
+                <mat-expansion-panel [expanded]="true">
                   <mat-expansion-panel-header>
 
                     <mat-panel-title>
@@ -507,7 +507,7 @@
                     </div>
                   </div>
                 </mat-expansion-panel></mat-accordion></div>
-            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="center stretch" [fxShow]="true"><button mat-raised-button matStepperPrevious color="warn">Back</button><button mat-raised-button class="kg-yellow" (click)="confirm()">Confirm</button></div>
+            <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="center stretch" [fxShow]="true"><button mat-raised-button class="kg-yellow" matStepperPrevious>Back</button><button mat-raised-button class="kg-grey" (click)="confirm()">Confirm</button></div>
           </div>
         </mat-step></div>
     </mat-horizontal-stepper></div>

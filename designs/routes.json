@@ -24,23 +24,15 @@
         },
         {
             "path": "DOAServices",
-            "component": "landingComponent",
-            "canActivate": {
-                "edited": true,
-                "value": ""
-            }
+            "component": "landingComponent"
         },
         {
-            "path": "contact-us",
+            "path": "call",
             "component": "contact_usComponent"
         },
         {
             "path": "login",
-            "component": "loginComponent",
-            "canActivate": {
-                "edited": true,
-                "value": ""
-            }
+            "component": "loginComponent"
         },
         {
             "path": "forgot-password",

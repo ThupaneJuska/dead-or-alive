@@ -2005,7 +2005,6 @@
                             {
                                 "_key": "class",
                                 "_value": [
-                                    "pointer",
                                     "full-width",
                                     "white-bg",
                                     "center-center",
@@ -3283,16 +3282,9 @@
                     },
                     {
                         "_key": "(click)",
-                        "_value": "logout()",
+                        "_value": "",
                         "_type": "kv",
-                        "_attrDef": "p",
-                        "objValue": {
-                            "nodeID": "sd_1Hc7CpWDYjpI9LYE",
-                            "functionName": "logout",
-                            "activeTree": "pages",
-                            "z": "sd_5GPzHp6kREM9zmOq",
-                            "input": []
-                        }
+                        "_attrDef": "p"
                     },
                     {
                         "_key": "[disabled]",

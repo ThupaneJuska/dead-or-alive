@@ -1,0 +1,290 @@
+[
+    {
+        "id": "sd_sslKQC9SCZ3rr5Xe",
+        "type": "tab",
+        "createdDate": "2024-08-25T20:29:52.133Z",
+        "label": "claims",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 3,
+        "generateNext": true,
+        "serviceName": "claimsComponent"
+    },
+    {
+        "id": "sd_Z1DToX7LS6YU49Dk",
+        "type": "OnInit",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_Z1DToX7LS6YU49Dk",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_f4qlWKJDct97cBFV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "claimsComponent"
+    },
+    {
+        "id": "sd_f4qlWKJDct97cBFV",
+        "type": "PageVariables",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_f4qlWKJDct97cBFV",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_GwgX5mNFcON59xzn"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "claimsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_GwgX5mNFcON59xzn",
+        "type": "Script",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.local.dataSource = new MatTableDataSource([\n  {\n    position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' }\n  ,\n  {\n    position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' }\n  ,\n  {\n    position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' }\n  ,\n  {\n    position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' }\n  ,\n  {\n    position: 5, name: 'Boron', weight: 10.811, symbol: 'B' }\n  ,\n  {\n    position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' }\n  ,\n  {\n    position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' }\n  ,\n  {\n    position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' }\n  ,\n  {\n    position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' }\n  ,\n  {\n    position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' }\n  ,\n]);",
+        "functionName": "sd_eJuzOUTYKNgXaqdz_1",
+        "category": "Function",
+        "x": 190,
+        "y": 140,
+        "wires": [
+            [
+                "sd_3pY8tDHomR137FNx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "claimsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_3pY8tDHomR137FNx",
+        "type": "PageVariables",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "tableData",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "dataSource"
+                }
+            }
+        ],
+        "functionName": "sd_E9QbOlnVduPNV5MO_1",
+        "category": "Function",
+        "x": 330,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "claimsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_NnBo2ElmEPMQhdin",
+        "type": "AfterViewInit",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "ngAfterViewInit",
+        "category": "Lifecycle Events",
+        "x": 65,
+        "y": 250,
+        "wires": [
+            [
+                "sd_9CSVHoYiwzqvTVDq"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "claimsComponent"
+    },
+    {
+        "id": "sd_9CSVHoYiwzqvTVDq",
+        "type": "ViewPicker",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatSort"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_1",
+        "category": "Function",
+        "x": 205,
+        "y": 250,
+        "wires": [
+            [
+                "sd_P1x3dimC6AnShOit"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "claimsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_P1x3dimC6AnShOit",
+        "type": "Script",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.sort = this.MatSort;",
+        "functionName": "sd_2VNGqvcKee34lvOz_1",
+        "category": "Function",
+        "x": 345,
+        "y": 250,
+        "wires": [
+            [
+                "sd_nJkzHFDq629hbd1F"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "claimsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_HIDdQSP0NPnkAAKL",
+        "type": "Script",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(bh.input.filterEvent);\nconst filterValue = (bh.input.filterEvent.target as HTMLInputElement).value;\nthis.page.tableData.filter = filterValue.trim().toLowerCase();",
+        "functionName": "sd_iBlFYTlpoczCmWts_2",
+        "category": "Function",
+        "x": 165,
+        "y": 340,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "claimsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Ax3NUpSHKes7P69O",
+        "type": "PageStart",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "onFilter_2",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "filterEvent",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "onFilter_2",
+        "category": "General",
+        "x": 60,
+        "y": 370,
+        "wires": [
+            [
+                "sd_HIDdQSP0NPnkAAKL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "claimsComponent"
+    },
+    {
+        "id": "sd_nJkzHFDq629hbd1F",
+        "type": "ViewPicker",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "childViewVariables": [
+            {
+                "key": {
+                    "type": "literal",
+                    "value": "MatPaginator"
+                },
+                "defaultValue": "",
+                "isViewChildren": false
+            }
+        ],
+        "functionName": "sd_xKCCTWKzvgDN0rx7_3",
+        "category": "Function",
+        "x": 205,
+        "y": 480,
+        "wires": [
+            [
+                "sd_WATRVjI05gX4Sh1T"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "claimsComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WATRVjI05gX4Sh1T",
+        "type": "Script",
+        "z": "sd_sslKQC9SCZ3rr5Xe",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "this.page.tableData.paginator = this.MatPaginator;",
+        "functionName": "sd_2VNGqvcKee34lvOz_3",
+        "category": "Function",
+        "x": 345,
+        "y": 480,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "claimsComponent",
+        "generated": true
+    }
+]

@@ -11,6 +11,14 @@
                 {
                     "path": "schedules",
                     "component": "schedulesComponent"
+                },
+                {
+                    "path": "claims",
+                    "component": "claimsComponent"
+                },
+                {
+                    "path": "register",
+                    "component": "registerComponent"
                 }
             ]
         },
@@ -37,10 +45,6 @@
         {
             "component": "reset_passwordComponent",
             "path": "reset-password"
-        },
-        {
-            "component": "registerComponent",
-            "path": "register"
         },
         {
             "path": "''",

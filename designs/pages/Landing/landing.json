@@ -72,7 +72,7 @@
         "eventName": "\"document:wheel\"",
         "functionName": "sd_EZA5vzCitJkCx2Z4",
         "category": "Listener",
-        "x": 105,
+        "x": 65,
         "y": 180,
         "wires": [
             [

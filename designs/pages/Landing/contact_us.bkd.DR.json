@@ -61,6 +61,104 @@
                 "_attrDef": "p"
             }
         ],
+        "7152f435-0a18-0dbb-9d8c-1fd31010e6e8": {
+            "paletteKey": "FlexLayoutCol",
+            "parentEditorKey": "3be99414-23b1-6971-a103-eef9bbb4826f",
+            "commentid": null,
+            "designerReference": [
+                {
+                    "_key": "componentLabel",
+                    "_value": "Loader",
+                    "_type": "kv",
+                    "_attrDef": "p",
+                    "_useAsLabel": true
+                },
+                {
+                    "_key": "style",
+                    "_value": "background-color: #0000002e",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": [
+                        "full-width",
+                        "full-height",
+                        "absolute"
+                    ],
+                    "_type": "dav",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "fxFlex",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "fxLayoutGap",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "wrap",
+                    "_value": "wrap",
+                    "_type": "a",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "layoutAlign",
+                    "_value": "center",
+                    "_type": "a",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "pLayoutAlign",
+                    "_value": "center",
+                    "_type": "a",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "[fxShow]",
+                    "_value": "true",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "*ngIf",
+                    "_value": "page.loader",
+                    "_type": "kv",
+                    "_attrDef": "c"
+                }
+            ],
+            "8f983ba9-b983-ba0a-9956-26da92ea7050": {
+                "paletteKey": "NEUTRINOS_VIEW_loader",
+                "parentEditorKey": "7152f435-0a18-0dbb-9d8c-1fd31010e6e8",
+                "commentid": null,
+                "designerReference": [
+                    {
+                        "_key": "componentLabel",
+                        "_value": "loader",
+                        "_type": "kv",
+                        "_attrDef": "p",
+                        "_useAsLabel": true
+                    },
+                    {
+                        "_key": "style",
+                        "_value": "",
+                        "_type": "kv",
+                        "_attrDef": "p"
+                    },
+                    {
+                        "_key": "class",
+                        "_value": "",
+                        "_type": "dav",
+                        "_attrDef": "p"
+                    }
+                ]
+            }
+        },
         "e453a905-9738-adef-f87e-4e4f25505553": {
             "paletteKey": "FlexLayoutRow",
             "parentEditorKey": "3be99414-23b1-6971-a103-eef9bbb4826f",
@@ -1023,13 +1121,15 @@
                                 },
                                 {
                                     "_key": "style",
-                                    "_value": "",
+                                    "_value": "border: 2px solid ; padding-left:7px;padding-right:7px;border-radius:15px",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
                                 {
                                     "_key": "class",
-                                    "_value": "",
+                                    "_value": [
+                                        "landing-login"
+                                    ],
                                     "_type": "dav",
                                     "_attrDef": "p"
                                 },
@@ -1068,6 +1168,12 @@
                                     "_value": "true",
                                     "_type": "kv",
                                     "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "routerLink",
+                                    "_value": "/login",
+                                    "_type": "kv",
+                                    "_attrDef": "c"
                                 }
                             ],
                             "7456f98c-691d-f27a-16ee-103a0f178a34": {
@@ -1407,7 +1513,7 @@
                                     },
                                     {
                                         "_key": "routerLink",
-                                        "_value": "call",
+                                        "_value": "contact-us",
                                         "_type": "kv",
                                         "_attrDef": "p"
                                     }
@@ -2133,7 +2239,7 @@
                                 },
                                 {
                                     "_key": "name",
-                                    "_value": "",
+                                    "_value": "email",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -2253,7 +2359,7 @@
                                     "_visibility": true
                                 },
                                 {
-                                    "_key": "FormControlName",
+                                    "_key": "formControlName",
                                     "_value": "email",
                                     "_type": "kv",
                                     "_attrDef": "c"
@@ -2317,7 +2423,7 @@
                                 },
                                 {
                                     "_key": "name",
-                                    "_value": "",
+                                    "_value": "title",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -2428,7 +2534,7 @@
                                     "_visibility": true
                                 },
                                 {
-                                    "_key": "FormControlName",
+                                    "_key": "formControlName",
                                     "_value": "title",
                                     "_type": "kv",
                                     "_attrDef": "c"
@@ -2503,7 +2609,7 @@
                                 },
                                 {
                                     "_key": "name",
-                                    "_value": "",
+                                    "_value": "message",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 },
@@ -2520,8 +2626,8 @@
                                     "_attrDef": "p"
                                 },
                                 {
-                                    "_key": "FormControlName",
-                                    "_value": "massege",
+                                    "_key": "formControlName",
+                                    "_value": "message",
                                     "_type": "kv",
                                     "_attrDef": "c"
                                 }
@@ -2562,12 +2668,12 @@
                                 },
                                 {
                                     "_key": "(click)",
-                                    "_value": "massege()",
+                                    "_value": "sendMessage()",
                                     "_type": "kv",
                                     "_attrDef": "p",
                                     "objValue": {
                                         "nodeID": "sd_ApSpYIma5PeptqEU",
-                                        "functionName": "massege",
+                                        "functionName": "sendMessage",
                                         "activeTree": "pages",
                                         "z": "sd_YuwrB9kbk8y0g2BR",
                                         "input": []
@@ -2594,7 +2700,7 @@
                                 },
                                 {
                                     "_key": "routerLink",
-                                    "_value": "call",
+                                    "_value": "",
                                     "_type": "kv",
                                     "_attrDef": "p"
                                 }

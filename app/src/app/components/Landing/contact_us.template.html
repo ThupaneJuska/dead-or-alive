@@ -31,7 +31,11 @@
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
             <input matInput name="email" placeholder="Your email address" [required]="false" formControlName="email">
-            <mat-error align="start" *ngIf="page.formContact.email?.error?.required">Email is required</mat-error> <mat-label>Email</mat-label>
+            <mat-error align="start" *ngIf="page.formContact.controls.email?.errors?.required">Email is required</mat-error><mat-error align="start" *ngIf="page.formContact.controls.email?.errors?.pattern">Enter a valid email Address</mat-error> <mat-label>Email</mat-label>
+          </mat-form-field>
+          <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="cellphone " [required]="false" formControlName="cellPhone" oninput=" this.value = this.value.replace(/[^\d]/g,&#xA0;&apos;&apos;)">
+            <mat-error align="start" *ngIf="page.formContact.controls.cellPhone?.errors?.required">Cellphone number is required</mat-error><mat-error align="start" *ngIf="page.formContact.controls.cellPhone?.errors?.pattern">Enter a valid South African celphone number</mat-error>
           </mat-form-field>
           <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
             <input matInput name="title" placeholder="Subject" [required]="false" formControlName="title">

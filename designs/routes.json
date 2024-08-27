@@ -13,14 +13,14 @@
                     "component": "schedulesComponent"
                 },
                 {
-                    "path": "claims",
-                    "component": "claimsComponent"
-                },
-                {
-                    "path": "register",
-                    "component": "registerComponent"
+                    "path": "claim_form",
+                    "component": "claims_registerComponent"
                 }
-            ]
+            ],
+            "canActivate": {
+                "edited": true,
+                "value": "authorizationService"
+            }
         },
         {
             "path": "DOAServices",
@@ -45,6 +45,10 @@
         {
             "component": "reset_passwordComponent",
             "path": "reset-password"
+        },
+        {
+            "component": "registerComponent",
+            "path": "register"
         },
         {
             "path": "''",

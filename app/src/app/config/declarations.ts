@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-claims_registerComponent
+import { claims_registerComponent } from '../components/Admin claims/claims_register.component';
 //CORE_REFERENCE_IMPORT-authorizationService
 import { authorizationService } from '../services/authorization/authorization.service';
 //CORE_REFERENCE_IMPORT-claimsComponent
@@ -78,6 +80,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claims_registerComponent
+  claims_registerComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claimsComponent
   claimsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-schedulesComponent
@@ -120,9 +124,9 @@ export const appProviders = [
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-authorizationService
-authorizationService,
+  authorizationService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-randomNumber
-    randomNumber,
+  randomNumber,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-otp
   otp,
 ];
@@ -149,6 +153,7 @@ export const appRoutes = [
   { path: 'forgot-password', component: forgot_passwordComponent },
   { path: 'verify-code', component: verify_codeComponent },
   { path: 'reset-password', component: reset_passwordComponent },
+  { path: 'register', component: registerComponent },
   { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

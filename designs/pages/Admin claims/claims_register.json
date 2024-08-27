@@ -3,12 +3,12 @@
         "id": "sd_N4CyuOQSKrbNKzFe",
         "type": "tab",
         "createdDate": "2024-08-25T14:37:24.681Z",
-        "label": "claims_table",
+        "label": "claims_register",
         "disabled": false,
         "info": "",
         "functionSeq": 0,
         "generateNext": true,
-        "serviceName": "claims_tableComponent"
+        "serviceName": "claims_registerComponent"
     },
     {
         "id": "sd_WDAEQKzleIjERFxE",
@@ -28,7 +28,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "claims_tableComponent"
+        "serviceName": "claims_registerComponent"
     },
     {
         "id": "sd_8uegiEQyOnacegW8",
@@ -50,7 +50,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
-        "serviceName": "claims_tableComponent",
+        "serviceName": "claims_registerComponent",
         "generated": true
     }
 ]

@@ -12,13 +12,13 @@
             },
             {
                 "_key": "style",
-                "_value": "",
+                "_value": "height: '100vh';",
                 "_type": "kv",
                 "_attrDef": "p"
             },
             {
                 "_key": "class",
-                "_value": "",
+                "_value": [],
                 "_type": "dav",
                 "_attrDef": "p"
             },
@@ -57,12 +57,6 @@
                 "_value": "true",
                 "_type": "kv",
                 "_attrDef": "p"
-            },
-            {
-                "_key": "fxFill",
-                "_value": "fxFill",
-                "_type": "a",
-                "_attrDef": "c"
             }
         ],
         "784ab526-9915-fec8-10ce-994536b008b9": {
@@ -73,7 +67,7 @@
             "designerReference": [
                 {
                     "_key": "style",
-                    "_value": "",
+                    "_value": "height:100%; ",
                     "_type": "kv",
                     "_attrDef": "p"
                 },

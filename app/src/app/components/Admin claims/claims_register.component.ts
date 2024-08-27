@@ -4,20 +4,19 @@
 //append_imports_start
 
 import { Component, Injector } from '@angular/core'; //_splitter_
-import { FormBuilder } from '@angular/forms'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
 //append_imports_end
 
 @Component({
-  selector: 'bh-claims_table',
-  templateUrl: './claims_table.template.html',
+  selector: 'bh-claims_register',
+  templateUrl: './claims_register.template.html',
   providers: [
     //appendnew_element_providers
   ],
 })
-export class claims_tableComponent {
+export class claims_registerComponent {
   page: any = { dep: {} };
   constructor(
     private __page_injector__: Injector,
@@ -26,7 +25,6 @@ export class claims_tableComponent {
   ) {
     this.__page_injector__.get(SDPageCommonService).addPageDefaults(this.page);
     this.registerListeners();
-    this.page.dep.FormBuilder = this.__page_injector__.get(FormBuilder); //FormBuilder
     //appendnew_element_inject
   }
 
@@ -57,7 +55,7 @@ export class claims_tableComponent {
     }
   }
 
-  //appendnew_flow_claims_tableComponent_start
+  //appendnew_flow_claims_registerComponent_start
 
   sd_8uegiEQyOnacegW8(bh) {
     try {
@@ -84,5 +82,5 @@ export class claims_tableComponent {
     bh.errorSource = src;
     throw e;
   }
-  //appendnew_flow_claims_tableComponent_Catch
+  //appendnew_flow_claims_registerComponent_Catch
 }

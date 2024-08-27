@@ -28,7 +28,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "dashboardComponent"
+        "serviceName": "dashboardComponent",
+        "generated": false
     },
     {
         "id": "sd_BZk5VYcbok7vTCa5",
@@ -101,7 +102,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "dashboardComponent"
+        "serviceName": "dashboardComponent",
+        "generated": false
     },
     {
         "id": "sd_MzHFd7vzx5yvrY4O",
@@ -176,7 +178,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "dashboardComponent"
+        "serviceName": "dashboardComponent",
+        "generated": false
     },
     {
         "id": "sd_p4UqDj3fR0sGlSfo",
@@ -297,7 +300,8 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "dashboardComponent"
+        "serviceName": "dashboardComponent",
+        "generated": false
     },
     {
         "id": "sd_aSuB2dcKyxmaLU6f",
@@ -358,9 +362,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
+        "generated": true,
         "generateNext": false,
-        "serviceName": "dashboardComponent",
-        "generated": true
+        "serviceName": "dashboardComponent"
     },
     {
         "id": "sd_72RyqGrd9xSHuPJ4",

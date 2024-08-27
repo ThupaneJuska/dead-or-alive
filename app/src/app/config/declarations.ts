@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-clientDasbhoardComponent
+import { clientDasbhoardComponent } from '../components/Client/clientDasbhoard.component';
 //CORE_REFERENCE_IMPORT-claims_registerComponent
 import { claims_registerComponent } from '../components/Admin claims/claims_register.component';
 //CORE_REFERENCE_IMPORT-authorizationService
@@ -80,6 +82,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-clientDasbhoardComponent
+  clientDasbhoardComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claims_registerComponent
   claims_registerComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claimsComponent
@@ -140,20 +144,22 @@ export const appRoutes = [
   {
     path: 'dashboard',
     component: dashboardComponent,
+    canActivate: [authorizationService],
     children: [
       { path: 'home', component: homeComponent },
       { path: 'schedules', component: schedulesComponent },
-      { path: 'claims', component: claimsComponent },
+      { path: 'claim_form', component: claims_registerComponent },
       { path: 'register', component: registerComponent },
     ],
   },
   { path: 'DOAServices', component: landingComponent },
-  { path: 'call', component: contact_usComponent },
+  { path: 'contact-us', component: contact_usComponent },
   { path: 'login', component: loginComponent },
   { path: 'forgot-password', component: forgot_passwordComponent },
   { path: 'verify-code', component: verify_codeComponent },
   { path: 'reset-password', component: reset_passwordComponent },
   { path: 'register', component: registerComponent },
+  { path: 'clientDasbhoard', component: clientDasbhoardComponent },
   { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

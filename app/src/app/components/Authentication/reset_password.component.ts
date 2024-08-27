@@ -264,6 +264,8 @@ export class reset_passwordComponent implements OnChanges {
       bh.url = page.ssdUrl + `reset-password/${page.dataFromSession._id}`;
       console.log('Dataa', bh.url);
       page.loading = true;
+      delete bh.input.form.value.confirmPassword;
+
       bh = this.sd_mgR6ulEmuPpuCjHQ(bh);
       //appendnew_next_sd_PiexsvqTOWM62dBX
       return bh;

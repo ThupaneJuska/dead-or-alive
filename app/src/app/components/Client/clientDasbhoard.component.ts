@@ -153,17 +153,11 @@ export class clientDasbhoardComponent {
     try {
       const page = this.page;
       page.sideNav = [
-        { label: 'Home', icon: 'home', route: '/dashboard/home' },
-        { label: 'Claims', icon: 'description', route: '/dashboard/claims' },
-        {
-          label: 'Register Client',
-          icon: 'edit',
-          route: '/dashboard/register',
-        },
-        { label: 'Schedules', icon: 'today', route: '/dashboard/schedules' },
-        { label: 'Reports', icon: 'folder_open' },
-        { label: 'Audit Logs', icon: 'trending_up' },
+        { label: 'Plan details', icon: 'description', route: '/plan-details' },
+        { label: 'Payment History', icon: 'edit', route: '/payment-history' },
+        { label: 'Claims', icon: 'today', route: '/claims' },
       ];
+
       //appendnew_next_sd_gTpAdpgdhVuSsnsk
       return bh;
     } catch (e) {
@@ -174,28 +168,7 @@ export class clientDasbhoardComponent {
   sd_OBeE6JyxXZbYRb71(bh) {
     try {
       const page = this.page;
-      page.navItem = [
-        {
-          title: 'Plan details',
-          route: '/plan-details',
-          icon: 'icon-plan-details', // Assuming you have an icon set up
-        },
-        {
-          title: 'Payment History',
-          route: '/payment-history',
-          icon: 'icon-payment-history',
-        },
-        {
-          title: 'Claims',
-          route: '/claims',
-          icon: 'icon-claims',
-        },
-        {
-          title: 'Personal Information',
-          route: '/personal-information',
-          icon: 'icon-personal-information',
-        },
-      ];
+      page.navItem = bh.input.index.label;
       //appendnew_next_sd_OBeE6JyxXZbYRb71
       return bh;
     } catch (e) {

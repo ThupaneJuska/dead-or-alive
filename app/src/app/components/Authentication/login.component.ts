@@ -395,7 +395,7 @@ export class loginComponent {
   async sd_FvHEQT4Hl9QPdzc6(bh) {
     try {
       const { paramObj: qprm, path: path } =
-        this.sdService.getPathAndQParamsObj('/');
+        this.sdService.getPathAndQParamsObj('/clientDasbhoard');
       await this.__page_injector__
         .get(Router)
         .navigate([this.sdService.formatPathWithParams(path, undefined)]);

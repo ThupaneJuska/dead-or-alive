@@ -28,8 +28,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "dashboardComponent",
-        "generated": false
+        "serviceName": "dashboardComponent"
     },
     {
         "id": "sd_BZk5VYcbok7vTCa5",
@@ -102,8 +101,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "dashboardComponent",
-        "generated": false
+        "serviceName": "dashboardComponent"
     },
     {
         "id": "sd_MzHFd7vzx5yvrY4O",
@@ -178,8 +176,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "dashboardComponent",
-        "generated": false
+        "serviceName": "dashboardComponent"
     },
     {
         "id": "sd_p4UqDj3fR0sGlSfo",
@@ -209,6 +206,7 @@
         "serviceImportPath": "./",
         "startName": "fetchLoggedInUser",
         "inputParams": [],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_p4UqDj3fR0sGlSfo",
         "category": "General",
@@ -300,8 +298,7 @@
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": true,
-        "serviceName": "dashboardComponent",
-        "generated": false
+        "serviceName": "dashboardComponent"
     },
     {
         "id": "sd_aSuB2dcKyxmaLU6f",
@@ -351,6 +348,7 @@
         "serviceImportPath": "./",
         "startName": "getInitials",
         "inputParams": [],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_pSDSROkDxza5Z3hc",
         "category": "General",
@@ -362,9 +360,9 @@
             ]
         ],
         "__n_excludedFromValidation__": {},
-        "generated": true,
         "generateNext": false,
-        "serviceName": "dashboardComponent"
+        "serviceName": "dashboardComponent",
+        "generated": true
     },
     {
         "id": "sd_72RyqGrd9xSHuPJ4",

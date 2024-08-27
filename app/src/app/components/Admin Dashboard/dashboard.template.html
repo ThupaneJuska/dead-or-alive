@@ -34,7 +34,7 @@
   <div fxLayout="column wrap" style="height: 84%" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
     <div fxLayout="row wrap" class="full-height full-width" fxLayoutGap="0.5em" fxLayoutAlign="start stretch" [fxShow]="true">
       <div fxLayout="row wrap" style="margin-left: 0.5em;" class="radius-bottom-right-LMN radius-top-right white-bg width-10 column flex full-height" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="row wrap" class="full-width white-bg center-center column flex height-12 nav-items radius-10px blue-color" fxLayoutGap="0.5em" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.sideNav; let i" (click)="selectedItem = i; navItems(item)" [class.nav-items]="selectedItem === i" [routerLink]="item.route" routerLinkActive="nav-items">
+        <div fxLayout="row wrap" class="pointer full-width white-bg center-center column flex height-12 nav-items radius-10px blue-color" fxLayoutGap="0.5em" fxLayoutAlign="start stretch" [fxShow]="true" *ngFor="let item of page.sideNav; let i" (click)="selectedItem = i; navItems(item)" [class.nav-items]="selectedItem === i" [routerLink]="item.route" routerLinkActive="nav-items">
           <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true"><mat-icon>{{item.icon}}</mat-icon></div>
           <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
             <div>
@@ -55,7 +55,7 @@
     </div>
   </div>
 </div>
-<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-menu #menu="matMenu"><button mat-menu-item class="blue-color">
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-menu #menu="matMenu"><button mat-menu-item class="blue-color" (click)="logout()">
       <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="teal-color">exit_to_app</mat-icon></div>
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">

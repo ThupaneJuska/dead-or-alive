@@ -105,6 +105,21 @@ export class schedulesComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_G8YN2Rq1FHiszlWV');
     }
   }
+
+  editSchedule(event: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { event };
+      bh.local = {};
+      bh = this.sd_bgj0MEdiE4Tv6reS(bh);
+      //appendnew_next_editSchedule
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_c6G1OGckcY4fA0Pe');
+    }
+  }
   //appendnew_flow_schedulesComponent_start
 
   sd_D2LECCxuE48GweRQ(bh) {
@@ -132,6 +147,7 @@ export class schedulesComponent implements AfterViewInit {
   sd_10GshSRIqokJRDnz(bh) {
     try {
       this.page.dates = undefined;
+      this.page.editDates = undefined;
       bh = this.sd_oTnwqN7gr5BF6zF1(bh);
       //appendnew_next_sd_10GshSRIqokJRDnz
       return bh;
@@ -201,6 +217,19 @@ export class schedulesComponent implements AfterViewInit {
       scheduler.attachEvent('onEventAdded', (id, ev) => {
         page.dates = ev;
         this.post();
+      });
+
+      scheduler.attachEvent('onEventChanged', (id, ev) => {
+        //  page.editDate = ev
+        this.editSchedule(ev);
+      });
+
+      scheduler.attachEvent('onEventSave', function (id, ev, is_new) {
+        if (!is_new) {
+          // This is an edit, not a new event
+          this.editSchedule(ev);
+        }
+        return true;
       });
       //appendnew_next_intialized
       return bh;
@@ -300,6 +329,66 @@ export class schedulesComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_50SK5Qz8OnvjnZ3v');
+    }
+  }
+
+  sd_bgj0MEdiE4Tv6reS(bh) {
+    try {
+      this.page.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_ESApyGL1mX9CQXgA(bh);
+      //appendnew_next_sd_bgj0MEdiE4Tv6reS
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_bgj0MEdiE4Tv6reS');
+    }
+  }
+
+  sd_ESApyGL1mX9CQXgA(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdURL + 'edit-schedule';
+      bh.payload = {
+        id: bh.input.event.id,
+        start_date: bh.input.event.start_date,
+        end_date: bh.input.event.end_date,
+        text: bh.input.event.text,
+      };
+
+      console.log('Sending payload ==>', bh.payload);
+      bh = this.sd_ptm2QeIOHrKrY3py(bh);
+      //appendnew_next_sd_ESApyGL1mX9CQXgA
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ESApyGL1mX9CQXgA');
+    }
+  }
+
+  async sd_ptm2QeIOHrKrY3py(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'post',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.payload,
+      };
+      this.page.result = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_koAZz202rugcm329(bh);
+      //appendnew_next_sd_ptm2QeIOHrKrY3py
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_ptm2QeIOHrKrY3py');
+    }
+  }
+
+  sd_koAZz202rugcm329(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.result);
+      //appendnew_next_sd_koAZz202rugcm329
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_koAZz202rugcm329');
     }
   }
 

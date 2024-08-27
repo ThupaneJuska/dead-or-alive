@@ -47,6 +47,13 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "editDates",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_10GshSRIqokJRDnz",
@@ -232,7 +239,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "intialized",
-        "script": "scheduler.attachEvent('onEventAdded', (id, ev) => {\n page.dates = ev\n this.post()\n})",
+        "script": "scheduler.attachEvent('onEventAdded', (id, ev) => {\n page.dates = ev\n this.post()\n})\n\nscheduler.attachEvent('onEventChanged', (id, ev) => {\n//  page.editDate = ev\n    this.editSchedule(ev);\n})\n\nscheduler.attachEvent('onEventSave', function(id, ev, is_new) {\n  if (!is_new) {\n    // This is an edit, not a new event\n    this.editSchedule(ev);\n  }\n  return true;\n});",
         "functionName": "intialized",
         "category": "Function",
         "x": 310,
@@ -552,6 +559,168 @@
         "wires": [
             []
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_c6G1OGckcY4fA0Pe",
+        "type": "PageStart",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "edit schedule",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "event",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "editSchedule",
+        "category": "General",
+        "x": 45,
+        "y": 440,
+        "wires": [
+            [
+                "sd_bgj0MEdiE4Tv6reS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "schedulesComponent"
+    },
+    {
+        "id": "sd_bgj0MEdiE4Tv6reS",
+        "type": "Environment",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_bgj0MEdiE4Tv6reS",
+        "category": "General",
+        "x": 125,
+        "y": 440,
+        "wires": [
+            [
+                "sd_ESApyGL1mX9CQXgA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ESApyGL1mX9CQXgA",
+        "type": "Script",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdURL + \"edit-schedule\"\nbh.payload = {\n    id: bh.input.event.id,\n    start_date: bh.input.event.start_date,\n    end_date: bh.input.event.end_date,\n    text: bh.input.event.text,\n  };\n\n  console.log('Sending payload ==>', bh.payload)",
+        "functionName": "sd_ESApyGL1mX9CQXgA",
+        "category": "Function",
+        "x": 220,
+        "y": 440,
+        "wires": [
+            [
+                "sd_ptm2QeIOHrKrY3py"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ptm2QeIOHrKrY3py",
+        "type": "HttpRequest",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.payload",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "payload"
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_ptm2QeIOHrKrY3py",
+        "category": "HTTP",
+        "x": 305,
+        "y": 440,
+        "wires": [
+            [
+                "sd_koAZz202rugcm329"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_koAZz202rugcm329",
+        "type": "Log",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.result",
+        "functionName": "sd_koAZz202rugcm329",
+        "category": "General",
+        "x": 400,
+        "y": 460,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "result",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "schedulesComponent",

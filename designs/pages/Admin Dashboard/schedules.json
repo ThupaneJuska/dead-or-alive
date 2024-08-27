@@ -54,6 +54,13 @@
                     "type": "literal",
                     "value": ""
                 }
+            },
+            {
+                "textIp": "id",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
             }
         ],
         "functionName": "sd_10GshSRIqokJRDnz",
@@ -239,7 +246,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "intialized",
-        "script": "scheduler.attachEvent('onEventAdded', (id, ev) => {\n page.dates = ev\n this.post()\n})\n\nscheduler.attachEvent('onEventChanged', (id, ev) => {\n//  page.editDate = ev\n    this.editSchedule(ev);\n})\n\nscheduler.attachEvent('onEventSave', function(id, ev, is_new) {\n  if (!is_new) {\n    // This is an edit, not a new event\n    this.editSchedule(ev);\n  }\n  return true;\n});",
+        "script": "scheduler.attachEvent('onEventAdded', (id, ev) => {\n            page.dates = ev;\n            this.post();\n        });\n\n        scheduler.attachEvent('onEventChanged', (id, ev) => {\n            this.editSchedule(ev);\n        });\n\n        scheduler.attachEvent('onEventSave', (id, ev, is_new) => {\n            if (!is_new) {\n                this.editSchedule(ev);\n            }\n            return true;\n        });\n\nscheduler.attachEvent('onEventDeleted', (id, ev) => {\n            console.log('Deleted Event ID:', id);  // Log the id to verify it\n            this.deleteSchedule({ id });  // Pass the id properly to the deleteSchedule method\n        });\n",
         "functionName": "intialized",
         "category": "Function",
         "x": 310,
@@ -260,6 +267,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "post",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -267,8 +275,10 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
@@ -284,9 +294,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_yooPhpzfRF9ArlKM",
         "category": "HTTP",
@@ -405,6 +417,7 @@
         "serviceImportPath": "./",
         "startName": "getSchedules",
         "inputParams": [],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_oTnwqN7gr5BF6zF1",
         "category": "General",
@@ -450,6 +463,7 @@
         "nodeType": "flow",
         "name": "",
         "method": "get",
+        "methodMapping": "",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -457,11 +471,14 @@
             "mapVarValue": "url"
         },
         "ret": "json",
+        "retMapping": "",
         "retMappingObj": {},
         "observe": "",
+        "observeMapping": "",
         "observeMappingObj": {},
         "reportProgress": false,
         "withCreds": false,
+        "reqBody": "",
         "reqBodyObj": {
             "mapVarType": "this.page",
             "mapVarValue": ""
@@ -473,9 +490,11 @@
         },
         "headers": {},
         "headersObj": [],
+        "headerMapping": "",
         "headerMappingObj": {},
         "params": {},
         "paramsObj": [],
+        "paramMapping": "",
         "paramMappingObj": {},
         "functionName": "sd_lWLxkvHgBt0cwZ0j",
         "category": "HTTP",
@@ -635,7 +654,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "bh.url = page.ssdURL + \"edit-schedule\"\nbh.payload = {\n    id: bh.input.event.id,\n    start_date: bh.input.event.start_date,\n    end_date: bh.input.event.end_date,\n    text: bh.input.event.text,\n  };\n\n  console.log('Sending payload ==>', bh.payload)",
+        "script": "bh.url = page.ssdURL + \"edit-schedule\"\nbh.payload = {\n    id: bh.input.event.id,\n    start_date: bh.input.event.start_date,\n    end_date: bh.input.event.end_date,\n    text: bh.input.event.text,\n  };\n",
         "functionName": "sd_ESApyGL1mX9CQXgA",
         "category": "Function",
         "x": 220,
@@ -657,7 +676,7 @@
         "viewType": "client-pages",
         "nodeType": "flow",
         "name": "",
-        "method": "post",
+        "method": "put",
         "methodMappingObj": {},
         "urlMapping": "bh.url",
         "urlMappingObj": {
@@ -691,8 +710,70 @@
         "x": 305,
         "y": 440,
         "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Gfd9El1eZllQsfCX",
+        "type": "PageStart",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "deleteSchedule",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "event",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "deleteSchedule",
+        "category": "General",
+        "x": 45,
+        "y": 540,
+        "wires": [
             [
-                "sd_koAZz202rugcm329"
+                "sd_aeiaDG1cBQidkd3O"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "schedulesComponent"
+    },
+    {
+        "id": "sd_aeiaDG1cBQidkd3O",
+        "type": "Environment",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_aeiaDG1cBQidkd3O",
+        "category": "General",
+        "x": 140,
+        "y": 540,
+        "wires": [
+            [
+                "sd_iB2ZFlixADhzWvXA"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -701,7 +782,79 @@
         "generated": true
     },
     {
-        "id": "sd_koAZz202rugcm329",
+        "id": "sd_iB2ZFlixADhzWvXA",
+        "type": "Script",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdURL + `delete-schedule/${bh.input.event.id}`\n\nbh.payload = {\n    id: bh.input.event.id\n  };\n\n  page.id = bh.payload.id\n  console.log(\"variable id ==>\", page.id)\n\n  console.log('Deleting event with id -->:', bh.payload);\n  console.log(\"Url ==>\", bh.url)\n\n",
+        "functionName": "sd_iB2ZFlixADhzWvXA",
+        "category": "Function",
+        "x": 225,
+        "y": 540,
+        "wires": [
+            [
+                "sd_TlUvdSEpFmLp9TU5"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_TlUvdSEpFmLp9TU5",
+        "type": "HttpRequest",
+        "z": "sd_PBwNMLXI1N7a2oTo",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "delete",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.payload",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "payload"
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_TlUvdSEpFmLp9TU5",
+        "category": "HTTP",
+        "x": 305,
+        "y": 540,
+        "wires": [
+            [
+                "sd_xA8KprZry4Y82QAO"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "schedulesComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_xA8KprZry4Y82QAO",
         "type": "Log",
         "z": "sd_PBwNMLXI1N7a2oTo",
         "viewType": "client-pages",
@@ -709,10 +862,10 @@
         "name": "",
         "outputs": 0,
         "logObject": "this.page.result",
-        "functionName": "sd_koAZz202rugcm329",
+        "functionName": "sd_xA8KprZry4Y82QAO",
         "category": "General",
-        "x": 400,
-        "y": 460,
+        "x": 425,
+        "y": 560,
         "wires": [],
         "__ssdTypeInputs__": {
             "logObject": {

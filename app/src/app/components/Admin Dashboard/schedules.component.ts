@@ -120,6 +120,21 @@ export class schedulesComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_c6G1OGckcY4fA0Pe');
     }
   }
+
+  deleteSchedule(event: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { event };
+      bh.local = {};
+      bh = this.sd_aeiaDG1cBQidkd3O(bh);
+      //appendnew_next_deleteSchedule
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_Gfd9El1eZllQsfCX');
+    }
+  }
   //appendnew_flow_schedulesComponent_start
 
   sd_D2LECCxuE48GweRQ(bh) {
@@ -148,6 +163,7 @@ export class schedulesComponent implements AfterViewInit {
     try {
       this.page.dates = undefined;
       this.page.editDates = undefined;
+      this.page.id = undefined;
       bh = this.sd_oTnwqN7gr5BF6zF1(bh);
       //appendnew_next_sd_10GshSRIqokJRDnz
       return bh;
@@ -220,17 +236,21 @@ export class schedulesComponent implements AfterViewInit {
       });
 
       scheduler.attachEvent('onEventChanged', (id, ev) => {
-        //  page.editDate = ev
         this.editSchedule(ev);
       });
 
-      scheduler.attachEvent('onEventSave', function (id, ev, is_new) {
+      scheduler.attachEvent('onEventSave', (id, ev, is_new) => {
         if (!is_new) {
-          // This is an edit, not a new event
           this.editSchedule(ev);
         }
         return true;
       });
+
+      scheduler.attachEvent('onEventDeleted', (id, ev) => {
+        console.log('Deleted Event ID:', id); // Log the id to verify it
+        this.deleteSchedule({ id }); // Pass the id properly to the deleteSchedule method
+      });
+
       //appendnew_next_intialized
       return bh;
     } catch (e) {
@@ -354,7 +374,6 @@ export class schedulesComponent implements AfterViewInit {
         text: bh.input.event.text,
       };
 
-      console.log('Sending payload ==>', bh.payload);
       bh = this.sd_ptm2QeIOHrKrY3py(bh);
       //appendnew_next_sd_ESApyGL1mX9CQXgA
       return bh;
@@ -367,14 +386,13 @@ export class schedulesComponent implements AfterViewInit {
     try {
       let requestOptions = {
         url: bh.url,
-        method: 'post',
+        method: 'put',
         responseType: 'json',
         headers: {},
         params: {},
         body: bh.payload,
       };
       this.page.result = await this.sdService.nHttpRequest(requestOptions);
-      this.sd_koAZz202rugcm329(bh);
       //appendnew_next_sd_ptm2QeIOHrKrY3py
       return bh;
     } catch (e) {
@@ -382,13 +400,66 @@ export class schedulesComponent implements AfterViewInit {
     }
   }
 
-  sd_koAZz202rugcm329(bh) {
+  sd_aeiaDG1cBQidkd3O(bh) {
     try {
-      console.log(new Date().toLocaleTimeString(), this.page.result);
-      //appendnew_next_sd_koAZz202rugcm329
+      this.page.ssdURL = bh.system.environment.properties.ssdURL;
+      bh = this.sd_iB2ZFlixADhzWvXA(bh);
+      //appendnew_next_sd_aeiaDG1cBQidkd3O
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_koAZz202rugcm329');
+      return this.errorHandler(bh, e, 'sd_aeiaDG1cBQidkd3O');
+    }
+  }
+
+  sd_iB2ZFlixADhzWvXA(bh) {
+    try {
+      const page = this.page;
+      bh.url = page.ssdURL + `delete-schedule/${bh.input.event.id}`;
+
+      bh.payload = {
+        id: bh.input.event.id,
+      };
+
+      page.id = bh.payload.id;
+      console.log('variable id ==>', page.id);
+
+      console.log('Deleting event with id -->:', bh.payload);
+      console.log('Url ==>', bh.url);
+
+      bh = this.sd_TlUvdSEpFmLp9TU5(bh);
+      //appendnew_next_sd_iB2ZFlixADhzWvXA
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_iB2ZFlixADhzWvXA');
+    }
+  }
+
+  async sd_TlUvdSEpFmLp9TU5(bh) {
+    try {
+      let requestOptions = {
+        url: bh.url,
+        method: 'delete',
+        responseType: 'json',
+        headers: {},
+        params: {},
+        body: bh.payload,
+      };
+      this.page.result = await this.sdService.nHttpRequest(requestOptions);
+      this.sd_xA8KprZry4Y82QAO(bh);
+      //appendnew_next_sd_TlUvdSEpFmLp9TU5
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_TlUvdSEpFmLp9TU5');
+    }
+  }
+
+  sd_xA8KprZry4Y82QAO(bh) {
+    try {
+      console.log(new Date().toLocaleTimeString(), this.page.result);
+      //appendnew_next_sd_xA8KprZry4Y82QAO
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_xA8KprZry4Y82QAO');
     }
   }
 

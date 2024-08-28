@@ -13,8 +13,12 @@
                     "component": "schedulesComponent"
                 },
                 {
-                    "path": "claim_form",
-                    "component": "claims_registerComponent"
+                    "path": "claims",
+                    "component": "claimsComponent"
+                },
+                {
+                    "path": "register",
+                    "component": "registerComponent"
                 }
             ],
             "canActivate": {
@@ -45,10 +49,6 @@
         {
             "component": "reset_passwordComponent",
             "path": "reset-password"
-        },
-        {
-            "component": "registerComponent",
-            "path": "register"
         },
         {
             "path": "''",

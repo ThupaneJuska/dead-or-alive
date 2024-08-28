@@ -15,6 +15,10 @@
                 {
                     "path": "claim_form",
                     "component": "claims_registerComponent"
+                },
+                {
+                    "component": "registerComponent",
+                    "path": "register"
                 }
             ],
             "canActivate": {
@@ -49,6 +53,10 @@
         {
             "component": "registerComponent",
             "path": "register"
+        },
+        {
+            "component": "clientDasbhoardComponent",
+            "path": "clientDasbhoard"
         },
         {
             "path": "''",

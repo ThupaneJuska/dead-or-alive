@@ -189,9 +189,8 @@ export class clientDasbhoardComponent {
   sd_DGRVLYYk7tZskvqn(bh) {
     try {
       const page = this.page;
-      page.name = page.firstName.charAt(0).toUpperCase();
-      page.surname = page.lastName.charAt(0).toUpperCase();
-
+      page.name = (page.user.firstName?.charAt(0) || '').toUpperCase();
+      page.surname = (page.user.lastName?.charAt(0) || '').toUpperCase();
       //appendnew_next_sd_DGRVLYYk7tZskvqn
       return bh;
     } catch (e) {

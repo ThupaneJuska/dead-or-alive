@@ -371,7 +371,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.name = page.firstName.charAt(0).toUpperCase();\npage.surname = page.lastName.charAt(0).toUpperCase();\n",
+        "script": "page.name = (page.user.firstName?.charAt(0) || '').toUpperCase();\npage.surname = (page.user.lastName?.charAt(0) || '').toUpperCase();",
         "functionName": "sd_DGRVLYYk7tZskvqn",
         "category": "Function",
         "x": 130,

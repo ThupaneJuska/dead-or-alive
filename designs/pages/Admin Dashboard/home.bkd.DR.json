@@ -3000,9 +3000,18 @@
                     },
                     {
                         "_key": "(click)",
-                        "_value": "",
+                        "_value": "viewPayments(index)",
                         "_type": "kv",
-                        "_attrDef": "p"
+                        "_attrDef": "p",
+                        "objValue": {
+                            "nodeID": "sd_yN9biohu3MCF1RRs",
+                            "functionName": "viewPayments",
+                            "activeTree": "pages",
+                            "z": "sd_o4ikLTEW12PcNWYL",
+                            "input": [
+                                "index"
+                            ]
+                        }
                     },
                     {
                         "_key": "[disabled]",

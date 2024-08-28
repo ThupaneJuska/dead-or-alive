@@ -1,0 +1,143 @@
+[
+    {
+        "id": "sd_mZtkuYkkTI8tLdyV",
+        "type": "tab",
+        "createdDate": "2024-08-28T09:36:49.759Z",
+        "label": "variables",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "tabType": "client",
+        "generateNext": true,
+        "serviceName": "variables",
+        "relativeParentPath": ""
+    },
+    {
+        "id": "sd_hfDnkRMEGQQWILVg",
+        "type": "ServiceVariables",
+        "z": "sd_mZtkuYkkTI8tLdyV",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "data",
+                "typedIpValue": {
+                    "type": "bh.input",
+                    "value": "data"
+                }
+            }
+        ],
+        "functionName": "sd_hfDnkRMEGQQWILVg",
+        "category": "Function",
+        "x": 165,
+        "y": 40,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "variables",
+        "generated": true
+    },
+    {
+        "id": "sd_jJNBQsNOvW2mw7Dt",
+        "type": "Start",
+        "z": "sd_mZtkuYkkTI8tLdyV",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "setVariable",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "data",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "localVariables": [],
+        "accept_bh": false,
+        "functionName": "setVariable",
+        "category": "General",
+        "x": 85,
+        "y": 40,
+        "wires": [
+            [
+                "sd_hfDnkRMEGQQWILVg"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "variables"
+    },
+    {
+        "id": "sd_sr5Ud7ts2hkaks9g",
+        "type": "Start",
+        "z": "sd_mZtkuYkkTI8tLdyV",
+        "viewType": "client-server",
+        "nodeType": "start",
+        "name": "getVariable",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [
+            {
+                "key": "data",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": true
+            }
+        ],
+        "accept_bh": false,
+        "functionName": "getVariable",
+        "category": "General",
+        "x": 90,
+        "y": 140,
+        "wires": [
+            [
+                "sd_QebDOTsYQdY2UDVD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "variables"
+    },
+    {
+        "id": "sd_QebDOTsYQdY2UDVD",
+        "type": "ServiceVariables",
+        "z": "sd_mZtkuYkkTI8tLdyV",
+        "viewType": "client-server",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "get",
+        "globalVariables": [
+            {
+                "textIp": "data",
+                "typedIpValue": {
+                    "type": "bh.local",
+                    "value": "data"
+                }
+            }
+        ],
+        "functionName": "sd_QebDOTsYQdY2UDVD",
+        "category": "Function",
+        "x": 165,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "variables",
+        "generated": true
+    }
+]

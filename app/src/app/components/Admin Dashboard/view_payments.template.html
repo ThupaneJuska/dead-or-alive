@@ -1,0 +1,13 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="kg-half-width" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="margin-top-10px margin-left-1em search" fxLayoutAlign="center stretch" [fxShow]="true">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput type="Search" placeholder="Search" [required]="false" (keydown)="onFilter_2($event)">
+          <mat-icon matPrefix>search</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="center start" [fxShow]="true"><button mat-raised-button color="accent">Log A Claim</button></div>
+  </div>
+</div>

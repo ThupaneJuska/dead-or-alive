@@ -16,6 +16,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-variables
+import { variables } from '../sd-services/variables';
+//CORE_REFERENCE_IMPORT-view_paymentsComponent
+import { view_paymentsComponent } from '../components/Admin Dashboard/view_payments.component';
 //CORE_REFERENCE_IMPORT-clientDasbhoardComponent
 import { clientDasbhoardComponent } from '../components/Client/clientDasbhoard.component';
 //CORE_REFERENCE_IMPORT-claims_registerComponent
@@ -82,6 +86,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-view_paymentsComponent
+  view_paymentsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-clientDasbhoardComponent
   clientDasbhoardComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claims_registerComponent
@@ -127,6 +133,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-variables
+variables,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-authorizationService
   authorizationService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-randomNumber
@@ -148,8 +156,9 @@ export const appRoutes = [
     children: [
       { path: 'home', component: homeComponent },
       { path: 'schedules', component: schedulesComponent },
-      { path: 'claim_form', component: claims_registerComponent },
+      { path: 'claims', component: claimsComponent },
       { path: 'register', component: registerComponent },
+      { path: 'view-payments', component: view_paymentsComponent },
     ],
   },
   { path: 'DOAServices', component: landingComponent },
@@ -158,8 +167,6 @@ export const appRoutes = [
   { path: 'forgot-password', component: forgot_passwordComponent },
   { path: 'verify-code', component: verify_codeComponent },
   { path: 'reset-password', component: reset_passwordComponent },
-  { path: 'register', component: registerComponent },
-  { path: 'clientDasbhoard', component: clientDasbhoardComponent },
   { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

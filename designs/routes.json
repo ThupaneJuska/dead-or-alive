@@ -13,12 +13,16 @@
                     "component": "schedulesComponent"
                 },
                 {
-                    "path": "claim_form",
-                    "component": "claims_registerComponent"
+                    "path": "claims",
+                    "component": "claimsComponent"
                 },
                 {
-                    "component": "registerComponent",
-                    "path": "register"
+                    "path": "register",
+                    "component": "registerComponent"
+                },
+                {
+                    "path": "view-payments",
+                    "component": "view_paymentsComponent"
                 }
             ],
             "canActivate": {
@@ -49,14 +53,6 @@
         {
             "component": "reset_passwordComponent",
             "path": "reset-password"
-        },
-        {
-            "component": "registerComponent",
-            "path": "register"
-        },
-        {
-            "component": "clientDasbhoardComponent",
-            "path": "clientDasbhoard"
         },
         {
             "path": "''",

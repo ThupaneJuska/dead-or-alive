@@ -420,7 +420,7 @@
         "y": 260,
         "wires": [
             [
-                "sd_xPkQQiJbZdO08QNX"
+                "sd_iGycO4jnqKpix0R8"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -592,17 +592,10 @@
         "nodeType": "flow",
         "name": "",
         "path": "/dashboard/home",
-        "pathMap": "",
-        "pathparams": "",
-        "pathparamsMap": "",
-        "qparams": "",
-        "qparamsMap": "",
-        "qparamsArray": "",
-        "resultMapping": "",
         "functionName": "sd_iGycO4jnqKpix0R8",
         "category": "Navigation",
-        "x": 925,
-        "y": 200,
+        "x": 825,
+        "y": 260,
         "wires": [
             [
                 "sd_AID4OaedpjFFkl1s"
@@ -623,8 +616,8 @@
         "script": "console.log(\"res\", bh.result)",
         "functionName": "sd_AID4OaedpjFFkl1s",
         "category": "Function",
-        "x": 1005,
-        "y": 200,
+        "x": 905,
+        "y": 260,
         "wires": [
             [
                 "sd_QCpkMADtxfSqgHXt"
@@ -696,218 +689,8 @@
         "resultMapping": {},
         "functionName": "sd_QCpkMADtxfSqgHXt",
         "category": "Storage",
-        "x": 1085,
-        "y": 200,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "loginComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_xPkQQiJbZdO08QNX",
-        "type": "PageSwitch",
-        "z": "sd_fn8FAmmpAsSioSZv",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "property": "result.role",
-        "propertyType": "bh",
-        "propertyGv": "bh.result.role",
-        "rules": [
-            {
-                "t": "eq",
-                "v": "admin",
-                "vt": "str",
-                "gv": "\"admin\""
-            },
-            {
-                "t": "eq",
-                "v": "client",
-                "vt": "str",
-                "gv": "\"client\""
-            },
-            {
-                "t": "eq",
-                "v": "director",
-                "vt": "str",
-                "gv": "\"director\""
-            }
-        ],
-        "checkall": "false",
-        "repair": false,
-        "outputs": 3,
-        "functionName": "sd_xPkQQiJbZdO08QNX",
-        "category": "Function",
-        "x": 825,
+        "x": 985,
         "y": 260,
-        "wires": [
-            [
-                "sd_iGycO4jnqKpix0R8"
-            ],
-            [
-                "sd_FvHEQT4Hl9QPdzc6"
-            ],
-            [
-                "sd_CJ43s3JE9LEJd2zi"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "loginComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_FvHEQT4Hl9QPdzc6",
-        "type": "Navigation",
-        "z": "sd_fn8FAmmpAsSioSZv",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "path": "/",
-        "functionName": "sd_FvHEQT4Hl9QPdzc6",
-        "category": "Navigation",
-        "x": 925,
-        "y": 280,
-        "wires": [
-            [
-                "sd_33xSmGLJGx4dva03"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "loginComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_CJ43s3JE9LEJd2zi",
-        "type": "Navigation",
-        "z": "sd_fn8FAmmpAsSioSZv",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "path": "/",
-        "pathMap": "",
-        "pathparams": "",
-        "pathparamsMap": "",
-        "qparams": "",
-        "qparamsMap": "",
-        "qparamsArray": "",
-        "resultMapping": "",
-        "functionName": "sd_CJ43s3JE9LEJd2zi",
-        "category": "Navigation",
-        "x": 933,
-        "y": 357.8020935058594,
-        "wires": [
-            [
-                "sd_MVHU6yudZyoVZ1LY"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "loginComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_MVHU6yudZyoVZ1LY",
-        "type": "Script",
-        "z": "sd_fn8FAmmpAsSioSZv",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "console.log(\"res\", bh.result)",
-        "functionName": "sd_MVHU6yudZyoVZ1LY",
-        "category": "Function",
-        "x": 1005,
-        "y": 360,
-        "wires": [
-            [
-                "sd_KJi84Kx2j9ABGDqJ"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "loginComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_KJi84Kx2j9ABGDqJ",
-        "type": "Storage",
-        "z": "sd_fn8FAmmpAsSioSZv",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "operationType": "setItem",
-        "storageType": "sessionStorage",
-        "outputs": 1,
-        "key": {
-            "type": "str",
-            "value": "user"
-        },
-        "value": {
-            "type": "bh",
-            "value": "result"
-        },
-        "resultMapping": {},
-        "functionName": "sd_KJi84Kx2j9ABGDqJ",
-        "category": "Storage",
-        "x": 1085,
-        "y": 360,
-        "wires": [
-            []
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "loginComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_33xSmGLJGx4dva03",
-        "type": "Script",
-        "z": "sd_fn8FAmmpAsSioSZv",
-        "viewType": "common",
-        "nodeType": "flow",
-        "name": "",
-        "script": "console.log(\"res\", bh.result)",
-        "functionName": "sd_33xSmGLJGx4dva03",
-        "category": "Function",
-        "x": 1005,
-        "y": 280,
-        "wires": [
-            [
-                "sd_C9gEmPKzcYtWYKXW"
-            ]
-        ],
-        "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "loginComponent",
-        "generated": true
-    },
-    {
-        "id": "sd_C9gEmPKzcYtWYKXW",
-        "type": "Storage",
-        "z": "sd_fn8FAmmpAsSioSZv",
-        "viewType": "client-pages",
-        "nodeType": "flow",
-        "name": "",
-        "operationType": "setItem",
-        "storageType": "sessionStorage",
-        "outputs": 1,
-        "key": {
-            "type": "str",
-            "value": "user"
-        },
-        "value": {
-            "type": "bh",
-            "value": "result"
-        },
-        "resultMapping": {},
-        "functionName": "sd_C9gEmPKzcYtWYKXW",
-        "category": "Storage",
-        "x": 1085,
-        "y": 280,
         "wires": [
             []
         ],

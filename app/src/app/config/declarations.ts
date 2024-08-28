@@ -16,6 +16,12 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-variables
+import { variables } from '../sd-services/variables';
+//CORE_REFERENCE_IMPORT-view_paymentsComponent
+import { view_paymentsComponent } from '../components/Admin Dashboard/view_payments.component';
+//CORE_REFERENCE_IMPORT-clientDasbhoardComponent
+import { clientDasbhoardComponent } from '../components/Client/clientDasbhoard.component';
 //CORE_REFERENCE_IMPORT-claims_registerComponent
 import { claims_registerComponent } from '../components/Admin claims/claims_register.component';
 //CORE_REFERENCE_IMPORT-authorizationService
@@ -80,6 +86,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-view_paymentsComponent
+  view_paymentsComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-clientDasbhoardComponent
+  clientDasbhoardComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claims_registerComponent
   claims_registerComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claimsComponent
@@ -123,6 +133,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
+//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-variables
+variables,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-authorizationService
   authorizationService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-randomNumber
@@ -146,6 +158,7 @@ export const appRoutes = [
       { path: 'schedules', component: schedulesComponent },
       { path: 'claims', component: claimsComponent },
       { path: 'register', component: registerComponent },
+      { path: 'view-payments', component: view_paymentsComponent },
     ],
   },
   { path: 'DOAServices', component: landingComponent },

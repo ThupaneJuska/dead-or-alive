@@ -371,6 +371,7 @@ export class reset_passwordComponent implements OnChanges {
     try {
       const page = this.page;
       page.characterCount = bh.input.e.target.value.length;
+      bh.input.e.target.value = bh.input.e.target.value.replace(/[^\d]/g, '');
 
       console.log('Character', page.characterCount);
       //appendnew_next_sd_5u1T3qXyJGc45UDE

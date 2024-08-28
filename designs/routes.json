@@ -19,6 +19,10 @@
                 {
                     "path": "register",
                     "component": "registerComponent"
+                },
+                {
+                    "path": "view-payments",
+                    "component": "view_paymentsComponent"
                 }
             ],
             "canActivate": {

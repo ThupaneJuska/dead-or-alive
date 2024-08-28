@@ -283,48 +283,11 @@ export class loginComponent {
           horizontalPosition: 'center',
           verticalPosition: 'bottom',
         });
-      bh = this.sd_xPkQQiJbZdO08QNX(bh);
+      bh = this.sd_iGycO4jnqKpix0R8(bh);
       //appendnew_next_sd_SGMcpcrY4y3UKTKj
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_SGMcpcrY4y3UKTKj');
-    }
-  }
-
-  sd_xPkQQiJbZdO08QNX(bh) {
-    try {
-      if (
-        this.sdService.operators['eq'](
-          bh.result.role,
-          'admin',
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_iGycO4jnqKpix0R8(bh);
-      } else if (
-        this.sdService.operators['eq'](
-          bh.result.role,
-          'client',
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_FvHEQT4Hl9QPdzc6(bh);
-      } else if (
-        this.sdService.operators['eq'](
-          bh.result.role,
-          'director',
-          undefined,
-          undefined
-        )
-      ) {
-        bh = this.sd_CJ43s3JE9LEJd2zi(bh);
-      }
-
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_xPkQQiJbZdO08QNX');
     }
   }
 
@@ -365,6 +328,7 @@ export class loginComponent {
     }
   }
 
+<<<<<<< HEAD
   async sd_FvHEQT4Hl9QPdzc6(bh) {
     try {
       const { paramObj: qprm, path: path } =
@@ -441,6 +405,8 @@ export class loginComponent {
     }
   }
 
+=======
+>>>>>>> e3e11dbd3be0a96ef33a7bdb53ae8fda383a75c6
   sd_3Oob5ybAQPyPJtB0(bh) {
     try {
       const page = this.page;

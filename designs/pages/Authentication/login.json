@@ -414,7 +414,7 @@
         "y": 300,
         "wires": [
             [
-                "sd_xPkQQiJbZdO08QNX"
+                "sd_iGycO4jnqKpix0R8"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -588,8 +588,8 @@
         "path": "/dashboard/home",
         "functionName": "sd_iGycO4jnqKpix0R8",
         "category": "Navigation",
-        "x": 925,
-        "y": 200,
+        "x": 825,
+        "y": 260,
         "wires": [
             [
                 "sd_AID4OaedpjFFkl1s"
@@ -610,8 +610,8 @@
         "script": "console.log(\"res\", bh.result)",
         "functionName": "sd_AID4OaedpjFFkl1s",
         "category": "Function",
-        "x": 1005,
-        "y": 200,
+        "x": 905,
+        "y": 260,
         "wires": [
             [
                 "sd_QCpkMADtxfSqgHXt"
@@ -681,6 +681,7 @@
         "resultMapping": {},
         "functionName": "sd_QCpkMADtxfSqgHXt",
         "category": "Storage",
+<<<<<<< HEAD
         "x": 1085,
         "y": 200,
         "wires": [
@@ -894,6 +895,11 @@
         "x": 1085,
         "y": 280,
         "wires": [
+=======
+        "x": 985,
+        "y": 260,
+        "wires": [
+>>>>>>> e3e11dbd3be0a96ef33a7bdb53ae8fda383a75c6
             []
         ],
         "__n_excludedFromValidation__": {},

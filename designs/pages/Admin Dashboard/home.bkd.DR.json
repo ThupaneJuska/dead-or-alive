@@ -1907,13 +1907,24 @@
                     },
                     {
                         "_key": "(rowclick)",
-                        "_value": "setClientData(row)",
+                        "_value": "setClientData(row)getRow(row)",
                         "_type": "a",
                         "_attrDef": "p",
                         "_customAttributeFlag": "flowpicker",
                         "objValue": {
                             "nodeID": "sd_yN9biohu3MCF1RRs",
                             "functionName": "setClientData",
+                            "activeTree": "pages",
+                            "z": "sd_o4ikLTEW12PcNWYL",
+                            "input": [
+                                "row"
+                            ]
+                        }
+                        "_attrDef": "p",
+                        "_customAttributeFlag": "flowpicker",
+                        "objValue": {
+                            "nodeID": "sd_XA6taVXHZXbQwG6V",
+                            "functionName": "getRow",
                             "activeTree": "pages",
                             "z": "sd_o4ikLTEW12PcNWYL",
                             "input": [
@@ -2718,6 +2729,12 @@
                                     "_value": "",
                                     "_type": "kv",
                                     "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "routerLink",
+                                    "_value": "/dashboard/edit-personalinfo",
+                                    "_type": "kv",
+                                    "_attrDef": "c"
                                 }
                             ]
                         }

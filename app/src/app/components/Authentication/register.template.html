@@ -295,56 +295,46 @@
           <div fxLayout="column wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
             <div fxLayout="row wrap" fxLayoutAlign="center stretch" [fxShow]="true">
               <h3>
-                Summary</h3>
+                Summary<mat-accordion class="kg-full-width">
+                  <mat-expansion-panel [expanded]="true">
+                    <mat-expansion-panel-header>
+
+                      <mat-panel-title>
+                        <strong>Client Details</strong>
+                      </mat-panel-title></mat-expansion-panel-header>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="First Name" value="{{page.clientForm.value.firstName}}" [required]="false" readonly="true">
+
+                      </mat-form-field>
+                      <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Last Name" value="{{page.clientForm.value.lastName}}" [required]="false" readonly="true">
+
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Email" value="{{page.clientForm.value.email}}" [required]="false" readonly="true">
+
+                      </mat-form-field>
+                      <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="ID Number" value="{{page.clientForm.value.idNumber}}" [required]="false" readonly="true">
+
+                      </mat-form-field>
+                    </div>
+                    <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+                      <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Gender" value="{{page.clientForm.value.gender}}" [required]="false" readonly="true">
+
+                      </mat-form-field>
+                      <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                        <input matInput placeholder="Cellphone" value="{{page.clientForm.value.cellphone}}" [required]="false" readonly="true">
+
+                      </mat-form-field>
+                    </div>
+                  </mat-expansion-panel></mat-accordion></h3>
             </div>
-            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-accordion class="kg-full-width">
-                <mat-expansion-panel [expanded]="true">
-                  <mat-expansion-panel-header>
-
-                    <mat-panel-title>
-                      <strong>Client Details</strong>
-                    </mat-panel-title></mat-expansion-panel-header>
-                  <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                      <input matInput placeholder="First Name" value="{{page.clientForm.value.firstName}}" [required]="false" readonly="true">
-
-                    </mat-form-field>
-                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                      <input matInput placeholder="Last Name" value="{{page.clientForm.value.lastName}}" [required]="false" readonly="true">
-
-                    </mat-form-field>
-                  </div>
-                  <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                      <input matInput placeholder="Email" value="{{page.clientForm.value.email}}" [required]="false" readonly="true">
-
-                    </mat-form-field>
-                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                      <input matInput placeholder="ID Number" value="{{page.clientForm.value.idNumber}}" [required]="false" readonly="true">
-
-                    </mat-form-field>
-                  </div>
-                  <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                      <input matInput placeholder="Gender" value="{{page.clientForm.value.gender}}" [required]="false" readonly="true">
-
-                    </mat-form-field>
-                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                      <input matInput placeholder="Cellphone" value="{{page.clientForm.value.cellphone}}" [required]="false" readonly="true">
-
-                    </mat-form-field>
-                  </div>
-                  <div fxLayout="row " class="kg-full-width" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                      <input matInput placeholder="Email" value="{{page.clientForm.value.email}}" [required]="false" readonly="true">
-
-                    </mat-form-field>
-                    <mat-form-field class="kg-half-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-                      <input matInput placeholder="Email" value="{{page.clientForm.value.email}}" [required]="false" readonly="true">
-
-                    </mat-form-field>
-                  </div>
-                </mat-expansion-panel></mat-accordion></div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"></div>
             <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-accordion class="kg-full-width">
                 <mat-expansion-panel [expanded]="true">
                   <mat-expansion-panel-header>

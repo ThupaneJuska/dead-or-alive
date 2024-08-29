@@ -24,6 +24,8 @@ import { variables } from '../sd-services/variables';
 import { view_paymentsComponent } from '../components/Admin Dashboard/view_payments.component';
 //CORE_REFERENCE_IMPORT-clientDasbhoardComponent
 import { clientDasbhoardComponent } from '../components/Client/clientDasbhoard.component';
+//CORE_REFERENCE_IMPORT-edit_personalInfoComponent
+import { edit_personalInfoComponent } from '../components/Admin Dashboard/edit_personalInfo.component';
 //CORE_REFERENCE_IMPORT-claims_registerComponent
 import { claims_registerComponent } from '../components/Admin claims/claims_register.component';
 //CORE_REFERENCE_IMPORT-authorizationService
@@ -94,6 +96,8 @@ export const appDeclarations = [
   view_paymentsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-clientDasbhoardComponent
   clientDasbhoardComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-edit_personalInfoComponent
+  edit_personalInfoComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claims_registerComponent
   claims_registerComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claimsComponent
@@ -164,6 +168,7 @@ export const appRoutes = [
       { path: 'claims', component: claimsComponent },
       { path: 'register', component: registerComponent },
       { path: 'view-payments', component: view_paymentsComponent },
+      { path: 'edit-personalinfo', component: edit_personalInfoComponent },
     ],
   },
   { path: 'DOAServices', component: landingComponent },

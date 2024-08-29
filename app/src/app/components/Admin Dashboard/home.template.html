@@ -32,7 +32,7 @@
     <div fxLayout="column" style="width:98%; border: 1.5px solid #124e52;">
       <table mat-table [dataSource]="page.table" *ngIf="page.table.length &gt; 0" matSort class="table-width-fix">
         <tr mat-header-row *matHeaderRowDef="[&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;policyNumber&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;]"></tr>
-        <tr mat-row (click)="setClientData(row)" *matRowDef="let row; columns: [&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;policyNumber&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;];"></tr>
+        <tr mat-row (click)="setClientData(row)" (click)="getRow(row)" *matRowDef="let row; columns: [&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;policyNumber&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;];"></tr>
 
         <ng-container matColumnDef="firstName">
           <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
@@ -67,7 +67,7 @@
 </div>
 <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-menu #menu="matMenu"><button mat-menu-item>
       <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
-        <div fxLayout="column wrap" class="table-icons" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="yellow-color">edit</mat-icon></div>
+        <div fxLayout="column wrap" class="table-icons" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="yellow-color" routerLink="/dashboard/edit-personalinfo">edit</mat-icon></div>
         <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
           <div>
             <h3 class="no-margin blue-color">Edit details</h3>

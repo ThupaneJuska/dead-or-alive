@@ -1,0 +1,212 @@
+<div fxLayout="column wrap" style="height:100%" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column " style="height:100%" class="scroller" fxLayoutAlign="start stretch" [fxShow]="true"><mat-accordion style="margin-bottom:2em">
+      <mat-expansion-panel style="style: background: #BDBDBD;margin: 8px;" (opened)="true" (closed)="false">
+        <mat-expansion-panel-header>
+
+          <mat-panel-title>
+            <strong> Personal Details</strong>
+          </mat-panel-title></mat-expansion-panel-header>
+        <form [formGroup]="page.formdata">
+          <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+                <mat-error align="start" *ngIf="page.formdata.controls.firstName?.errors?.required">Name is Required</mat-error>
+              </mat-form-field>
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+                <mat-error align="start" *ngIf="page.formdata.controls.lastName?.errors?.required">Last Name is required</mat-error>
+              </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="ID Number" [required]="false" formControlName="idNumber" readonly="idNumber" [disabled]="false">
+
+              </mat-form-field>
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Gender" [required]="false" formControlName="gender" readonly="gender" [disabled]="false">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Email" [required]="false" formControlName="email">
+
+              </mat-form-field>
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Cell phone" [required]="false" formControlName="cellphone">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Address" [required]="false" formControlName="address">
+
+              </mat-form-field>
+              <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Package Type" [required]="false" formControlName="packageType">
+
+              </mat-form-field>
+            </div>
+          </div>
+        </form>
+      </mat-expansion-panel><mat-expansion-panel style="style: background: #BDBDBD;margin: 8px;" (opened)="true" (closed)="false">
+        <mat-expansion-panel-header>
+
+          <mat-panel-title>
+            <strong>Beneficary Details</strong>
+          </mat-panel-title></mat-expansion-panel-header>
+        <form [formGroup]="page.beneficariesForm">
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Id Number" [required]="false" formControlName="idNumber">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Gender" [required]="false" formControlName="gender">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Email" [required]="false" formControlName="email">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Cellphone" [required]="false" formControlName="cellphone">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Relationship" [required]="false" formControlName="relationship">
+
+            </mat-form-field>
+          </div>
+        </form>
+        <form [formGroup]="page.beneficaries1Form" *ngIf="page.showbeneficaries1Form == true">
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Id Number" [required]="false" formControlName="idNumber">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Gender" [required]="false" formControlName="gender">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Email" [required]="false" formControlName="email">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Cellphone" [required]="false" formControlName="cellphone">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Relationship" [required]="false" formControlName="relationship">
+
+            </mat-form-field>
+          </div>
+        </form>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon (click)="openBeneficiries()">add_circle</mat-icon></div>
+      </mat-expansion-panel><mat-expansion-panel style="style: background: #BDBDBD;margin: 8px;" (opened)="true" (closed)="false">
+        <mat-expansion-panel-header>
+
+          <mat-panel-title>
+            <strong>Dependency Details</strong>
+          </mat-panel-title></mat-expansion-panel-header>
+        <form [formGroup]="page.dependencyForm">
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Id Number" [required]="false" formControlName="idNumber">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Gender" [required]="false" formControlName="gender">
+
+            </mat-form-field>
+          </div>
+        </form>
+        <form [formGroup]="page.dependency1Form" *ngIf="page.showdependencies1Form == true">
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Id Number" [required]="false" formControlName="idNumber">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Gender" [required]="false" formControlName="gender">
+
+            </mat-form-field>
+          </div>
+        </form>
+        <form [formGroup]="page.dependency2Form" *ngIf="page.showdependencies1Form == true">
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="First Name" [required]="false" formControlName="firstName">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Last Name" [required]="false" formControlName="lastName">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutGap="10em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Id Number" [required]="false" formControlName="idNumber">
+
+            </mat-form-field>
+            <mat-form-field [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Gender" [required]="false" formControlName="gender">
+
+            </mat-form-field>
+          </div>
+        </form>
+        <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon (click)="openDependencies()">add_circle</mat-icon></div>
+      </mat-expansion-panel></mat-accordion>
+    <div fxLayout="row wrap" style="height:5%" fxLayoutGap="2em" fxLayoutAlign="center center" [fxShow]="true"><button mat-raised-button routerLink="/dashboard/home">Cancel</button><button mat-raised-button (click)="update()">Submit</button></div>
+  </div>
+</div>

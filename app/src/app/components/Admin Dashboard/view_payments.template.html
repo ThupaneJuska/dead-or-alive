@@ -17,7 +17,7 @@
     </div>
   </div>
   <div fxLayout="row wrap" style="margin-bottom: 1em;" fxLayoutAlign="center stretch" [fxShow]="true" *ngIf="page.table.length &lt; 1"><img imgSrc="/Web/images/D.O.A-logo.png" width="37%"></div>
-  <div fxLayout="row wrap" class="FullHeight full-width" fxLayoutAlign="center space-between" [fxShow]="true">
+  <div fxLayout="row wrap" class="FullHeight full-width" fxLayoutAlign="center space-between" [fxShow]="true" *ngIf="page.table.length &gt; 0">
     <div fxLayout="column" style="width:98%; border: 1.5px solid #124e52;">
       <table mat-table [dataSource]="page?.table" matSort class="table-width-fix">
         <tr mat-header-row *matHeaderRowDef="[&apos;amount&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;,&apos;policyNumber&apos;]"></tr>

@@ -1143,6 +1143,12 @@
                     "_value": "true",
                     "_type": "kv",
                     "_attrDef": "p"
+                },
+                {
+                    "_key": "*ngIf",
+                    "_value": "page.table.length > 0",
+                    "_type": "kv",
+                    "_attrDef": "c"
                 }
             ],
             "7696fbc1-c06e-a703-1422-24b863b7ae48": {
@@ -1612,7 +1618,7 @@
                                 "sd_jjzcP5piDwerUvHK"
                             ],
                             "_type": "a",
-                            "_attrDef": "p",
+                            "_attrDef": "c",
                             "_visibility": false
                         }
                     ]

@@ -7,9 +7,11 @@ import { AfterViewInit, Component, Injector, ViewChild } from '@angular/core'; /
 import { FormBuilder } from '@angular/forms'; //_splitter_
 import { MatPaginator } from '@angular/material/paginator'; //_splitter_
 import { MatSort } from '@angular/material/sort'; //_splitter_
+import { Router } from '@angular/router'; //_splitter_
 import { SDPageCommonService } from 'app/n-services/sd-page-common.service'; //_splitter_
 import { SDBaseService } from 'app/n-services/SDBaseService'; //_splitter_
 import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'; //_splitter_
+import { variables } from 'app/sd-services/variables'; //_splitter_
 //append_imports_end
 
 @Component({
@@ -20,7 +22,7 @@ import { NeuServiceInvokerService } from 'app/n-services/service-caller.service'
   ],
 })
 export class homeComponent implements AfterViewInit {
-  @ViewChild(MatSort)
+  @ViewChild(MatSort, { read: MatSort })
   public MatSort: any = null;
   @ViewChild(MatPaginator, { read: MatPaginator })
   public MatPaginator: any = null;
@@ -105,18 +107,33 @@ export class homeComponent implements AfterViewInit {
     }
   }
 
-  viewPayments(index: any = undefined, ...others) {
+  setClientData(row: any = undefined, ...others) {
     let bh: any = {};
     try {
       bh = this.__page_injector__
         .get(SDPageCommonService)
         .constructFlowObject(this);
-      bh.input = { index };
+      bh.input = { row };
       bh.local = {};
-      bh = this.sd_QChKdOVb4gfQJb18(bh);
-      //appendnew_next_viewPayments
+      bh = this.sd_iLkoHwTtrAd37cM8(bh);
+      //appendnew_next_setClientData
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_yN9biohu3MCF1RRs');
+    }
+  }
+
+  goToViewPayment(...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = {};
+      bh.local = {};
+      bh = this.sd_WnahUlnrdMBkCHsS(bh);
+      //appendnew_next_goToViewPayment
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_oYuxO86FKvA3jf09');
     }
   }
   //appendnew_flow_homeComponent_start
@@ -348,14 +365,33 @@ export class homeComponent implements AfterViewInit {
     }
   }
 
-  sd_QChKdOVb4gfQJb18(bh) {
+  async sd_iLkoHwTtrAd37cM8(bh) {
     try {
-      const page = this.page;
-      console.log('index ==>', bh.input.index);
-      //appendnew_next_sd_QChKdOVb4gfQJb18
+      const variablesInstance: variables =
+        this.__page_injector__.get(variables);
+
+      let outputVariables = await variablesInstance.setVariable(bh.input.row);
+
+      //appendnew_next_sd_iLkoHwTtrAd37cM8
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_QChKdOVb4gfQJb18');
+      return this.errorHandler(bh, e, 'sd_iLkoHwTtrAd37cM8');
+    }
+  }
+
+  async sd_WnahUlnrdMBkCHsS(bh) {
+    try {
+      const { paramObj: qprm, path: path } =
+        this.sdService.getPathAndQParamsObj('/dashboard/view-payments');
+      await this.__page_injector__
+        .get(Router)
+        .navigate([this.sdService.formatPathWithParams(path, undefined)], {
+          queryParams: Object.assign(qprm, ''),
+        });
+      //appendnew_next_sd_WnahUlnrdMBkCHsS
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_WnahUlnrdMBkCHsS');
     }
   }
 

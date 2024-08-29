@@ -140,20 +140,21 @@ export const appRoutes = [
   {
     path: 'dashboard',
     component: dashboardComponent,
+    canActivate: [authorizationService],
     children: [
       { path: 'home', component: homeComponent },
       { path: 'schedules', component: schedulesComponent },
+      { path: 'claim_register', component: claims_registerComponent },
       { path: 'claims', component: claimsComponent },
       { path: 'register', component: registerComponent },
     ],
   },
   { path: 'DOAServices', component: landingComponent },
-  { path: 'call', component: contact_usComponent },
+  { path: 'contact_us', component: contact_usComponent },
   { path: 'login', component: loginComponent },
   { path: 'forgot-password', component: forgot_passwordComponent },
   { path: 'verify-code', component: verify_codeComponent },
   { path: 'reset-password', component: reset_passwordComponent },
-  { path: 'register', component: registerComponent },
   { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

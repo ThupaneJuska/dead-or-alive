@@ -554,7 +554,7 @@
                         },
                         {
                             "_key": "routerLink",
-                            "_value": "",
+                            "_value": "/dashboard/claim_register",
                             "_type": "kv",
                             "_attrDef": "p"
                         }

@@ -13,8 +13,16 @@
                     "component": "schedulesComponent"
                 },
                 {
-                    "path": "claim_form",
+                    "path": "claim_register",
                     "component": "claims_registerComponent"
+                },
+                {
+                    "path": "claims",
+                    "component": "claimsComponent"
+                },
+                {
+                    "path": "register",
+                    "component": "registerComponent"
                 }
             ],
             "canActivate": {
@@ -27,7 +35,7 @@
             "component": "landingComponent"
         },
         {
-            "path": "call",
+            "path": "contact_us",
             "component": "contact_usComponent"
         },
         {
@@ -45,10 +53,6 @@
         {
             "component": "reset_passwordComponent",
             "path": "reset-password"
-        },
-        {
-            "component": "registerComponent",
-            "path": "register"
         },
         {
             "path": "''",

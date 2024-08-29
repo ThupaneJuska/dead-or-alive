@@ -2703,7 +2703,7 @@
                         },
                         {
                             "_key": "style",
-                            "_value": "width:89%",
+                            "_value": "width:89%;overflow-y:scroll;",
                             "_type": "kv",
                             "_attrDef": "p"
                         },

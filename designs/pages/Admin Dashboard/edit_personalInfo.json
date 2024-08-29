@@ -1,0 +1,502 @@
+[
+    {
+        "id": "sd_aszQuLCFTMEUXpR4",
+        "type": "tab",
+        "createdDate": "2024-08-27T10:07:31.270Z",
+        "label": "edit_personalInfo",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "edit_personalInfoComponent"
+    },
+    {
+        "id": "sd_GiOL8QuTONvO1QYL",
+        "type": "OnInit",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_GiOL8QuTONvO1QYL",
+        "category": "Lifecycle Events",
+        "x": 25,
+        "y": 60,
+        "wires": [
+            [
+                "sd_gVQaHXs38htCSDBJ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "edit_personalInfoComponent"
+    },
+    {
+        "id": "sd_Y3mN2lQwd5HnEduh",
+        "type": "PageVariables",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "results",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "formdata",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "beneficaries1Form",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "beneficariesForm",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "dependencyForm",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "dependency1Form",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "dependency2Form",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "showbeneficaries1Form",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "showdependencies1Form",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "false"
+                }
+            },
+            {
+                "textIp": "counter",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": "0"
+                }
+            },
+            {
+                "textIp": "showdependencies2Form",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": "false"
+                }
+            }
+        ],
+        "functionName": "sd_Y3mN2lQwd5HnEduh",
+        "category": "Function",
+        "x": 205,
+        "y": 60,
+        "wires": [
+            [
+                "sd_JfSFbebXgEzrA6yw"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_esjR1J0mKRyRAwFA",
+        "type": "Environment",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdUrl"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_esjR1J0mKRyRAwFA",
+        "category": "General",
+        "x": 285,
+        "y": 240,
+        "wires": [
+            [
+                "sd_N2zAqcAwssUX9pC6"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_N2zAqcAwssUX9pC6",
+        "type": "Script",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdUrl + 'update/'+`${page.user._id}` ",
+        "functionName": "sd_N2zAqcAwssUX9pC6",
+        "category": "Function",
+        "x": 385,
+        "y": 240,
+        "wires": [
+            [
+                "sd_bMnbUq5poe9SegbD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_bMnbUq5poe9SegbD",
+        "type": "HttpRequest",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "get",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "bh.structuredData.value",
+        "reqBodyObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "structuredData.value"
+        },
+        "resultMapping": "this.page.results",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "results"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_bMnbUq5poe9SegbD",
+        "category": "HTTP",
+        "x": 485,
+        "y": 240,
+        "wires": [
+            [
+                "sd_CrzHebrXy1FWqqr3"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_CrzHebrXy1FWqqr3",
+        "type": "Script",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"results\", page.results)\n\n",
+        "functionName": "sd_CrzHebrXy1FWqqr3",
+        "category": "Function",
+        "x": 585,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_gVQaHXs38htCSDBJ",
+        "type": "UseDependency",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "FormControl",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "FormGroup",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "Validators",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/forms",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_gVQaHXs38htCSDBJ",
+        "category": "Function",
+        "x": 120,
+        "y": 60,
+        "wires": [
+            [
+                "sd_Y3mN2lQwd5HnEduh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_JfSFbebXgEzrA6yw",
+        "type": "Storage",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "userData"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "userData"
+        },
+        "functionName": "sd_JfSFbebXgEzrA6yw",
+        "category": "Storage",
+        "x": 285,
+        "y": 60,
+        "wires": [
+            [
+                "sd_ECrTSDWg9bec5qWR"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_ECrTSDWg9bec5qWR",
+        "type": "Script",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"userData==>\",page.userData)\n//console.log(\"depe\", page.userData.dependencies)\n\npage.ben1 = page.userData.beneficaries[0]\npage.ben2 = page.userData.beneficaries[1]\n//console.log(\"ben1\", page.ben1)\n//console.log(\"ben2\", page.ben2)\npage.depe1 = page.userData.dependencies[0]\npage.depe2 = page.userData.dependencies[1]\npage.depe3 = page.userData.dependencies[2]\n//console.log(\"depe1\", page.depe1)\n\npage.formdata = new FormGroup({\n    firstName: new FormControl(page.userData?.firstName, [Validators.required,Validators.minLength(18),Validators.maxLength(25)]),\n   lastName: new FormControl(page.userData?.lastName, [Validators.required,Validators.minLength(20),Validators.maxLength(80)]),\n  cellphone: new FormControl(page.userData?.cellphone, [Validators.required]),\n    idNumber: new FormControl(page.userData?.idNumber || '', [Validators.required]),\n    gender: new FormControl(page.userData?.gender || '', [Validators.required]),\n    address: new FormControl(page.userData?.address || '', [Validators.required]),\n    email: new FormControl(page.userData?.email || '', [Validators.required]),\n    packageType: new FormControl(page.userData?.packageType || '', [Validators.required]),\n});\n\npage.beneficariesForm = new FormGroup({\n    firstName: new FormControl(page.ben1?.firstName || '', [Validators.required]),\n    lastName: new FormControl(page.ben1?.lastName || '', [Validators.required]),\n    idNumber: new FormControl(page.ben1?.idNumber || '', [Validators.required]),\n    gender: new FormControl(page.ben1?.gender || '', [Validators.required]),\n    email: new FormControl(page.ben1?.email || '', [Validators.required]),\n    cellphone: new FormControl(page.ben1?.cellphone || '', [Validators.required]),\n    relationship: new FormControl(page.ben1?.relationship || '', [Validators.required]),\n})\npage.beneficaries1Form = new FormGroup({\n    firstName: new FormControl(page.ben2.firstName),\n    lastName: new FormControl(page.ben2.lastName),\n    idNumber: new FormControl(page.ben2.idNumber),\n    gender: new FormControl(page.ben2.gender),\n    email: new FormControl(page.ben2.email),\n    cellphone: new FormControl(page.ben2.cellphone),\n    relationship: new FormControl(page.ben2.relationship),\n})\n\npage.dependencyForm  = new FormGroup({\n      firstName: new FormControl(page.depe1?.firstName ),\n    lastName: new FormControl(page.depe1?.lastName ),\n    gender: new FormControl(page.depe1?.gender ),\n     idNumber: new FormControl(page.depe1?.idNumber ),\n})\n\npage.dependency1Form  = new FormGroup({\n      firstName: new FormControl(page.depe2?.firstName || '', [Validators.required]),\n    lastName: new FormControl(page.depe2?.lastName || '', [Validators.required]),\n    gender: new FormControl(page.depe2?.gender || '', [Validators.required]),\n     idNumber: new FormControl(page.depe2?.idNumber || '', [Validators.required]),\n})\n\npage.dependency2Form  = new FormGroup({\n      firstName: new FormControl(page.depe3?.firstName || '', [Validators.required]),\n    lastName: new FormControl(page.depe3?.lastName || '', [Validators.required]),\n    gender: new FormControl(page.depe3?.gender || '', [Validators.required]),\n     idNumber: new FormControl(page.depe3?.idNumber || '', [Validators.required]),\n})\n\n//combine beneficaries\npage.beneficary = [page.beneficariesForm.value, page.beneficaries1Form.value ]\n\n//console.log(\"beneficaries\", page.beneficaries)\n\n//combine dependencies\npage.dependencies =[page.dependencyForm.value, page.dependency1Form.value, page.dependency2Form.value]\n//console.log(\"dependencies\", page.dependencies)\n",
+        "functionName": "sd_ECrTSDWg9bec5qWR",
+        "category": "Function",
+        "x": 385,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_86yneFfUNLGPQGtt",
+        "type": "PageStart",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "Update",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "update",
+        "category": "General",
+        "x": 60,
+        "y": 240,
+        "wires": [
+            [
+                "sd_FsVk6s2tPHK0ALhx"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "edit_personalInfoComponent"
+    },
+    {
+        "id": "sd_FsVk6s2tPHK0ALhx",
+        "type": "Script",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\nbh.structuredData = page.formdata.value\n\nbh.structuredData.beneficaries = page.beneficary\nconsole.log(page.beneficary)\n\nbh.structuredData.dependencies = page.dependencies\n\npage.ben2 = page.beneficaries1Form.value\nbh.structuredData.beneficaries[1] = page.ben2 \n\npage.depe2 = page.dependency1Form.value\nbh.structuredData.dependencies[1] = page.depe2\n\npage.depe3 = page.dependency2Form.value\nbh.structuredData.dependencies[2] = page.depe3\n \n\n\n// console.log(\"form\", page.formdata.value)\n\n// console.log(\"ben==>\", page.ben2)\nconsole.log(\"structured data: \", bh.structuredData)\n// console.log(\"ben value==>\", page.beneficaries1Form.value)\n\n\n",
+        "functionName": "sd_FsVk6s2tPHK0ALhx",
+        "category": "Function",
+        "x": 165,
+        "y": 240,
+        "wires": [
+            [
+                "sd_esjR1J0mKRyRAwFA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_UbfJ8q5a8V7xLZqx",
+        "type": "PageStart",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "openBeneficiries",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "openBeneficiries",
+        "category": "General",
+        "x": 80,
+        "y": 380,
+        "wires": [
+            [
+                "sd_5nhxWC6xzWqUMH6w"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "edit_personalInfoComponent"
+    },
+    {
+        "id": "sd_5nhxWC6xzWqUMH6w",
+        "type": "Script",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.showbeneficaries1Form = true\n//page.hideIcon = false\nconsole.log(\"form\", page.showbeneficaries1Form )\n\n",
+        "functionName": "sd_5nhxWC6xzWqUMH6w",
+        "category": "Function",
+        "x": 180,
+        "y": 380,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_AkNHYq7o3lsF76C8",
+        "type": "PageStart",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "openDependencies",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "openDependencies",
+        "category": "General",
+        "x": 80,
+        "y": 500,
+        "wires": [
+            [
+                "sd_WQQZU7S1MJVM0lrL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "edit_personalInfoComponent"
+    },
+    {
+        "id": "sd_WQQZU7S1MJVM0lrL",
+        "type": "Script",
+        "z": "sd_aszQuLCFTMEUXpR4",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.showdependencies1Form = true\n//page.hideIcon = false\nconsole.log(\"form\", page.showdependencies1Form )\n\npage.counter++\nif(page.counter == 2) {\n    page.showdependencies2Form = true\n   \n}",
+        "functionName": "sd_WQQZU7S1MJVM0lrL",
+        "category": "Function",
+        "x": 200,
+        "y": 500,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "edit_personalInfoComponent",
+        "generated": true
+    }
+]

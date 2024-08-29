@@ -13,8 +13,12 @@
                     "component": "schedulesComponent"
                 },
                 {
-                    "path": "claim_form",
-                    "component": "claims_registerComponent"
+                    "component": "registerComponent",
+                    "path": "register"
+                },
+                {
+                    "path": "edit-personalinfo",
+                    "component": "edit_personalInfoComponent"
                 }
             ],
             "canActivate": {
@@ -24,15 +28,23 @@
         },
         {
             "path": "DOAServices",
-            "component": "landingComponent"
+            "component": "landingComponent",
+            "canActivate": {
+                "edited": true,
+                "value": ""
+            }
         },
         {
-            "path": "call",
+            "path": "contact-us",
             "component": "contact_usComponent"
         },
         {
             "path": "login",
-            "component": "loginComponent"
+            "component": "loginComponent",
+            "canActivate": {
+                "edited": true,
+                "value": ""
+            }
         },
         {
             "path": "forgot-password",

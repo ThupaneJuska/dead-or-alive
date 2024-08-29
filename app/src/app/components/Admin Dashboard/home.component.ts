@@ -104,6 +104,21 @@ export class homeComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_k3j5KbTZTS6UvlPT');
     }
   }
+
+  getRow(index: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { index };
+      bh.local = {};
+      bh = this.sd_vjvOEe8HldDTwwSd(bh);
+      //appendnew_next_getRow
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_XA6taVXHZXbQwG6V');
+    }
+  }
   //appendnew_flow_homeComponent_start
 
   sd_E9QbOlnVduPNV5MO_1(bh) {
@@ -330,6 +345,28 @@ export class homeComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_cDHK0KhL1bspOFcv');
+    }
+  }
+
+  sd_vjvOEe8HldDTwwSd(bh) {
+    try {
+      const page = this.page;
+      console.log('row data==>', bh.input.index);
+      bh = this.sd_1IR3bJIDZWBKYOBA(bh);
+      //appendnew_next_sd_vjvOEe8HldDTwwSd
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_vjvOEe8HldDTwwSd');
+    }
+  }
+
+  sd_1IR3bJIDZWBKYOBA(bh) {
+    try {
+      sessionStorage.setItem('userData', JSON.stringify(bh.input.index));
+      //appendnew_next_sd_1IR3bJIDZWBKYOBA
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_1IR3bJIDZWBKYOBA');
     }
   }
 

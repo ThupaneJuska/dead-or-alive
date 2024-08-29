@@ -551,5 +551,91 @@
         "generateNext": false,
         "serviceName": "homeComponent",
         "generated": true
+    },
+    {
+        "id": "sd_XA6taVXHZXbQwG6V",
+        "type": "PageStart",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "getRow",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "index",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "getRow",
+        "category": "General",
+        "x": 80,
+        "y": 480,
+        "wires": [
+            [
+                "sd_vjvOEe8HldDTwwSd"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_vjvOEe8HldDTwwSd",
+        "type": "Script",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"row data==>\", bh.input.index)",
+        "functionName": "sd_vjvOEe8HldDTwwSd",
+        "category": "Function",
+        "x": 165,
+        "y": 480,
+        "wires": [
+            [
+                "sd_1IR3bJIDZWBKYOBA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_1IR3bJIDZWBKYOBA",
+        "type": "Storage",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "setItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "userData"
+        },
+        "value": {
+            "type": "bh.input",
+            "value": "index"
+        },
+        "resultMapping": {},
+        "functionName": "sd_1IR3bJIDZWBKYOBA",
+        "category": "Storage",
+        "x": 265,
+        "y": 480,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
     }
 ]

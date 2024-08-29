@@ -54,14 +54,21 @@ bh-contact_us{
      border-radius: 10px !important;
     height: 390px;
 overflow: hidden;
-margin-bottom: 10px;
+
+}
+.margin-10{
+    padding-bottom: 10px;
 }
 .CARDS:hover {
+    //  border: solid 1px #124e5285;
+
+    // padding-bottom: 10px;
      height: 390px;
-         box-sizing: unset !important;
-      border-bottom: 4.5px solid #124e52 !important;
-     border-right: 4.5px solid #124e52 !important;
-    border-radius: 10px !important;
+        //  box-sizing: unset !important;
+      border-bottom: 1.5px solid #124e52 !important;
+     border-right: 1.5px solid #124e52 !important;
+    // border-radius: 10px !important;
+
 }
 .toolbar {
   position: fixed;
@@ -97,6 +104,13 @@ margin-bottom: 10px;
 .CLAIMSCART :hover{
     border-bottom: solid 1px lightgrey;
     color: lightgrey;
+}
+.width-49{
+    width: 49%;
+}
+.scroller{
+ max-height: 600px;
+ overflow-y: auto;
 }
 // angel
 
@@ -295,6 +309,9 @@ width: 25%;
 
 .full-height {
     height: 100%;
+}
+.width-100px{
+    width:100px
 }
 
 //button styles

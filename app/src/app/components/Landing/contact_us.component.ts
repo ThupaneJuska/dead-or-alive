@@ -126,6 +126,7 @@ export class contact_usComponent {
         cellPhone: new FormControl('', [
           Validators.required,
           Validators.maxLength(10),
+          Validators.minLength(10),
           Validators.pattern(/^0(6|7|8){1}[0-9]{1}[0-9]{7}$/),
         ]),
         title: new FormControl(''),

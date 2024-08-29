@@ -237,7 +237,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"Form\", bh.input.form.form.status)\n",
+        "script": "// console.log(\"Form\", bh.input.form.form.status)\n",
         "functionName": "sd_aTFbyAc1RKygWOcE",
         "category": "Function",
         "x": 105,
@@ -335,9 +335,7 @@
         "x": 705,
         "y": 100,
         "wires": [
-            [
-                "sd_i2Jgl31qwu3RHkJP"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -377,9 +375,7 @@
         "x": 705,
         "y": 180,
         "wires": [
-            [
-                "sd_Iqjr01FHlpRey07B"
-            ]
+            []
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -415,7 +411,7 @@
         "functionName": "sd_SGMcpcrY4y3UKTKj",
         "category": "General",
         "x": 705,
-        "y": 260,
+        "y": 300,
         "wires": [
             [
                 "sd_iGycO4jnqKpix0R8"
@@ -466,7 +462,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.characterCount = bh.input.e.target.value.length;\n\nconsole.log(\"Character\", page.characterCount)",
+        "script": "page.characterCount = bh.input.e.target.value.length;\n\n// console.log(\"Character\", page.characterCount)",
         "functionName": "sd_3Oob5ybAQPyPJtB0",
         "category": "Function",
         "x": 160,
@@ -567,7 +563,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.loading = false\n\nconsole.log(\"Result login\", bh.result)",
+        "script": "page.loading = false\n\n// console.log(\"Result login\", bh.result)",
         "functionName": "sd_R2or05KgG4F0SznO",
         "category": "Function",
         "x": 525,
@@ -592,7 +588,7 @@
         "path": "/dashboard/home",
         "functionName": "sd_iGycO4jnqKpix0R8",
         "category": "Navigation",
-        "x": 800,
+        "x": 825,
         "y": 260,
         "wires": [
             [
@@ -614,7 +610,7 @@
         "script": "console.log(\"res\", bh.result)",
         "functionName": "sd_AID4OaedpjFFkl1s",
         "category": "Function",
-        "x": 900,
+        "x": 905,
         "y": 260,
         "wires": [
             [
@@ -642,9 +638,8 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "loginComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "loginComponent"
     },
     {
         "id": "sd_i2Jgl31qwu3RHkJP",
@@ -662,9 +657,8 @@
             []
         ],
         "__n_excludedFromValidation__": {},
-        "generateNext": false,
-        "serviceName": "loginComponent",
-        "generated": true
+        "generateNext": true,
+        "serviceName": "loginComponent"
     },
     {
         "id": "sd_QCpkMADtxfSqgHXt",
@@ -687,7 +681,7 @@
         "resultMapping": {},
         "functionName": "sd_QCpkMADtxfSqgHXt",
         "category": "Storage",
-        "x": 1020,
+        "x": 985,
         "y": 260,
         "wires": [
             []

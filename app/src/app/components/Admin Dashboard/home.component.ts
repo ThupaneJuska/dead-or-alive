@@ -104,6 +104,21 @@ export class homeComponent implements AfterViewInit {
       return this.errorHandler(bh, e, 'sd_k3j5KbTZTS6UvlPT');
     }
   }
+
+  viewPayments(index: any = undefined, ...others) {
+    let bh: any = {};
+    try {
+      bh = this.__page_injector__
+        .get(SDPageCommonService)
+        .constructFlowObject(this);
+      bh.input = { index };
+      bh.local = {};
+      bh = this.sd_QChKdOVb4gfQJb18(bh);
+      //appendnew_next_viewPayments
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_yN9biohu3MCF1RRs');
+    }
+  }
   //appendnew_flow_homeComponent_start
 
   sd_E9QbOlnVduPNV5MO_1(bh) {
@@ -330,6 +345,17 @@ export class homeComponent implements AfterViewInit {
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_cDHK0KhL1bspOFcv');
+    }
+  }
+
+  sd_QChKdOVb4gfQJb18(bh) {
+    try {
+      const page = this.page;
+      console.log('index ==>', bh.input.index);
+      //appendnew_next_sd_QChKdOVb4gfQJb18
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_QChKdOVb4gfQJb18');
     }
   }
 

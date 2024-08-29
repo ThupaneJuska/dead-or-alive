@@ -545,5 +545,58 @@
         "generateNext": false,
         "serviceName": "homeComponent",
         "generated": true
+    },
+    {
+        "id": "sd_yN9biohu3MCF1RRs",
+        "type": "PageStart",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "view payments",
+        "outputs": 1,
+        "inputVariables": [
+            {
+                "key": "index",
+                "defaultValue": {
+                    "type": "any",
+                    "value": ""
+                },
+                "output": false
+            }
+        ],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "viewPayments",
+        "category": "General",
+        "x": 85,
+        "y": 460,
+        "wires": [
+            [
+                "sd_QChKdOVb4gfQJb18"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_QChKdOVb4gfQJb18",
+        "type": "Script",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "console.log(\"index ==>\", bh.input.index)",
+        "functionName": "sd_QChKdOVb4gfQJb18",
+        "category": "Function",
+        "x": 185,
+        "y": 460,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
     }
 ]

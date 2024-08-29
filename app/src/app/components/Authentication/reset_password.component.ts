@@ -264,6 +264,8 @@ export class reset_passwordComponent implements OnChanges {
       bh.url = page.ssdUrl + `reset-password/${page.dataFromSession._id}`;
       console.log('Dataa', bh.url);
       page.loading = true;
+      delete bh.input.form.value.confirmPassword;
+
       bh = this.sd_mgR6ulEmuPpuCjHQ(bh);
       //appendnew_next_sd_PiexsvqTOWM62dBX
       return bh;
@@ -369,6 +371,7 @@ export class reset_passwordComponent implements OnChanges {
     try {
       const page = this.page;
       page.characterCount = bh.input.e.target.value.length;
+      bh.input.e.target.value = bh.input.e.target.value.replace(/[^\d]/g, '');
 
       console.log('Character', page.characterCount);
       //appendnew_next_sd_5u1T3qXyJGc45UDE

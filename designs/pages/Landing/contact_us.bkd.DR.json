@@ -2496,6 +2496,22 @@
                                                 "toggleData": [],
                                                 "selected": "start"
                                             }
+                                        },
+                                        {
+                                            "input1": "page.formContact.controls.cellPhone?.errors?.minLenght",
+                                            "input2": "Enter a minimum of 10 number",
+                                            "toggle": {
+                                                "toggleData": [],
+                                                "selected": "start"
+                                            }
+                                        },
+                                        {
+                                            "input1": "page.formContact.controls.cellPhone?.errors?.maxLenght",
+                                            "input2": "Enter maximum of 10",
+                                            "toggle": {
+                                                "toggleData": [],
+                                                "selected": "start"
+                                            }
                                         }
                                     ],
                                     "_type": "a",

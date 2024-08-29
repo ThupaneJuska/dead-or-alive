@@ -1,0 +1,47 @@
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="column wrap" class="kg-half-width" fxLayoutAlign="center stretch" [fxShow]="true">
+      <div fxLayout="column wrap" class="margin-top-10px margin-left-1em search" fxLayoutAlign="center stretch" [fxShow]="true">
+        <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+          <input matInput type="Search" placeholder="Search" [required]="false" (keydown)="onFilter($event)">
+          <mat-icon matPrefix>search</mat-icon>
+        </mat-form-field>
+      </div>
+    </div>
+    <div fxLayout="column wrap" fxLayoutAlign="center start" [fxShow]="true"><button mat-raised-button color="accent" (click)="openPaymentForm()">Log payment</button></div>
+  </div>
+  <div fxLayout="row wrap" class="margin-left-1em" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div>
+      <h3 class="blue-color" *ngIf="page.table.length &gt; 0"> Payment history for {{page.userData.firstName}} {{page.userData.lastName}}.</h3>
+      <h3 class="blue-color" *ngIf="page.table.length &lt; 1">{{page.userData.firstName}} {{page.userData.lastName}} has <span class="teal-color">0</span> payments.</h3>
+    </div>
+  </div>
+  <div fxLayout="row wrap" style="margin-bottom: 1em;" fxLayoutAlign="center stretch" [fxShow]="true" *ngIf="page.table.length &lt; 1"><img imgSrc="/Web/images/D.O.A-logo.png" width="37%"></div>
+  <div fxLayout="row wrap" class="FullHeight full-width" fxLayoutAlign="center space-between" [fxShow]="true" *ngIf="page.table.length &gt; 0">
+    <div fxLayout="column" style="width:98%; border: 1.5px solid #124e52;">
+      <table mat-table [dataSource]="page?.table" matSort class="table-width-fix">
+        <tr mat-header-row *matHeaderRowDef="[&apos;amount&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;,&apos;policyNumber&apos;]"></tr>
+        <tr mat-row *matRowDef="let row; columns: [&apos;amount&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;,&apos;policyNumber&apos;];"></tr>
+
+        <ng-container matColumnDef="amount">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Amount</th>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.amount}}</td>
+        </ng-container>
+
+        <ng-container matColumnDef="af49d494-9b3b-db7d-6ff7-3c53fb4d255e">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Date</th>
+          <td mat-cell *matCellDef="let table; let i = index;" (rowclick)="viewPayments(row)">
+            <div>
+              {{table.date| date}}
+            </div>
+          </td>
+        </ng-container>
+
+        <ng-container matColumnDef="policyNumber">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Policy number</th>
+          <td mat-cell *matCellDef="let table; let i = index;">{{table.policyNumber}}</td>
+        </ng-container>
+      </table>
+    </div>
+  </div>
+</div>

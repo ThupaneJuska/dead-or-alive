@@ -106,8 +106,7 @@ export class loginComponent {
 
   sd_aTFbyAc1RKygWOcE(bh) {
     try {
-      const page = this.page;
-      console.log('Form', bh.input.form.form.status);
+      const page = this.page; // console.log("Form", bh.input.form.form.status)
 
       bh = this.sd_rkB5QqUgrAKv3a1e(bh);
       //appendnew_next_sd_aTFbyAc1RKygWOcE
@@ -203,7 +202,7 @@ export class loginComponent {
       const page = this.page;
       page.loading = false;
 
-      console.log('Result login', bh.result);
+      // console.log("Result login", bh.result)
       bh = this.sd_buYzaxDxyjRaVxqv(bh);
       //appendnew_next_sd_R2or05KgG4F0SznO
       return bh;
@@ -252,22 +251,10 @@ export class loginComponent {
           horizontalPosition: 'center',
           verticalPosition: 'bottom',
         });
-      bh = this.sd_i2Jgl31qwu3RHkJP(bh);
       //appendnew_next_sd_DrwpTKFaF2PfX0uE
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_DrwpTKFaF2PfX0uE');
-    }
-  }
-
-  sd_i2Jgl31qwu3RHkJP(bh) {
-    try {
-      const page = this.page;
-      console.log('res', bh.result);
-      //appendnew_next_sd_i2Jgl31qwu3RHkJP
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_i2Jgl31qwu3RHkJP');
     }
   }
 
@@ -279,22 +266,10 @@ export class loginComponent {
         horizontalPosition: 'center',
         verticalPosition: 'bottom',
       });
-      bh = this.sd_Iqjr01FHlpRey07B(bh);
       //appendnew_next_sd_vl5FCxtDP6xLD1fe
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_vl5FCxtDP6xLD1fe');
-    }
-  }
-
-  sd_Iqjr01FHlpRey07B(bh) {
-    try {
-      const page = this.page;
-      console.log('res', bh.result);
-      //appendnew_next_sd_Iqjr01FHlpRey07B
-      return bh;
-    } catch (e) {
-      return this.errorHandler(bh, e, 'sd_Iqjr01FHlpRey07B');
     }
   }
 
@@ -358,7 +333,7 @@ export class loginComponent {
       const page = this.page;
       page.characterCount = bh.input.e.target.value.length;
 
-      console.log('Character', page.characterCount);
+      // console.log("Character", page.characterCount)
       //appendnew_next_sd_3Oob5ybAQPyPJtB0
       return bh;
     } catch (e) {

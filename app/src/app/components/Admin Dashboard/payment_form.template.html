@@ -1,0 +1,58 @@
+<div fxLayout="column wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="row wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true"><img imgSrc="/Web/images/D.O.A-logo.png" style="height: 70px;" width="90px;">
+    <div>
+      <h2 class="blue-color flex center-center full-width">Log a payment</h2>
+    </div>
+  </div>
+  <div fxLayout="row wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true">
+    <form [formGroup]="page.paymentForm" class="full-width">
+      <div fxLayout="row wrap" class="full-width" fxLayoutAlign="start stretch" [fxShow]="true"><mat-form-field class="full-width" [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;">
+          <mat-label></mat-label>
+          <mat-select formControlName="event" placeholder="Event" [required]="true">
+            <mat-option [value]="&apos;Paid&apos;" disabled="false">Paid</mat-option><mat-option [value]="&apos;Missed payment&apos;" disabled="false">Missed payment</mat-option>
+          </mat-select>
+          <mat-error align="start" *ngIf="page.paymentForm.controls.event?.errors?.required">Event is <b>required</b></mat-error>
+        </mat-form-field></div>
+      <div fxLayout="row wrap" class="margin-top-10px full-width" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="width-48" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="name" value="{{page.userData.firstName}}" [required]="false" readonly="True" [disabled]="false">
+
+          </mat-form-field>
+        </div>
+        <div fxLayout="column wrap" class="width-48" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="surname" value="{{page.userData.lastName}}" [required]="false" readonly="True" [disabled]="false">
+
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="full-width" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="width-48" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="policy number" value="{{page.userData.policyNumber}}" [required]="false" readonly="True" [disabled]="false">
+
+          </mat-form-field>
+        </div>
+        <div fxLayout="column wrap" class="width-48" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="amount due" value="{{page.amount | currency:&apos;ZAR&apos;}}" [required]="false" readonly="True" [disabled]="false">
+
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="kg-margin-top-3em" fxLayoutAlign="space-between stretch" [fxShow]="true">
+        <div fxLayout="column wrap" class="width-48" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field class="full-width" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput placeholder="logged by" value="{{page.loggedInUser.email}}" [required]="false" readonly="True" [disabled]="false">
+
+          </mat-form-field>
+        </div>
+      </div>
+      <div fxLayout="row wrap" class="full-width" fxLayoutGap="1em" fxLayoutAlign="end stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="white-color light-blue-bg" (click)="close()">Cancel</button></div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><button mat-raised-button class="blue-color yellow-bg" (click)="logPayment()">Submit</button></div>
+      </div>
+    </form>
+  </div>
+</div>

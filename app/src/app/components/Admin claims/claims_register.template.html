@@ -1,11 +1,142 @@
-<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" fxFill>
-  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-      <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div>
-          Claim on behalf of </div>
-      </div>
-      <form></form>
+<div fxLayout="column " fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column " class="scroller" fxLayoutAlign="start stretch" [fxShow]="true">
+    <div fxLayout="row wrap" class="fullWidth" fxLayoutAlign="center center" [fxShow]="true">
+      <h2>
+        Claims Form -{{page.policyno}}</h2>
     </div>
+    <form [formGroup]="page.policyClaimsForm">
+      <div fxLayout="column wrap" style="padding-left:19px; padding-right:19px" fxLayoutAlign="start stretch" [fxShow]="true">
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label style="margin-bottom: 20px; ">
+              <b *ngIf="page.policyholder == true">Policy Holder Details</b>
+              <b *ngIf="page.beneficiary == true">Beneficiary Details</b></label></div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.beneficiary ==true"><mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+              <mat-label>Select Beneficiary Id Number</mat-label>
+              <mat-select placeholder="Select" [required]="false">
+                <ng-template ngFor let-option [ngForOf] let-i="index">
+                  <mat-option [value]></mat-option>
+                </ng-template>
+              </mat-select>
+
+            </mat-form-field></div>
+          <div fxLayout="row wrap" fxLayoutAlign="space-between space-between" [fxShow]="true">
+            <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Name" [required]="false" formControlName="firstName" readonly="True">
+
+            </mat-form-field>
+            <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Lastname" [required]="false" formControlName="lastName" readonly="true">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="space-between space-between" [fxShow]="true">
+            <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Idnum" [required]="false" formControlName="idNum" readonly="true">
+
+            </mat-form-field>
+            <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Gender" [required]="false" formControlName="gender" readonly="true">
+
+            </mat-form-field>
+          </div>
+          <div fxLayout="row wrap" fxLayoutAlign="space-between space-between" [fxShow]="true">
+            <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Pakage Type" [required]="false" formControlName="packageType" readonly="true">
+
+            </mat-form-field>
+            <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+              <input matInput placeholder="Payout Amount" [required]="false" formControlName="payoutAmount" readonly="true">
+
+            </mat-form-field>
+          </div>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label style="margin-bottom: 20px; ">
+              <b>Deceased Details</b></label></div>
+          <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.policyholder == true"><mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;">
+              <mat-label>Select Dependency Id Number</mat-label>
+              <mat-select placeholder="Select" [required]="false">
+                <ng-template ngFor let-option [ngForOf] let-i="index">
+                  <mat-option [value]></mat-option>
+                </ng-template>
+              </mat-select>
+
+            </mat-form-field></div>
+          <form [formGroup]="page.deceased">
+            <div fxLayout="row wrap" fxLayoutAlign="space-between space-between" [fxShow]="true">
+              <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Name" [required]="false" formControlName="firstName" readonly="true">
+
+              </mat-form-field>
+              <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Lastname" [required]="false" formControlName="lastName" readonly="true">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="space-between space-between" [fxShow]="true">
+              <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Idnum" [required]="false" formControlName="idNum" readonly="true">
+
+              </mat-form-field>
+              <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+                <input matInput placeholder="Gender" [required]="false" formControlName="gender" readonly="true">
+
+              </mat-form-field>
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <mat-form-field class="width-49" [appearance]="&apos;legacy&apos;">
+                <mat-label>Date of death</mat-label>
+                <input matInput placeholder="Date of Death" [matDatepicker]="picker" formControlName="dateOfDeath" [max]="page.date" [disabled]="false">
+                <mat-datepicker-toggle matSuffix [for]="picker" disabled="false"></mat-datepicker-toggle>
+                <mat-datepicker #picker [disabled]="false"></mat-datepicker>
+                <mat-error align="start" *ngIf="page.deceased.controls.dateOfDeath?.errors?.required">Date of Death is required</mat-error>
+              </mat-form-field>
+            </div>
+          </form>
+          <div fxLayout="column " fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="row wrap" fxLayoutAlign="start stretch" [fxShow]="true"><label style="margin-bottom: 20px; ">
+                <b>Required Documents</b></label></div>
+            <div style="display: flex;     flex-direction: column;     gap: 25px;">
+
+              <input type="file" id="upload1" (change)="upload1()" accept=".pdf" hidden required formControlName="idClaimer2">
+              <button class="width-100px"><label for="upload1">
+                  Upload ID Claimer
+                </label></button>
+              <mat-error *ngIf="page.policyClaimsForm.controls.idClaimer2.errors?.required">Please Upload File</mat-error>
+              <input type="file" id="upload2" (change)="upload2()" accept=".pdf" hidden required formControlName="idDeceased2">
+              <button class="width-100px"><label for="upload2">
+                  Upload ID Deceased
+
+                </label></button>
+              <mat-error *ngIf="page.policyClaimsForm.controls.idDeceased2.errors?.required">Please Upload File</mat-error>
+
+
+              <input type="file" id="upload3" (change)="upload3()" accept=".pdf" hidden required formControlName="deathCetificatify2">
+              <button class="width-100px"><label for="upload3">
+                  Upload Death Cetificatify
+
+                </label></button>
+              <mat-error *ngIf="page.policyClaimsForm.controls.deathCetificatify2.errors?.required">Please Upload File</mat-error>
+
+              <input type="file" id="upload4" (change)="upload4()" accept=".pdf" hidden required formControlName="bi16632">
+              <button class="width-100px"><label for="upload4">
+                  Upload bi1663
+
+                </label></button>
+              <mat-error *ngIf="page.policyClaimsForm.controls.bi16632.errors?.required">Please Upload File</mat-error>
+
+              <input type="file" id="upload5" (change)="upload5()" accept=".pdf" hidden required formControlName="bankDetails2">
+              <button class="width-100px"><label for="upload5">
+                  Upload Bank Details
+
+                </label></button>
+              <mat-error *ngIf="page.policyClaimsForm.controls.bankDetails2.errors?.required">Please Upload File</mat-error>
+
+            </div>
+            <div fxLayout="row wrap" fxLayoutAlign="center center" [fxShow]="true"><button mat-raised-button style="margin-top: 25px;     margin-bottom: 25px;    width: 124px;" color="accent" (click)="sd_IXCHRCQfCoHdrMK4()">Submit a Claim</button></div>
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </div>

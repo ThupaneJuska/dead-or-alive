@@ -92,8 +92,8 @@
         "flow_type": "sync",
         "functionName": "navItems",
         "category": "General",
-        "x": 60,
-        "y": 200,
+        "x": 65,
+        "y": 140,
         "wires": [
             [
                 "sd_MzHFd7vzx5yvrY4O"
@@ -113,8 +113,8 @@
         "script": "page.navItem = bh.input.index.label",
         "functionName": "sd_MzHFd7vzx5yvrY4O",
         "category": "Function",
-        "x": 145,
-        "y": 200,
+        "x": 150,
+        "y": 140,
         "wires": [
             []
         ],
@@ -144,10 +144,12 @@
         },
         "functionName": "sd_9ULu0EXL31v1xkfC",
         "category": "Storage",
-        "x": 345,
-        "y": 200,
+        "x": 365,
+        "y": 140,
         "wires": [
-            []
+            [
+                "sd_B01D0BB3EZJ9HeSh"
+            ]
         ],
         "__n_excludedFromValidation__": {},
         "generateNext": false,
@@ -167,8 +169,8 @@
         "flow_type": "sync",
         "functionName": "fetchLoggedInUser",
         "category": "General",
-        "x": 260,
-        "y": 200,
+        "x": 280,
+        "y": 140,
         "wires": [
             [
                 "sd_9ULu0EXL31v1xkfC"
@@ -206,6 +208,7 @@
         "serviceImportPath": "./",
         "startName": "fetchLoggedInUser",
         "inputParams": [],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_p4UqDj3fR0sGlSfo",
         "category": "General",
@@ -288,11 +291,11 @@
         "flow_type": "sync",
         "functionName": "getInitials",
         "category": "General",
-        "x": 60,
-        "y": 300,
+        "x": 65,
+        "y": 240,
         "wires": [
             [
-                "sd_aSuB2dcKyxmaLU6f"
+                "sd_cd1QrV5LjbnLQkbt"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -309,8 +312,8 @@
         "script": "page.name = page.name.charAt(0).toUpperCase();\npage.surname = page.surname.charAt(0).toUpperCase();\n",
         "functionName": "sd_aSuB2dcKyxmaLU6f",
         "category": "Function",
-        "x": 145,
-        "y": 300,
+        "x": 305,
+        "y": 240,
         "wires": [
             []
         ],
@@ -347,6 +350,7 @@
         "serviceImportPath": "./",
         "startName": "getInitials",
         "inputParams": [],
+        "accept_bh": false,
         "accept_csd": false,
         "functionName": "sd_pSDSROkDxza5Z3hc",
         "category": "General",
@@ -354,7 +358,7 @@
         "y": 40,
         "wires": [
             [
-                "sd_72RyqGrd9xSHuPJ4"
+                "sd_Oxa4JU6JEwuflFFv"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -372,11 +376,245 @@
         "script": "page.sideNav = [\n    {label: \"Home\", icon: \"home\", route: \"/dashboard/home\"},\n    {label: \"Claims\", icon: \"description\", route: \"/dashboard/claims\"},\n    {label: \"Register Client\", icon: \"edit\", route:\"/dashboard/register\"},\n    {label: \"Schedules\", icon: \"today\", route: \"/dashboard/schedules\"},\n    {label: \"Reports\", icon: \"folder_open\"},\n    {label: \"Audit Logs\", icon: \"trending_up\"}\n]",
         "functionName": "sd_72RyqGrd9xSHuPJ4",
         "category": "Function",
-        "x": 445,
+        "x": 625,
         "y": 40,
         "wires": [
             []
         ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_1Hc7CpWDYjpI9LYE",
+        "type": "PageStart",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "logout",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "logout",
+        "category": "General",
+        "x": 60,
+        "y": 420,
+        "wires": [
+            [
+                "sd_Fde7P8ntbklt8Rlj"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "dashboardComponent"
+    },
+    {
+        "id": "sd_Fde7P8ntbklt8Rlj",
+        "type": "Script",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "sessionStorage.clear()",
+        "functionName": "sd_Fde7P8ntbklt8Rlj",
+        "category": "Function",
+        "x": 145,
+        "y": 420,
+        "wires": [
+            [
+                "sd_6aBkqmJxzZVLrfOa"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6aBkqmJxzZVLrfOa",
+        "type": "Navigation",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/login",
+        "pathMap": "",
+        "pathparams": "",
+        "pathparamsMap": "",
+        "qparams": "",
+        "qparamsMap": "",
+        "qparamsArray": "",
+        "resultMapping": "",
+        "functionName": "sd_6aBkqmJxzZVLrfOa",
+        "category": "Navigation",
+        "x": 225,
+        "y": 420,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_SqXtYD2RjekqCj5k",
+        "type": "Script",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.sideNav = [\n    {label: \"Plan details\", icon: \"description\", route: \"/plan-details\"},\n    {label: \"Payment History\", icon: \"edit\", route:\"/payment-history\"},\n    {label: \"Claims\", icon: \"today\", route: \"/claims\"},\n]",
+        "functionName": "sd_SqXtYD2RjekqCj5k",
+        "category": "Function",
+        "x": 540,
+        "y": 140,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_cd1QrV5LjbnLQkbt",
+        "type": "PageSwitch",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "user.role",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.user.role",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "admin",
+                "vt": "str",
+                "gv": "\"admin\""
+            },
+            {
+                "t": "eq",
+                "v": "client",
+                "vt": "str",
+                "gv": "\"client\""
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 2,
+        "functionName": "sd_cd1QrV5LjbnLQkbt",
+        "category": "Function",
+        "x": 165,
+        "y": 240,
+        "wires": [
+            [
+                "sd_aSuB2dcKyxmaLU6f"
+            ],
+            [
+                "sd_FjqAocSbCmtINlLP"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_FjqAocSbCmtINlLP",
+        "type": "Script",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "page.name = (page.user.firstName?.charAt(0) || '').toUpperCase();\npage.surname = (page.user.lastName?.charAt(0) || '').toUpperCase();",
+        "functionName": "sd_FjqAocSbCmtINlLP",
+        "category": "Function",
+        "x": 305,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_Oxa4JU6JEwuflFFv",
+        "type": "PageSwitch",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "property": "user.role",
+        "propertyType": "this.page",
+        "propertyGv": "this.page.user.role",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "admin",
+                "vt": "str",
+                "gv": "\"admin\""
+            },
+            {
+                "t": "eq",
+                "v": "client",
+                "vt": "str",
+                "gv": "\"client\""
+            },
+            {
+                "t": "eq",
+                "v": "director",
+                "vt": "str",
+                "gv": "\"director\""
+            }
+        ],
+        "checkall": "false",
+        "repair": false,
+        "outputs": 3,
+        "functionName": "sd_Oxa4JU6JEwuflFFv",
+        "category": "Function",
+        "x": 525,
+        "y": 40,
+        "wires": [
+            [
+                "sd_72RyqGrd9xSHuPJ4"
+            ],
+            [
+                "sd_SqXtYD2RjekqCj5k"
+            ],
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "dashboardComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_B01D0BB3EZJ9HeSh",
+        "type": "Log",
+        "z": "sd_5GPzHp6kREM9zmOq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.user.role",
+        "functionName": "sd_B01D0BB3EZJ9HeSh",
+        "category": "General",
+        "x": 445,
+        "y": 140,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "user.role",
+                "constant": false
+            }
+        },
         "__n_excludedFromValidation__": {},
         "generateNext": false,
         "serviceName": "dashboardComponent",

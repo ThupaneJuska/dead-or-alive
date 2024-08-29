@@ -1907,8 +1907,19 @@
                     },
                     {
                         "_key": "(rowclick)",
-                        "_value": "getRow(row)",
+                        "_value": "setClientData(row)getRow(row)",
                         "_type": "a",
+                        "_attrDef": "p",
+                        "_customAttributeFlag": "flowpicker",
+                        "objValue": {
+                            "nodeID": "sd_yN9biohu3MCF1RRs",
+                            "functionName": "setClientData",
+                            "activeTree": "pages",
+                            "z": "sd_o4ikLTEW12PcNWYL",
+                            "input": [
+                                "row"
+                            ]
+                        }
                         "_attrDef": "p",
                         "_customAttributeFlag": "flowpicker",
                         "objValue": {
@@ -2325,6 +2336,22 @@
                             "_value": "",
                             "_type": "dav",
                             "_attrDef": "p"
+                        },
+                        {
+                            "_key": "(rowclick)",
+                            "_value": "viewPayments(row)",
+                            "_type": "kv",
+                            "_attrDef": "c",
+                            "_customAttributeFlag": "flowpicker",
+                            "objValue": {
+                                "nodeID": "sd_yN9biohu3MCF1RRs",
+                                "functionName": "viewPayments",
+                                "activeTree": "pages",
+                                "z": "sd_o4ikLTEW12PcNWYL",
+                                "input": [
+                                    "row"
+                                ]
+                            }
                         }
                     ],
                     "93a68c3f-49c8-0851-e4da-b18e08edd794": {
@@ -2368,6 +2395,12 @@
                             {
                                 "_key": "[matMenuTriggerFor]",
                                 "_value": "menu",
+                                "_type": "kv",
+                                "_attrDef": "c"
+                            },
+                            {
+                                "_key": "[matMenuTriggerData]",
+                                "_value": "{table: table}",
                                 "_type": "kv",
                                 "_attrDef": "c"
                             }
@@ -3016,9 +3049,16 @@
                     },
                     {
                         "_key": "(click)",
-                        "_value": "",
+                        "_value": "goToViewPayment()",
                         "_type": "kv",
-                        "_attrDef": "p"
+                        "_attrDef": "p",
+                        "objValue": {
+                            "nodeID": "sd_oYuxO86FKvA3jf09",
+                            "functionName": "goToViewPayment",
+                            "activeTree": "pages",
+                            "z": "sd_o4ikLTEW12PcNWYL",
+                            "input": []
+                        }
                     },
                     {
                         "_key": "[disabled]",

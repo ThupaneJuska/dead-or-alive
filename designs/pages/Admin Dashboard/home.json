@@ -131,7 +131,7 @@
                     "type": "literal",
                     "value": "MatSort"
                 },
-                "defaultValue": "",
+                "defaultValue": "MatSort",
                 "isViewChildren": false
             }
         ],
@@ -558,11 +558,11 @@
         "z": "sd_o4ikLTEW12PcNWYL",
         "viewType": "pages",
         "nodeType": "start",
-        "name": "view payments",
+        "name": "set client data",
         "outputs": 1,
         "inputVariables": [
             {
-                "key": "index",
+                "key": "row",
                 "defaultValue": {
                     "type": "any",
                     "value": ""
@@ -572,13 +572,13 @@
         ],
         "localVariables": [],
         "flow_type": "sync",
-        "functionName": "viewPayments",
+        "functionName": "setClientData",
         "category": "General",
         "x": 85,
         "y": 460,
         "wires": [
             [
-                "sd_QChKdOVb4gfQJb18"
+                "sd_iLkoHwTtrAd37cM8"
             ]
         ],
         "__n_excludedFromValidation__": {},
@@ -586,17 +586,101 @@
         "serviceName": "homeComponent"
     },
     {
-        "id": "sd_QChKdOVb4gfQJb18",
-        "type": "Script",
+        "id": "sd_iLkoHwTtrAd37cM8",
+        "type": "PageCallService",
         "z": "sd_o4ikLTEW12PcNWYL",
-        "viewType": "common",
+        "viewType": "pages",
         "nodeType": "flow",
         "name": "",
-        "script": "console.log(\"index ==>\", bh.input.index)",
-        "functionName": "sd_QChKdOVb4gfQJb18",
-        "category": "Function",
-        "x": 185,
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_mZtkuYkkTI8tLdyV",
+            "type": "tab",
+            "createdDate": "2024-08-28T09:36:49.759Z",
+            "label": "variables",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_jJNBQsNOvW2mw7Dt",
+            "flowName": "setVariable"
+        },
+        "inputVariables": [
+            {
+                "key": "data",
+                "map": true,
+                "valueType": "bh",
+                "value": "input.row"
+            }
+        ],
+        "outputMapping": [
+            {
+                "mapVarType": "input",
+                "key": "data",
+                "valueType": "bh",
+                "value": "",
+                "mapVarName": "data"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/variables",
+        "startName": "setVariable",
+        "inputParams": [
+            "bh.input.row"
+        ],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "sd_iLkoHwTtrAd37cM8",
+        "category": "General",
+        "x": 160,
         "y": 460,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_oYuxO86FKvA3jf09",
+        "type": "PageStart",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "go to view payment",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "goToViewPayment",
+        "category": "General",
+        "x": 85,
+        "y": 560,
+        "wires": [
+            [
+                "sd_WnahUlnrdMBkCHsS"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_WnahUlnrdMBkCHsS",
+        "type": "Navigation",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "path": "/dashboard/view-payments",
+        "functionName": "sd_WnahUlnrdMBkCHsS",
+        "category": "Navigation",
+        "x": 180,
+        "y": 560,
         "wires": [
             []
         ],

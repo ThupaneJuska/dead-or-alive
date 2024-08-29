@@ -16,6 +16,8 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
+//CORE_REFERENCE_IMPORT-payment_formComponent
+import { payment_formComponent } from '../components/Admin Dashboard/payment_form.component';
 //CORE_REFERENCE_IMPORT-variables
 import { variables } from '../sd-services/variables';
 //CORE_REFERENCE_IMPORT-view_paymentsComponent
@@ -86,6 +88,8 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-payment_formComponent
+  payment_formComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-view_paymentsComponent
   view_paymentsComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-clientDasbhoardComponent
@@ -133,8 +137,8 @@ export const appProviders = [
   },
   NAuthGuardService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY
-//CORE_REFERENCE_PUSH_TO_PRO_ARRAY-variables
-variables,
+  //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-variables
+  variables,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-authorizationService
   authorizationService,
   //CORE_REFERENCE_PUSH_TO_PRO_ARRAY-randomNumber

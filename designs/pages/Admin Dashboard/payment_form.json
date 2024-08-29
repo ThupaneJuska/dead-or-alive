@@ -1,0 +1,614 @@
+[
+    {
+        "id": "sd_7Y0FdLD4v3Ji9ha6",
+        "type": "tab",
+        "createdDate": "2024-08-28T13:27:11.041Z",
+        "label": "payment_form",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "payment_formComponent"
+    },
+    {
+        "id": "sd_pv9WDQQTAb5TdcRu",
+        "type": "OnInit",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_pv9WDQQTAb5TdcRu",
+        "category": "Lifecycle Events",
+        "x": 45,
+        "y": 60,
+        "wires": [
+            [
+                "sd_1mWJDUJMcNFR2L50"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "payment_formComponent"
+    },
+    {
+        "id": "sd_1mWJDUJMcNFR2L50",
+        "type": "PageVariables",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [
+            {
+                "textIp": "userData",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "amount",
+                "typedIpValue": {
+                    "type": "literal",
+                    "value": ""
+                }
+            }
+        ],
+        "functionName": "sd_1mWJDUJMcNFR2L50",
+        "category": "Function",
+        "x": 125,
+        "y": 60,
+        "wires": [
+            [
+                "sd_6JYmM4GgmH550ZuL"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_wFLj92XcWVhb5iwB",
+        "type": "PageCallService",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "get service",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_mZtkuYkkTI8tLdyV",
+            "type": "tab",
+            "createdDate": "2024-08-28T09:36:49.759Z",
+            "label": "variables",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_sr5Ud7ts2hkaks9g",
+            "flowName": "getVariable"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "data",
+                "valueType": "this.page",
+                "value": "userData",
+                "mapVarName": "data",
+                "localVar": "this.page.userData"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/variables",
+        "startName": "getVariable",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "getService",
+        "category": "General",
+        "x": 285,
+        "y": 60,
+        "wires": [
+            [
+                "sd_pHYVQ6qVqoPeCrHB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_LV7KwD0nrfUeJXen",
+        "type": "Script",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "\npage.paymentForm = new FormGroup({\n    name: new FormControl(page.userData.firstName),\n    surname: new FormControl(page.userData.lastName),\n    policyNumber: new FormControl(page.userData.policyNumber),\n    amount: new FormControl(page.amount),\n    loggedBY: new FormControl(page.loggedInUser.email),\n    event: new FormControl(\"\",[Validators.required])\n})\n\nconsole.log(\"form value\",page.paymentForm.value)",
+        "functionName": "sd_LV7KwD0nrfUeJXen",
+        "category": "Function",
+        "x": 505,
+        "y": 60,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_6JYmM4GgmH550ZuL",
+        "type": "UseDependency",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "property": "",
+        "propertyType": "bh",
+        "propertyGv": "bh.",
+        "alias": "",
+        "modules": [
+            {
+                "textIp": "Validators",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "FormGroup",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            },
+            {
+                "textIp": "FormControl",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                },
+                "injectable": false
+            }
+        ],
+        "import_all": false,
+        "library": "@angular/forms",
+        "serviceDesignerType": "pages",
+        "functionName": "sd_6JYmM4GgmH550ZuL",
+        "category": "Function",
+        "x": 205,
+        "y": 60,
+        "wires": [
+            [
+                "sd_wFLj92XcWVhb5iwB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_cKmiPodGA3tDIBUK",
+        "type": "PageStart",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "packageType",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "packageType",
+        "category": "General",
+        "x": 65,
+        "y": 200,
+        "wires": [
+            [
+                "sd_ZcCdk3M89Mu75WMQ"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "payment_formComponent"
+    },
+    {
+        "id": "sd_ZcCdk3M89Mu75WMQ",
+        "type": "Script",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "if(page.userData.packageType == \"Package 1\"){\n    page.amount = 90;\n} else if (page.userData.packageType == \"Package 2\"){\n    page.amount = 110;\n} else {\n    page.amount = 130;\n}\n\n\n",
+        "functionName": "sd_ZcCdk3M89Mu75WMQ",
+        "category": "Function",
+        "x": 165,
+        "y": 200,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_pHYVQ6qVqoPeCrHB",
+        "type": "PageCallService",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_7Y0FdLD4v3Ji9ha6",
+            "type": "tab",
+            "createdDate": "2024-08-28T13:27:11.041Z",
+            "label": "payment_form",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_cKmiPodGA3tDIBUK",
+            "flowName": "packageType"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "packageType",
+        "inputParams": [],
+        "accept_csd": false,
+        "functionName": "sd_pHYVQ6qVqoPeCrHB",
+        "category": "General",
+        "x": 360,
+        "y": 60,
+        "wires": [
+            [
+                "sd_U9h9VOBbE3QabBzk"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_U9h9VOBbE3QabBzk",
+        "type": "Storage",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "user"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "loggedInUser"
+        },
+        "functionName": "sd_U9h9VOBbE3QabBzk",
+        "category": "Storage",
+        "x": 425,
+        "y": 60,
+        "wires": [
+            [
+                "sd_LV7KwD0nrfUeJXen"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_v3rJupcK1WyIppav",
+        "type": "PageStart",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "log payment",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "logPayment",
+        "category": "General",
+        "x": 65,
+        "y": 320,
+        "wires": [
+            [
+                "sd_VcaQ1xF5Yh44J1gA"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "payment_formComponent"
+    },
+    {
+        "id": "sd_VcaQ1xF5Yh44J1gA",
+        "type": "Environment",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "envMaps": [
+            {
+                "flowVar": {
+                    "type": "this.page",
+                    "value": "ssdURL"
+                },
+                "envProperty": "ssdURL"
+            }
+        ],
+        "functionName": "sd_VcaQ1xF5Yh44J1gA",
+        "category": "General",
+        "x": 160,
+        "y": 320,
+        "wires": [
+            [
+                "sd_b3DUrK8OijuTIvWT"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_b3DUrK8OijuTIvWT",
+        "type": "Script",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "bh.url = page.ssdURL + \"log-payment\"",
+        "functionName": "sd_b3DUrK8OijuTIvWT",
+        "category": "Function",
+        "x": 260,
+        "y": 320,
+        "wires": [
+            [
+                "sd_K8VOPjLQKX8kul5n"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_K8VOPjLQKX8kul5n",
+        "type": "HttpRequest",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "method": "post",
+        "methodMappingObj": {},
+        "urlMapping": "bh.url",
+        "urlMappingObj": {
+            "mapVarType": "bh",
+            "mapVarValue": "url"
+        },
+        "ret": "json",
+        "retMappingObj": {},
+        "observe": "",
+        "observeMappingObj": {},
+        "reportProgress": false,
+        "withCreds": false,
+        "reqBody": "this.page.paymentForm.value",
+        "reqBodyObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "paymentForm.value"
+        },
+        "resultMapping": "this.page.result",
+        "resultMappingObj": {
+            "mapVarType": "this.page",
+            "mapVarValue": "result"
+        },
+        "headers": {},
+        "headersObj": [],
+        "headerMappingObj": {},
+        "params": {},
+        "paramsObj": [],
+        "paramMappingObj": {},
+        "functionName": "sd_K8VOPjLQKX8kul5n",
+        "category": "HTTP",
+        "x": 365,
+        "y": 320,
+        "wires": [
+            [
+                "sd_mEg74lKeqcx440aD"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_lTyEMTbjU8Va6qET",
+        "type": "PageStart",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "close",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "close",
+        "category": "General",
+        "x": 65,
+        "y": 440,
+        "wires": [
+            [
+                "sd_gu3HmZZofEmUAShG"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "payment_formComponent"
+    },
+    {
+        "id": "sd_gu3HmZZofEmUAShG",
+        "type": "CloseDialog",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "data": "bh.system",
+        "functionName": "sd_gu3HmZZofEmUAShG",
+        "category": "Dialog",
+        "x": 160,
+        "y": 440,
+        "wires": [
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "bh",
+                "value": "system",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_mEg74lKeqcx440aD",
+        "type": "PageCallService",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_7Y0FdLD4v3Ji9ha6",
+            "type": "tab",
+            "createdDate": "2024-08-28T13:27:11.041Z",
+            "label": "payment_form",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0
+        },
+        "flow": {
+            "flowId": "sd_lTyEMTbjU8Va6qET",
+            "flowName": "close"
+        },
+        "inputVariables": [],
+        "outputMapping": [],
+        "serviceImportPath": "./",
+        "startName": "close",
+        "inputParams": [],
+        "accept_csd": false,
+        "functionName": "sd_mEg74lKeqcx440aD",
+        "category": "General",
+        "x": 480,
+        "y": 320,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_0i3SdyDhQNDUdx2z",
+        "type": "OnChanges",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "On Changes",
+        "functionName": "ngOnChanges",
+        "category": "Lifecycle Events",
+        "x": 320,
+        "y": 180,
+        "wires": [
+            [
+                "sd_IJvi4mnr0YOvwVXV"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "payment_formComponent"
+    },
+    {
+        "id": "sd_IJvi4mnr0YOvwVXV",
+        "type": "PageCallService",
+        "z": "sd_7Y0FdLD4v3Ji9ha6",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "get service2",
+        "outputs": 1,
+        "isValidNode": true,
+        "noerr": 0,
+        "service": {
+            "id": "sd_mZtkuYkkTI8tLdyV",
+            "type": "tab",
+            "createdDate": "2024-08-28T09:36:49.759Z",
+            "label": "variables",
+            "disabled": false,
+            "info": "",
+            "functionSeq": 0,
+            "tabType": "client"
+        },
+        "flow": {
+            "flowId": "sd_sr5Ud7ts2hkaks9g",
+            "flowName": "getVariable"
+        },
+        "inputVariables": [],
+        "outputMapping": [
+            {
+                "mapVarType": "local",
+                "key": "data",
+                "valueType": "this.page",
+                "value": "userData",
+                "mapVarName": "data",
+                "localVar": "this.page.userData"
+            }
+        ],
+        "serviceImportPath": "app/sd-services/variables",
+        "startName": "getVariable",
+        "inputParams": [],
+        "accept_bh": false,
+        "accept_csd": true,
+        "functionName": "getService2",
+        "category": "General",
+        "x": 425,
+        "y": 180,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "payment_formComponent",
+        "generated": true
+    }
+]

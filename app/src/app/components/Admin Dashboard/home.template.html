@@ -1,86 +1,153 @@
-<div fxLayout="column wrap" class="full-width" fxLayoutAlign="start center" [fxShow]="true" fxFill>
-  <div fxLayout="row wrap" class="full-width" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
-    <div fxLayout="column wrap" class="width-30 margin-top-10px margin-left-1em search" fxLayoutAlign="start stretch" [fxShow]="true">
-      <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
-        <input matInput type="Search" placeholder="Search" [required]="false" (keydown)="onFilter($event)">
-        <mat-icon matPrefix>search</mat-icon>
-      </mat-form-field>
-    </div>
-    <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
-      <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
-        <div fxLayout="column wrap" class="blue-color" fxLayoutAlign="center stretch" [fxShow]="true">
-          <div>
-            View by</div>
-        </div>
-        <div fxLayout="column wrap" class="padding-5px filter-cards" fxLayoutAlign="start stretch" [fxShow]="true" (click)="cardsFilter(&apos;Package 1&apos;)">
-          <div class="padding-5px blue-color">
-            Plan A</div>
-        </div>
-        <div fxLayout="column wrap" class="filter-cards" fxLayoutAlign="start stretch" [fxShow]="true" (click)="cardsFilter(&apos;Package 2&apos;)">
-          <div class="padding-5px blue-color">
-            Plan B</div>
-        </div>
-        <div fxLayout="column wrap" class="filter-cards" fxLayoutAlign="start stretch" [fxShow]="true" (click)="cardsFilter(&apos;Package 3&apos;)">
-          <div class="padding-5px blue-color">
-            Plan C</div>
-        </div>
+<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"></div>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.user.role == &apos;client&apos;">
+    <div>
+      <div class="container">
+        <!-- Personal Information Section -->
+        <mat-expansion-panel class="panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Personal Information
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="item"><label>First Name:</label> <span>{{ page.currentUser.firstName }}</span></div>
+          <div class="item"><label>Last Name:</label> <span>{{ page.currentUser.lastName }}</span></div>
+          <div class="item"><label>Email:</label> <span>{{ page.currentUser.email }}</span></div>
+          <div class="item"><label>Gender:</label> <span>{{ page.currentUser.gender }}</span></div>
+          <div class="item"><label>ID Number:</label> <span>{{ page.currentUser.idNumber }}</span></div>
+          <div class="item"><label>Cellphone:</label> <span>{{ page.currentUser.cellphone }}</span></div>
+          <div class="item"><label>Address:</label> <span>{{ page.currentUser.address }}</span></div>
+          <div class="item"><label>Policy Number:</label> <span>{{ page.currentUser.policyNumber }}</span></div>
+          <div class="item"><label>Package Type:</label> <span>{{ page.currentUser.packageType }}</span></div>
+        </mat-expansion-panel>
+
+        <!-- Beneficiaries Section -->
+        <mat-expansion-panel class="panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Beneficiaries
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div *ngIf="page.currentUser.beneficaries.length === 0">
+            <p>No beneficiaries available.</p>
+          </div>
+          <div *ngFor="let beneficiary of page.currentUser.beneficaries" class="array-item">
+            <div class="item"><label>First Name:</label> <span>{{ beneficiary.firstName }}</span></div>
+            <div class="item"><label>Last Name:</label> <span>{{ beneficiary.lastName }}</span></div>
+            <div class="item"><label>Email:</label> <span>{{ beneficiary.email }}</span></div>
+            <div class="item"><label>Gender:</label> <span>{{ beneficiary.gender }}</span></div>
+            <div class="item"><label>ID Number:</label> <span>{{ beneficiary.idNumber }}</span></div>
+            <div class="item"><label>Cellphone:</label> <span>{{ beneficiary.cellphone }}</span></div>
+            <div class="item"><label>Relationship:</label> <span>{{ beneficiary.relationship }}</span></div>
+          </div>
+        </mat-expansion-panel>
+
+        <!-- Dependencies Section -->
+        <mat-expansion-panel class="panel">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              Dependencies
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div *ngIf="page.currentUser.dependencies.length === 0">
+            <p>No dependencies have been added.</p>
+          </div>
+          <div *ngFor="let dependency of page.currentUser.dependencies" class="array-item">
+            <div class="item"><label>First Name:</label> <span>{{ dependency.firstName }}</span></div>
+            <div class="item"><label>Last Name:</label> <span>{{ dependency.lastName }}</span></div>
+            <div class="item"><label>Gender:</label> <span>{{ dependency.gender }}</span></div>
+            <div class="item"><label>ID Number:</label> <span>{{ dependency.idNumber }}</span></div>
+          </div>
+        </mat-expansion-panel>
       </div>
     </div>
   </div>
-  <div fxLayout="row wrap" style="margin-bottom: 1em;" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.table.length &lt; 1"><img imgSrc="/Web/images/D.O.A-logo.png" width="90%"></div>
-  <div fxLayout="row wrap" class="full-width" fxLayoutAlign="center stretch" [fxShow]="true">
-    <div fxLayout="column" style="width:98%; border: 1.5px solid #124e52;">
-      <table mat-table [dataSource]="page.table" *ngIf="page.table.length &gt; 0" matSort class="table-width-fix">
-        <tr mat-header-row *matHeaderRowDef="[&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;policyNumber&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;]"></tr>
-        <tr mat-row *matRowDef="let row; columns: [&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;policyNumber&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;];"></tr>
+  <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf=" page.user.role ==  &apos;admin&apos;">
+    <div fxLayout="column wrap" class="full-width" fxLayoutAlign="start center" [fxShow]="true" fxFill>
+      <div fxLayout="row wrap" class="full-width" fxLayoutGap="1em" fxLayoutAlign="start center" [fxShow]="true">
+        <div fxLayout="column wrap" class="width-30 margin-top-10px margin-left-1em search" fxLayoutAlign="start stretch" [fxShow]="true">
+          <mat-form-field [appearance]="&apos;outline&apos;" [floatLabel]="&apos;auto&apos;" [hideRequiredMarker]="false">
+            <input matInput type="Search" placeholder="Search" [required]="false" (keydown)="onFilter($event)">
+            <mat-icon matPrefix>search</mat-icon>
+          </mat-form-field>
+        </div>
+        <div fxLayout="column wrap" fxLayoutAlign="center center" [fxShow]="true">
+          <div fxLayout="row wrap" fxLayoutGap="1em" fxLayoutAlign="start stretch" [fxShow]="true">
+            <div fxLayout="column wrap" class="blue-color" fxLayoutAlign="center stretch" [fxShow]="true">
+              <div>
+                View by</div>
+            </div>
+            <div fxLayout="column wrap" class="padding-5px filter-cards" fxLayoutAlign="start stretch" [fxShow]="true" (click)="cardsFilter(&apos;Package 1&apos;)">
+              <div class="padding-5px blue-color">
+                Plan A</div>
+            </div>
+            <div fxLayout="column wrap" class="filter-cards" fxLayoutAlign="start stretch" [fxShow]="true" (click)="cardsFilter(&apos;Package 2&apos;)">
+              <div class="padding-5px blue-color">
+                Plan B</div>
+            </div>
+            <div fxLayout="column wrap" class="filter-cards" fxLayoutAlign="start stretch" [fxShow]="true" (click)="cardsFilter(&apos;Package 3&apos;)">
+              <div class="padding-5px blue-color">
+                Plan C</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div fxLayout="row wrap" style="margin-bottom: 1em;" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf="page.table.length &lt; 1"><img imgSrc="/Web/images/D.O.A-logo.png" width="90%"></div>
+      <div fxLayout="row wrap" class="full-width" fxLayoutAlign="center stretch" [fxShow]="true">
+        <div fxLayout="column" style="width:98%; border: 1.5px solid #124e52;">
+          <table mat-table [dataSource]="page.table" *ngIf="page.table.length &gt; 0" matSort class="table-width-fix">
+            <tr mat-header-row *matHeaderRowDef="[&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;policyNumber&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;]"></tr>
+            <tr mat-row *matRowDef="let row; columns: [&apos;firstName&apos;,&apos;lastName&apos;,&apos;packageType&apos;,&apos;policyNumber&apos;,&apos;af49d494-9b3b-db7d-6ff7-3c53fb4d255e&apos;];"></tr>
 
-        <ng-container matColumnDef="firstName">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
-          <td mat-cell *matCellDef="let table; let i = index;">{{table.firstName}}</td>
-        </ng-container>
+            <ng-container matColumnDef="firstName">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Name</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.firstName}}</td>
+            </ng-container>
 
-        <ng-container matColumnDef="lastName">
-          <th mat-header-cell *matHeaderCellDef>Surname</th>
-          <td mat-cell *matCellDef="let table; let i = index;">{{table.lastName}}</td>
-        </ng-container>
+            <ng-container matColumnDef="lastName">
+              <th mat-header-cell *matHeaderCellDef>Surname</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.lastName}}</td>
+            </ng-container>
 
-        <ng-container matColumnDef="packageType">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Package Type</th>
-          <td mat-cell *matCellDef="let table; let i = index;">{{table.packageType}}</td>
-        </ng-container>
+            <ng-container matColumnDef="packageType">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Package Type</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.packageType}}</td>
+            </ng-container>
 
-        <ng-container matColumnDef="policyNumber">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Policy Number</th>
-          <td mat-cell *matCellDef="let table; let i = index;">{{table.policyNumber}}</td>
-        </ng-container>
+            <ng-container matColumnDef="policyNumber">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Policy Number</th>
+              <td mat-cell *matCellDef="let table; let i = index;">{{table.policyNumber}}</td>
+            </ng-container>
 
-        <ng-container matColumnDef="af49d494-9b3b-db7d-6ff7-3c53fb4d255e">
-          <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
-          <td mat-cell *matCellDef="let table; let i = index;"><mat-icon class="pointer" [matMenuTriggerFor]="menu">more_vert</mat-icon></td>
-        </ng-container>
-      </table>
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
-      </mat-paginator>
+            <ng-container matColumnDef="af49d494-9b3b-db7d-6ff7-3c53fb4d255e">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+              <td mat-cell *matCellDef="let table; let i = index;"><mat-icon class="pointer" [matMenuTriggerFor]="menu">more_vert</mat-icon></td>
+            </ng-container>
+          </table>
+          <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]">
+          </mat-paginator>
 
+        </div>
+      </div>
     </div>
+    <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-menu #menu="matMenu"><button mat-menu-item>
+          <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="column wrap" class="table-icons" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="yellow-color">edit</mat-icon></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div>
+                <h3 class="no-margin blue-color">Edit details</h3>
+              </div>
+            </div>
+          </div>
+        </button><button mat-menu-item>
+          <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="teal-color">visibility</mat-icon></div>
+            <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
+              <div>
+                <h3 class="no-margin blue-color">View Payments</h3>
+              </div>
+            </div>
+          </div>
+        </button></mat-menu></div>
   </div>
 </div>
-<div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-menu #menu="matMenu"><button mat-menu-item>
-      <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
-        <div fxLayout="column wrap" class="table-icons" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="yellow-color">edit</mat-icon></div>
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div>
-            <h3 class="no-margin blue-color">Edit details</h3>
-          </div>
-        </div>
-      </div>
-    </button><button mat-menu-item>
-      <div fxLayout="row wrap" fxLayoutAlign="start center" [fxShow]="true">
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true"><mat-icon class="teal-color">visibility</mat-icon></div>
-        <div fxLayout="column wrap" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div>
-            <h3 class="no-margin blue-color">View Payments</h3>
-          </div>
-        </div>
-      </div>
-    </button></mat-menu></div>

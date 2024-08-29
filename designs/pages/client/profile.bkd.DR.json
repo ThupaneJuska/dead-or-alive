@@ -1,0 +1,215 @@
+{
+    "e3d17098-7384-1519-f0ab-cfa4ee591bb5": {
+        "paletteKey": "Html5",
+        "isAdvancedComponent": true,
+        "commentid": null,
+        "designerReference": [
+            {
+                "_key": "style",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "class",
+                "_value": "",
+                "_type": "dav",
+                "_attrDef": "p"
+            },
+            {
+                "_key": "htmlElement",
+                "_value": "div",
+                "_type": "dav",
+                "_attrDef": "p",
+                "_useAsLabel": true
+            },
+            {
+                "_key": "tagType",
+                "_value": "",
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "name",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "sandbox",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "src",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "srcdoc",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "width",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "[autoplay]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "[loop]",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "data",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "audioSource",
+                "_value": [],
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "videoSource",
+                "_value": [],
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "audioDatasource",
+                "_value": "",
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "audioSrc",
+                "_value": "",
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "audioType",
+                "_value": "",
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "videoDatasource",
+                "_value": "",
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "videoSrc",
+                "_value": "",
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "videoType",
+                "_value": "",
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "(audioplay)",
+                "_value": "",
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "(videoplay)",
+                "_value": "",
+                "_type": "a",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "(audiopause)",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "(videopause)",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "(audioended)",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            },
+            {
+                "_key": "(videoended)",
+                "_value": "",
+                "_type": "kv",
+                "_attrDef": "p",
+                "_visibility": false
+            }
+        ],
+        "48ec7f8e-d841-e884-cd8f-10c5ade036d2": {
+            "paletteKey": "html-editor",
+            "parentEditorKey": "e3d17098-7384-1519-f0ab-cfa4ee591bb5",
+            "isAdvancedChildComponent": true,
+            "commentid": null,
+            "designerReference": [
+                {
+                    "_key": "style",
+                    "_value": "",
+                    "_type": "kv",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "class",
+                    "_value": "",
+                    "_type": "dav",
+                    "_attrDef": "p"
+                },
+                {
+                    "_key": "html",
+                    "_value": "<div class=\"profile-container\">\r\n  <!-- Personal Information Section -->\r\n  <mat-card class=\"profile-card\">\r\n    <mat-card-header class=\"profile-card-header\">\r\n      <mat-card-title>\r\n        <mat-icon class=\"profile-icon\">person</mat-icon> Personal Information\r\n      </mat-card-title>\r\n    </mat-card-header>\r\n    <mat-card-content>\r\n      <div class=\"profile-item\">\r\n        <label class=\"profile-label\">First Name:</label> <span class=\"profile-value\">{{ page.currentUser.firstName }}</span>\r\n      </div>\r\n      <div class=\"profile-item\">\r\n        <label class=\"profile-label\">Last Name:</label> <span class=\"profile-value\">{{ page.currentUser.lastName }}</span>\r\n      </div>\r\n      <div class=\"profile-item\">\r\n        <label class=\"profile-label\">Email:</label> <span class=\"profile-value\">{{ page.currentUser.email }}</span>\r\n      </div>\r\n      <div class=\"profile-item\">\r\n        <label class=\"profile-label\">Gender:</label> <span class=\"profile-value\">{{ page.currentUser.gender }}</span>\r\n      </div>\r\n      <div class=\"profile-item\">\r\n        <label class=\"profile-label\">ID Number:</label> <span class=\"profile-value\">{{ page.currentUser.idNumber }}</span>\r\n      </div>\r\n      <div class=\"profile-item\">\r\n        <label class=\"profile-label\">Cellphone:</label> <span class=\"profile-value\">{{ page.currentUser.cellphone }}</span>\r\n      </div>\r\n      <div class=\"profile-item\">\r\n        <label class=\"profile-label\">Address:</label> <span class=\"profile-value\">{{ page.currentUser.address }}</span>\r\n      </div>\r\n      <div class=\"profile-item\">\r\n        <label class=\"profile-label\">Policy Number:</label> <span class=\"profile-value\">{{ page.currentUser.policyNumber }}</span>\r\n      </div>\r\n      <div class=\"profile-item\">\r\n        <label class=\"profile-label\">Package Type:</label> <span class=\"profile-value\">{{ page.currentUser.packageType }}</span>\r\n      </div>\r\n    </mat-card-content>\r\n    <mat-card-actions>\r\n      <button mat-raised-button color=\"primary\" class=\"edit-button\" (click)=\"editProfile()\">Edit</button>\r\n    </mat-card-actions>\r\n  </mat-card>\r\n</div>\r\n",
+                    "_type": "a",
+                    "_attrDef": "p"
+                }
+            ]
+        }
+    }
+}

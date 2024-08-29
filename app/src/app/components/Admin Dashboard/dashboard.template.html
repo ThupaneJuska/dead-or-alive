@@ -45,7 +45,7 @@
       </div>
       <div fxLayout="row wrap" style="width:89%" class="box-sizing padding-5px light-grey-bg" fxLayoutAlign="center stretch" [fxShow]="true">
         <div fxLayout="column wrap" class="white-bg full-width" fxLayoutAlign="start stretch" [fxShow]="true">
-          <div fxLayout="row wrap" class="light-grey-bg" fxLayoutAlign="start stretch" [fxShow]="true">
+          <div fxLayout="row wrap" class="light-grey-bg" fxLayoutAlign="start stretch" [fxShow]="true" *ngIf=" page.user.role ==  &apos;admin&apos;">
             <div>
               <h2 class="no-margin lightgrey-bg blue-color">{{page.navItem}}</h2>
             </div>

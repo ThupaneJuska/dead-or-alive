@@ -16,8 +16,10 @@ window['neutrinos'] = {
 };
 
 //CORE_REFERENCE_IMPORTS
-//CORE_REFERENCE_IMPORT-clientDasbhoardComponent
-import { clientDasbhoardComponent } from '../components/Client/clientDasbhoard.component';
+//CORE_REFERENCE_IMPORT-client_formComponent
+import { client_formComponent } from '../components/client/client_form.component';
+//CORE_REFERENCE_IMPORT-profileComponent
+import { profileComponent } from '../components/client/profile.component';
 //CORE_REFERENCE_IMPORT-claims_registerComponent
 import { claims_registerComponent } from '../components/Admin claims/claims_register.component';
 //CORE_REFERENCE_IMPORT-authorizationService
@@ -82,8 +84,10 @@ export const appDeclarations = [
   PageNotFoundComponent,
   ArtImgSrcDirective,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY
-  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-clientDasbhoardComponent
-  clientDasbhoardComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-client_formComponent
+  client_formComponent,
+  //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-profileComponent
+  profileComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claims_registerComponent
   claims_registerComponent,
   //CORE_REFERENCE_PUSH_TO_DEC_ARRAY-claimsComponent
@@ -150,6 +154,7 @@ export const appRoutes = [
       { path: 'schedules', component: schedulesComponent },
       { path: 'claim_form', component: claims_registerComponent },
       { path: 'register', component: registerComponent },
+      { path: 'profile', component: profileComponent },
     ],
   },
   { path: 'DOAServices', component: landingComponent },
@@ -159,7 +164,6 @@ export const appRoutes = [
   { path: 'verify-code', component: verify_codeComponent },
   { path: 'reset-password', component: reset_passwordComponent },
   { path: 'register', component: registerComponent },
-  { path: 'clientDasbhoard', component: clientDasbhoardComponent },
   { path: '', redirectTo: '/DOAServices', pathMatch: 'full' },
   { path: '**', component: PageNotFoundComponent },
 ];

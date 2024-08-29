@@ -65,7 +65,7 @@
         ],
         "functionName": "sd_XAIP7JuvVAj0wF4F",
         "category": "Function",
-        "x": 685,
+        "x": 805,
         "y": 40,
         "wires": [
             []
@@ -85,7 +85,7 @@
         "script": "// bh.local.dataSource = new MatTableDataSource(page.table);\n// this.page.tableData = new MatTableDataSource(this.page.table);",
         "functionName": "sd_eJuzOUTYKNgXaqdz_1",
         "category": "Function",
-        "x": 605,
+        "x": 745,
         "y": 40,
         "wires": [
             [
@@ -250,7 +250,7 @@
         ],
         "functionName": "sd_SqQamlbgHC0CMDv2",
         "category": "General",
-        "x": 285,
+        "x": 445,
         "y": 40,
         "wires": [
             [
@@ -272,7 +272,7 @@
         "script": "bh.url = page.ssdURL + \"get-users\"",
         "functionName": "sd_7gioBFKVWHaZ95Yw",
         "category": "Function",
-        "x": 365,
+        "x": 505,
         "y": 40,
         "wires": [
             [
@@ -327,7 +327,7 @@
         "paramMappingObj": {},
         "functionName": "sd_RRKQV3ETWYI7Umxb",
         "category": "HTTP",
-        "x": 440,
+        "x": 585,
         "y": 40,
         "wires": [
             [
@@ -349,7 +349,7 @@
         "script": "bh.tableDataSource = page.result.filter((user:any) =>{\nreturn    user.role == \"client\"\n})\n\npage.table = bh.tableDataSource \npage.backupapplicationsDatasource = page.table;",
         "functionName": "sd_sQz2RUgYmK2eNRYZ",
         "category": "Function",
-        "x": 525,
+        "x": 665,
         "y": 40,
         "wires": [
             [
@@ -395,6 +395,13 @@
             },
             {
                 "textIp": "backupapplicationsDatasource",
+                "typedIpValue": {
+                    "type": "this.page",
+                    "value": ""
+                }
+            },
+            {
+                "textIp": "currentUser",
                 "typedIpValue": {
                     "type": "this.page",
                     "value": ""
@@ -541,6 +548,144 @@
         "functionName": "sd_MVMh0WBg4s6QqZUr",
         "category": "Function",
         "x": 205,
+        "y": 40,
+        "wires": [
+            [
+                "sd_AaiqwUb7HgzTfDeh"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_QYLl0HiQxcsEa5Ab",
+        "type": "Storage",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "user"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_QYLl0HiQxcsEa5Ab",
+        "category": "Storage",
+        "x": 155,
+        "y": 472.8020935058594,
+        "wires": [
+            [
+                "sd_UyjiAEcafE2dIIEu"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_yUD6QIZheJgtSbWK",
+        "type": "PageStart",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "fetchLoggedInUser",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "fetchLoggedInUser",
+        "category": "General",
+        "x": 70,
+        "y": 472.8020935058594,
+        "wires": [
+            [
+                "sd_QYLl0HiQxcsEa5Ab"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "homeComponent"
+    },
+    {
+        "id": "sd_UyjiAEcafE2dIIEu",
+        "type": "Log",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 0,
+        "logObject": "this.page.user",
+        "functionName": "sd_UyjiAEcafE2dIIEu",
+        "category": "General",
+        "x": 235,
+        "y": 472.8020935058594,
+        "wires": [],
+        "__ssdTypeInputs__": {
+            "logObject": {
+                "type": "this.page",
+                "value": "user",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_AaiqwUb7HgzTfDeh",
+        "type": "Storage",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "user"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_AaiqwUb7HgzTfDeh",
+        "category": "Storage",
+        "x": 285,
+        "y": 40,
+        "wires": [
+            [
+                "sd_KFeCUX7cJpIWGtaF"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "homeComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_KFeCUX7cJpIWGtaF",
+        "type": "Script",
+        "z": "sd_o4ikLTEW12PcNWYL",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// page.currentUser = Object.keys(page.user).map(key => {\n//     return { key: key, value: page.user[key] };\n// });\n\npage.currentUser = page.user\n\n console.log(\"page user\" , page.currentUser)\n console.log(\"bene\",page.currentUser.beneficaries);",
+        "functionName": "sd_KFeCUX7cJpIWGtaF",
+        "category": "Function",
+        "x": 365,
         "y": 40,
         "wires": [
             [

@@ -1,0 +1,291 @@
+[
+    {
+        "id": "sd_vg2Bvxi7T3P3pCjq",
+        "type": "tab",
+        "createdDate": "2024-08-29T11:10:42.020Z",
+        "label": "profile",
+        "disabled": false,
+        "info": "",
+        "functionSeq": 0,
+        "generateNext": true,
+        "serviceName": "profileComponent"
+    },
+    {
+        "id": "sd_Ulek6TDKhKGRApma",
+        "type": "OnInit",
+        "z": "sd_vg2Bvxi7T3P3pCjq",
+        "viewType": "common",
+        "nodeType": "start",
+        "name": "",
+        "functionName": "sd_Ulek6TDKhKGRApma",
+        "category": "Lifecycle Events",
+        "x": 30,
+        "y": 30,
+        "wires": [
+            [
+                "sd_c9BRyen4EAmFj0g9"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "profileComponent"
+    },
+    {
+        "id": "sd_c9BRyen4EAmFj0g9",
+        "type": "PageVariables",
+        "z": "sd_vg2Bvxi7T3P3pCjq",
+        "viewType": "pages",
+        "nodeType": "flow",
+        "name": "",
+        "inputs": 1,
+        "outputs": 1,
+        "operation": "set",
+        "globalVariables": [],
+        "functionName": "sd_c9BRyen4EAmFj0g9",
+        "category": "Function",
+        "x": 180,
+        "y": 30,
+        "wires": [
+            [
+                "sd_STng32Sf7lsjxLuB"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "profileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_omOKQpOO6TFRH305",
+        "type": "OpenDialog",
+        "z": "sd_vg2Bvxi7T3P3pCjq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "outputs": 4,
+        "flow": {
+            "flowId": "sd_dAh483Z0wEJ534w5",
+            "label": "client_form"
+        },
+        "relativePath": "app/components/client/client_form",
+        "data": "this.page",
+        "ariaDescribedBy": "this.page",
+        "ariaLabel": "this.page",
+        "ariaLabelledBy": "this.page",
+        "autoFocus": "this.page",
+        "backdropClass": "this.page",
+        "closeOnNavigation": "this.page",
+        "direction": "this.page",
+        "disableClose": "this.page",
+        "hasBackdrop": "this.page",
+        "height": "this.page",
+        "maxHeight": "this.page",
+        "minHeight": "this.page",
+        "width": "this.page",
+        "maxWidth": "this.page",
+        "minWidth": "this.page",
+        "panelClass": "this.page",
+        "position": "this.page",
+        "restoreFocus": "this.page",
+        "role": "this.page",
+        "resultMapping": "this.page",
+        "functionName": "sd_omOKQpOO6TFRH305",
+        "category": "Dialog",
+        "x": 265,
+        "y": 400,
+        "wires": [
+            [],
+            [],
+            [],
+            []
+        ],
+        "__ssdTypeInputs__": {
+            "data": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaDescribedBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabel": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "ariaLabelledBy": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "autoFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "backdropClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "closeOnNavigation": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "direction": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "disableClose": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "hasBackdrop": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "height": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minHeight": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "width": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "maxWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "minWidth": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "panelClass": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "position": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "restoreFocus": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "role": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            },
+            "resultMapping": {
+                "type": "this.page",
+                "value": "",
+                "constant": false
+            }
+        },
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "profileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_STng32Sf7lsjxLuB",
+        "type": "Storage",
+        "z": "sd_vg2Bvxi7T3P3pCjq",
+        "viewType": "client-pages",
+        "nodeType": "flow",
+        "name": "",
+        "operationType": "getItem",
+        "storageType": "sessionStorage",
+        "outputs": 1,
+        "key": {
+            "type": "str",
+            "value": "user"
+        },
+        "value": {},
+        "resultMapping": {
+            "type": "this.page",
+            "value": "user"
+        },
+        "functionName": "sd_STng32Sf7lsjxLuB",
+        "category": "Storage",
+        "x": 225,
+        "y": 140,
+        "wires": [
+            [
+                "sd_WyX8tH6lIl8lZgf8"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "profileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_WyX8tH6lIl8lZgf8",
+        "type": "Script",
+        "z": "sd_vg2Bvxi7T3P3pCjq",
+        "viewType": "common",
+        "nodeType": "flow",
+        "name": "",
+        "script": "// page.currentUser = Object.keys(page.user).map(key => {\n//     return { key: key, value: page.user[key] };\n// });\n\npage.currentUser = page.user\n\n console.log(\"page user\" , page.currentUser)\n console.log(\"bene\",page.currentUser.beneficaries);",
+        "functionName": "sd_WyX8tH6lIl8lZgf8",
+        "category": "Function",
+        "x": 305,
+        "y": 240,
+        "wires": [
+            []
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": false,
+        "serviceName": "profileComponent",
+        "generated": true
+    },
+    {
+        "id": "sd_XJUodCaFkJL3lsDy",
+        "type": "PageStart",
+        "z": "sd_vg2Bvxi7T3P3pCjq",
+        "viewType": "pages",
+        "nodeType": "start",
+        "name": "editProfile",
+        "outputs": 1,
+        "inputVariables": [],
+        "localVariables": [],
+        "flow_type": "sync",
+        "functionName": "editProfile",
+        "category": "General",
+        "x": 140,
+        "y": 400,
+        "wires": [
+            [
+                "sd_omOKQpOO6TFRH305"
+            ]
+        ],
+        "__n_excludedFromValidation__": {},
+        "generateNext": true,
+        "serviceName": "profileComponent"
+    }
+]

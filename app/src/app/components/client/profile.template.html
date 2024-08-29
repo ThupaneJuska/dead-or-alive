@@ -1,0 +1,44 @@
+<div>
+  <div class="profile-container">
+    <!-- Personal Information Section -->
+    <mat-card class="profile-card">
+      <mat-card-header class="profile-card-header">
+        <mat-card-title>
+          <mat-icon class="profile-icon">person</mat-icon> Personal Information
+        </mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+        <div class="profile-item">
+          <label class="profile-label">First Name:</label> <span class="profile-value">{{ page.currentUser.firstName }}</span>
+        </div>
+        <div class="profile-item">
+          <label class="profile-label">Last Name:</label> <span class="profile-value">{{ page.currentUser.lastName }}</span>
+        </div>
+        <div class="profile-item">
+          <label class="profile-label">Email:</label> <span class="profile-value">{{ page.currentUser.email }}</span>
+        </div>
+        <div class="profile-item">
+          <label class="profile-label">Gender:</label> <span class="profile-value">{{ page.currentUser.gender }}</span>
+        </div>
+        <div class="profile-item">
+          <label class="profile-label">ID Number:</label> <span class="profile-value">{{ page.currentUser.idNumber }}</span>
+        </div>
+        <div class="profile-item">
+          <label class="profile-label">Cellphone:</label> <span class="profile-value">{{ page.currentUser.cellphone }}</span>
+        </div>
+        <div class="profile-item">
+          <label class="profile-label">Address:</label> <span class="profile-value">{{ page.currentUser.address }}</span>
+        </div>
+        <div class="profile-item">
+          <label class="profile-label">Policy Number:</label> <span class="profile-value">{{ page.currentUser.policyNumber }}</span>
+        </div>
+        <div class="profile-item">
+          <label class="profile-label">Package Type:</label> <span class="profile-value">{{ page.currentUser.packageType }}</span>
+        </div>
+      </mat-card-content>
+      <mat-card-actions>
+        <button mat-raised-button color="primary" class="edit-button" (click)="editProfile()">Edit</button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+</div>

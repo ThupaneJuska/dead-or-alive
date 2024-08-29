@@ -94,7 +94,7 @@ export class dashboardComponent {
         .constructFlowObject(this);
       bh.input = {};
       bh.local = {};
-      bh = this.sd_cd1QrV5LjbnLQkbt(bh);
+      bh = this.sd_vo43nDZqadLgsXmv(bh);
       //appendnew_next_getInitials
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_AXTFUrLCHdiuiemj');
@@ -193,6 +193,7 @@ export class dashboardComponent {
           undefined
         )
       ) {
+        bh = this.sd_nsvWegJGgnozHiVd(bh);
       }
 
       return bh;
@@ -223,14 +224,30 @@ export class dashboardComponent {
     try {
       const page = this.page;
       page.sideNav = [
-        { label: 'Plan details', icon: 'description', route: '/plan-details' },
-        { label: 'Payment History', icon: 'edit', route: '/payment-history' },
-        { label: 'Claims', icon: 'today', route: '/claims' },
+        { label: 'Plan Details', icon: 'book', route: '/dashboard/home' },
+        { label: 'Payment', icon: 'payments', route: '/payment-history' },
+        { label: 'Claims', icon: 'description' },
+        { label: 'Profile', icon: 'person', route: '/dashboard/profile' },
       ];
       //appendnew_next_sd_SqXtYD2RjekqCj5k
       return bh;
     } catch (e) {
       return this.errorHandler(bh, e, 'sd_SqXtYD2RjekqCj5k');
+    }
+  }
+
+  sd_nsvWegJGgnozHiVd(bh) {
+    try {
+      const page = this.page;
+      page.sideNav = [
+        { label: 'Home', icon: 'home', route: '/dashboard/home' },
+        { label: 'Claims', icon: 'description' },
+        { label: 'Schedules', icon: 'today', route: '/dashboard/schedules' },
+      ];
+      //appendnew_next_sd_nsvWegJGgnozHiVd
+      return bh;
+    } catch (e) {
+      return this.errorHandler(bh, e, 'sd_nsvWegJGgnozHiVd');
     }
   }
 
@@ -266,7 +283,7 @@ export class dashboardComponent {
     }
   }
 
-  sd_cd1QrV5LjbnLQkbt(bh) {
+  sd_vo43nDZqadLgsXmv(bh) {
     try {
       if (
         this.sdService.operators['eq'](
@@ -286,11 +303,20 @@ export class dashboardComponent {
         )
       ) {
         bh = this.sd_FjqAocSbCmtINlLP(bh);
+      } else if (
+        this.sdService.operators['eq'](
+          this.page.user.role,
+          'director',
+          undefined,
+          undefined
+        )
+      ) {
+        bh = this.sd_FjqAocSbCmtINlLP(bh);
       }
 
       return bh;
     } catch (e) {
-      return this.errorHandler(bh, e, 'sd_cd1QrV5LjbnLQkbt');
+      return this.errorHandler(bh, e, 'sd_vo43nDZqadLgsXmv');
     }
   }
 

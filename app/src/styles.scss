@@ -518,7 +518,7 @@ body{
     width: 15%;
 }
 
-.section{
+.section-jula{
     height: calc(100% - 84px);
     background-color:#f7f9f9;
 }
@@ -661,4 +661,131 @@ body{
 .mat-step-header .mat-step-icon-selected, .mat-step-header .mat-step-icon-state-done, .mat-step-header .mat-step-icon-state-edit {
     background-color: $yellow;
     color: #fff;
+}
+
+
+
+.container {
+    max-height: 500px;
+    overflow-y: auto;
+    scrollbar-width: none; 
+    // background-color: $light-grey;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.container::-webkit-scrollbar {
+    display: none; 
+}
+
+.panel {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.mat-expansion-panel-header {
+    // background-color: $light-blue;
+    color: #ffffff;
+    border-radius: 8px;
+}
+
+// .mat-expansion-panel:hover {
+//     background-color: $light-blue;
+// }
+
+.panel {
+    margin-bottom: 20px; 
+}
+
+.item {
+    display: flex;
+    justify-content: space-between;
+    // padding: 10px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0; 
+}
+
+.item label {
+    font-weight: bold;
+    color: $light-blue;
+}
+
+.item span {
+    color: #333;
+}
+
+.array-item {
+    margin: 10px 0;
+}
+    
+.profile-container {
+  padding: 5px;
+//   max-width: 800px;
+  margin: auto;
+  
+    max-height: 500px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+
+    // display: none; 
+}
+
+.profile-card {
+  margin: 20px 0;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-card-header {
+  background-color: #f1f1f1;
+  border-bottom: 1px solid #ddd;
+  padding: 16px;
+}
+
+.profile-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-label {
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+}
+
+.profile-value {
+  color: #555;
+  font-size: 16px;
+}
+
+.profile-icon {
+  vertical-align: middle;
+  margin-right: 12px;
+  color: $yellow;
+}
+
+.mat-card-actions {
+  padding: 16px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.edit-button {
+  background-color: $yellow !important;
+  color: #fff;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.edit-button:hover {
+  background-color: $light-grey;
+  cursor: pointer;
 }

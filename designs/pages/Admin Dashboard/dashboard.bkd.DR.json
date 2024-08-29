@@ -2762,7 +2762,7 @@
                         "designerReference": [
                             {
                                 "_key": "componentLabel",
-                                "_value": "Column",
+                                "_value": "container router",
                                 "_type": "kv",
                                 "_attrDef": "p",
                                 "_useAsLabel": true
@@ -2822,6 +2822,7 @@
                         "aa1385a1-d2d0-6310-d8a6-7c0451469d88": {
                             "paletteKey": "FlexLayoutRow",
                             "parentEditorKey": "42d51ab1-4835-9ada-e68c-ca7a9d013654",
+                            "isCommented": "false",
                             "commentid": null,
                             "designerReference": [
                                 {
@@ -2880,12 +2881,19 @@
                                     "_value": "true",
                                     "_type": "kv",
                                     "_attrDef": "p"
+                                },
+                                {
+                                    "_key": "*ngIf",
+                                    "_value": " page.user.role ==  'admin'",
+                                    "_type": "kv",
+                                    "_attrDef": "c"
                                 }
                             ],
                             "f43fece3-7823-23af-b815-2c6dda0afdbf": {
                                 "paletteKey": "Html5",
                                 "parentEditorKey": "aa1385a1-d2d0-6310-d8a6-7c0451469d88",
                                 "isAdvancedComponent": true,
+                                "isCommented": "false",
                                 "commentid": null,
                                 "designerReference": [
                                     {
@@ -3073,6 +3081,7 @@
                                     "paletteKey": "html-editor",
                                     "parentEditorKey": "f43fece3-7823-23af-b815-2c6dda0afdbf",
                                     "isAdvancedChildComponent": true,
+                                    "isCommented": "false",
                                     "commentid": null,
                                     "designerReference": [
                                         {

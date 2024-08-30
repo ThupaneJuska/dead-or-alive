@@ -13,16 +13,26 @@
                     "component": "schedulesComponent"
                 },
                 {
-                    "path": "claim_form",
-                    "component": "claims_registerComponent"
+                    "path": "claims",
+                    "component": "claimsComponent"
                 },
                 {
+                    "path": "register",
+                    "component": "registerComponent"
+                },
+                {
+                    "path": "view-payments",
+                    "component": "view_paymentsComponent",
                     "component": "registerComponent",
                     "path": "register"
                 },
                 {
                     "path": "profile",
                     "component": "profileComponent"
+                },
+                {
+                    "path": "edit-personalinfo",
+                    "component": "edit_personalInfoComponent"
                 }
             ],
             "canActivate": {
@@ -32,7 +42,11 @@
         },
         {
             "path": "DOAServices",
-            "component": "landingComponent"
+            "component": "landingComponent",
+            "canActivate": {
+                "edited": true,
+                "value": ""
+            }
         },
         {
             "path": "contact-us",
@@ -40,7 +54,11 @@
         },
         {
             "path": "login",
-            "component": "loginComponent"
+            "component": "loginComponent",
+            "canActivate": {
+                "edited": true,
+                "value": ""
+            }
         },
         {
             "path": "forgot-password",
@@ -53,10 +71,6 @@
         {
             "component": "reset_passwordComponent",
             "path": "reset-password"
-        },
-        {
-            "component": "registerComponent",
-            "path": "register"
         },
         {
             "path": "''",

@@ -373,7 +373,7 @@
         "viewType": "common",
         "nodeType": "flow",
         "name": "",
-        "script": "page.sideNav = [\n    {label: \"Home\", icon: \"home\", route: \"/dashboard/home\"},\n    {label: \"Claims\", icon: \"description\"},\n    {label: \"Register Client\", icon: \"edit\", route:\"/register\"},\n    {label: \"Schedules\", icon: \"today\", route: \"/dashboard/schedules\"},\n    {label: \"Reports\", icon: \"folder_open\"},\n    {label: \"Audit Logs\", icon: \"trending_up\"}\n]",
+        "script": "page.sideNav = [\n    {label: \"Home\", icon: \"home\", route: \"/dashboard/home\"},\n    {label: \"Claims\", icon: \"description\", route: \"/dashboard/claims\"},\n    {label: \"Register Client\", icon: \"edit\", route:\"/dashboard/register\"},\n    {label: \"Schedules\", icon: \"today\", route: \"/dashboard/schedules\"},\n    {label: \"Reports\", icon: \"folder_open\"},\n    {label: \"Audit Logs\", icon: \"trending_up\"}\n]",
         "functionName": "sd_72RyqGrd9xSHuPJ4",
         "category": "Function",
         "x": 625,

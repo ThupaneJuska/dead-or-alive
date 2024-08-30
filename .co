@@ -1,0 +1,280 @@
+[33mcommit bb130877cb42aabafe49f2f5e6fef19f0e229457[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mnox[m[33m)[m
+Author: Noxolo <noxolo.mnguni@neutrinos.co>
+Date:   Thu Aug 29 20:45:42 2024 +0200
+
+    noxolo
+
+[33mcommit cf73ba4c35290abe09c3e74a5508fb773d7ef94b[m[33m ([m[1;31morigin/nox[m[33m)[m
+Author: Noxolo <noxolo.mnguni@neutrinos.co>
+Date:   Wed Aug 28 10:52:48 2024 +0200
+
+    fixed issue
+
+[33mcommit 955dd67840766e8ba822cc70cbede34ec02331a6[m
+Merge: eddcba8 e3e11db
+Author: Noxolo <noxolo.mnguni@neutrinos.co>
+Date:   Wed Aug 28 09:27:45 2024 +0200
+
+    norox
+
+[33mcommit e3e11dbd3be0a96ef33a7bdb53ae8fda383a75c6[m
+Merge: 9b5169a c9211b9
+Author: ThupaneJuska <116320282+ThupaneJuska@users.noreply.github.com>
+Date:   Wed Aug 28 09:26:09 2024 +0200
+
+    Merge pull request #28 from ThupaneJuska/juska
+    
+    Juska
+
+[33mcommit eddcba8059aa25e1ac1f8e7ba0912067dfe616ff[m
+Author: Noxolo <noxolo.mnguni@neutrinos.co>
+Date:   Wed Aug 28 09:25:59 2024 +0200
+
+    kim
+
+[33mcommit c9211b96e0a145f7e2602279a4c9efac4bbb4c13[m[33m ([m[1;31morigin/juska[m[33m)[m
+Merge: 7d0c7f3 9b5169a
+Author: Edward <edwardthupane80@gmail.com>
+Date:   Wed Aug 28 09:24:24 2024 +0200
+
+    changes
+
+[33mcommit 7d0c7f387c59d5d87014df73501b33a881367873[m
+Author: Edward <edwardthupane80@gmail.com>
+Date:   Wed Aug 28 09:21:26 2024 +0200
+
+    changes
+
+[33mcommit 69d0717e49004017d436dc033f676d80210b8397[m
+Merge: 9a0db7c 9b5169a
+Author: Noxolo <noxolo.mnguni@neutrinos.co>
+Date:   Tue Aug 27 15:42:42 2024 +0200
+
+    Merge branch 'main' of https://github.com/ThupaneJuska/dead-or-alive into nox
+
+[33mcommit 9a0db7c9ba2f23ddb94f4cfdf947684cd86bf4d6[m
+Author: Noxolo <noxolo.mnguni@neutrinos.co>
+Date:   Tue Aug 27 15:42:21 2024 +0200
+
+    kim
+
+[33mcommit 9b5169af094229f9a67ed13876f47b5aa7f96979[m
+Merge: 2f18c56 1cf3391
+Author: Nicholas Maluleka <118725389+NicholasMaluleka@users.noreply.github.com>
+Date:   Tue Aug 27 15:33:46 2024 +0200
+
+    Merge pull request #27 from ThupaneJuska/nicholas/dashboard
+    
+    Nicholas/dashboard
+
+[33mcommit 1cf33910eaca0d0df0d25c441ee9bf1b08edce3d[m
+Merge: 2553a8d 2f18c56
+Author: Nicholas <lesetjamaluleka@gmail.com>
+Date:   Tue Aug 27 15:30:18 2024 +0200
+
+    Merge branch 'main' of https://github.com/ThupaneJuska/dead-or-alive into nicholas/dashboard
+
+[33mcommit 2553a8dafa70d653336a3a736a24d62138504d23[m
+Author: Nicholas <lesetjamaluleka@gmail.com>
+Date:   Tue Aug 27 15:29:22 2024 +0200
+
+    completed CRUD for schedules
+
+[33mcommit fdd5ba9d4b2ac39fa88656f62411a3aa676e5564[m
+Merge: cd3aa78 2f18c56
+Author: Noxolo <noxolo.mnguni@neutrinos.co>
+Date:   Tue Aug 27 14:55:00 2024 +0200
+
+    Merge branch 'main' of https://github.com/ThupaneJuska/dead-or-alive into nox
+
+[33mcommit cd3aa786a4fcdfbf3adf0f6744a20589ec98256f[m
+Author: Noxolo <noxolo.mnguni@neutrinos.co>
+Date:   Tue Aug 27 14:53:46 2024 +0200
+
+    kim
+
+[33mcommit 2f18c5657572a23ab4e95335593f7bd1d4391747[m
+Merge: 3c5a059 fa8e0f4
+Author: ThupaneJuska <116320282+ThupaneJuska@users.noreply.github.com>
+Date:   Tue Aug 27 14:52:42 2024 +0200
+
+    Merge pull request #26 from ThupaneJuska/juska
+    
+    changes
+
+[33mcommit fa8e0f42f8a4b7b56f00746421b87f16b7562bcd[m
+Author: Edward <edwardthupane80@gmail.com>
+Date:   Tue Aug 27 14:50:50 2024 +0200
+
+    changes
+
+[33mcommit db1db1e268a4d30c9d762b570164caf14068eb00[m
+Merge: 1dc15b3 3c5a059
+Author: Nicholas <lesetjamaluleka@gmail.com>
+Date:   Tue Aug 27 11:42:25 2024 +0200
+
+    Merge branch 'main' of https://github.com/ThupaneJuska/dead-or-alive into nicholas/dashboard
+
+[33mcommit 1dc15b3bd68c9e63473902c6354f637c5d79a9cb[m
+Author: Nicholas <lesetjamaluleka@gmail.com>
+Date:   Tue Aug 27 11:42:16 2024 +0200
+
+    edit schedules ongoing
+
+[33mcommit 3c5a059fab62febeda08c560454e5440ab6802ac[m
+Merge: 153ae0d 23fa79a
+Author: ThupaneJuska <116320282+ThupaneJuska@users.noreply.github.com>
+Date:   Tue Aug 27 10:38:18 2024 +0200
+
+    Merge pull request #25 from ThupaneJuska/Angel
+    
+    Angel
+
+[33mcommit 23fa79a6f75605d2d0028d34ac9e18a8150b6e21[m
+Merge: 3418be6 153ae0d
+Author: angel <angelnthebe00@gmail.com>
+Date:   Tue Aug 27 10:37:50 2024 +0200
+
+    Merge branch 'main' of https://github.com/ThupaneJuska/dead-or-alive into Angel
+
+[33mcommit 3418be692caee3d7aa23a2397e03312dcfaca98c[m
+Author: angel <angelnthebe00@gmail.com>
+Date:   Tue Aug 27 10:33:22 2024 +0200
+
+    changes
+
+[33mcommit 153ae0d06b53ffd40307c0ce5b1e06e73fc72e58[m
+Merge: 33437f5 5993032
+Author: ThupaneJuska <116320282+ThupaneJuska@users.noreply.github.com>
+Date:   Tue Aug 27 09:39:50 2024 +0200
+
+    Merge pull request #24 from ThupaneJuska/nicholas/dashboard
+    
+    Nicholas/dashboard
+
+[33mcommit 59930321505c60d72fdd0b536185742e20384b6b[m
+Merge: 4622014 33437f5
+Author: Nicholas <lesetjamaluleka@gmail.com>
+Date:   Tue Aug 27 08:51:19 2024 +0200
+
+    about to add with fixed schedules
+
+[33mcommit 4622014e186ed23bfaad6837078aef1a9af4170b[m
+Author: Nicholas <lesetjamaluleka@gmail.com>
+Date:   Tue Aug 27 08:47:55 2024 +0200
+
+    fixed schedules
+
+[33mcommit 33437f538c0ef673beb24cecd43809556f38d42b[m
+Merge: 0497f24 91daec2
+Author: ThupaneJuska <116320282+ThupaneJuska@users.noreply.github.com>
+Date:   Tue Aug 27 08:47:47 2024 +0200
+
+    Merge pull request #23 from ThupaneJuska/kg
+    
+    Kg
+
+[33mcommit 91daec2d4f9d177eab39947253c80872700d42b8[m[33m ([m[1;31morigin/kg[m[33m)[m
+Author: KgothatsoTheko <kgothatsotheko7@gmail.com>
+Date:   Tue Aug 27 08:24:19 2024 +0200
+
+    register updates
+
+[33mcommit 3af9e4a854d771f8910557c9de14390d6ba5a7d9[m
+Merge: d92b428 0497f24
+Author: KgothatsoTheko <kgothatsotheko7@gmail.com>
+Date:   Mon Aug 26 22:22:02 2024 +0200
+
+    updated claims
+
+[33mcommit 0497f2488160a1753109fe5a8c9da6d35727f427[m
+Merge: 663f2dd 525927a
+Author: ThupaneJuska <116320282+ThupaneJuska@users.noreply.github.com>
+Date:   Mon Aug 26 15:44:44 2024 +0200
+
+    Merge pull request #22 from ThupaneJuska/juska
+    
+    changes
+
+[33mcommit 525927a9c2b3b20d599b8fd7ba2152379bac234b[m
+Author: Edward <edwardthupane80@gmail.com>
+Date:   Mon Aug 26 15:43:59 2024 +0200
+
+    changes
+
+[33mcommit 21777b059b3df5123746fc7c14b38162b630d070[m
+Merge: 0b605e0 663f2dd
+Author: angel <angelnthebe00@gmail.com>
+Date:   Mon Aug 26 14:37:27 2024 +0200
+
+    Merge branch 'main' of https://github.com/ThupaneJuska/dead-or-alive into Angel
+
+[33mcommit 0b605e07658331670e95464f66644ed8873b3189[m
+Author: angel <angelnthebe00@gmail.com>
+Date:   Mon Aug 26 14:36:32 2024 +0200
+
+    phonenumber
+
+[33mcommit 663f2ddcd31d5321e658a5658497ccb422aba244[m
+Merge: 00ec6c0 946d4a8
+Author: ThupaneJuska <116320282+ThupaneJuska@users.noreply.github.com>
+Date:   Mon Aug 26 14:33:25 2024 +0200
+
+    Merge pull request #21 from ThupaneJuska/juska
+    
+    Juska
+
+[33mcommit 946d4a8f6e59a08de0f8a5599adfbf4ae86de355[m
+Merge: b4e0565 00ec6c0
+Author: Edward <edwardthupane80@gmail.com>
+Date:   Mon Aug 26 14:30:51 2024 +0200
+
+    fixed bugs
+
+[33mcommit b4e0565661d3ffa57dab100121035c823b70e0e5[m
+Merge: 9ae4a8b 4da20ba
+Author: Edward <edwardthupane80@gmail.com>
+Date:   Mon Aug 26 14:27:09 2024 +0200
+
+    fixed bugs
+
+[33mcommit 00ec6c0b84df5cc996d9a7f5e24d9bbacf051556[m
+Merge: 4da20ba 581daa4
+Author: ThupaneJuska <116320282+ThupaneJuska@users.noreply.github.com>
+Date:   Mon Aug 26 14:24:04 2024 +0200
+
+    Merge pull request #20 from ThupaneJuska/Angel
+    
+    Angel
+
+[33mcommit 9ae4a8b4b031248170d3a9fe0ef1626ed84e8eea[m
+Author: Edward <edwardthupane80@gmail.com>
+Date:   Mon Aug 26 14:21:13 2024 +0200
+
+    Fixed bugs
+
+[33mcommit 581daa4d6ca793e60d9dfffd1fdec17a501beb1e[m
+Merge: 58c6571 4da20ba
+Author: angel <angelnthebe00@gmail.com>
+Date:   Mon Aug 26 12:19:15 2024 +0200
+
+    angel just pulled
+
+[33mcommit 58c6571755cd2b32ca11c56f03a15e754f5409fa[m
+Author: angel <angelnthebe00@gmail.com>
+Date:   Mon Aug 26 12:15:09 2024 +0200
+
+    claims
+
+[33mcommit 4da20ba0b6361f13135a82daedefdac5b07d9963[m
+Merge: 8597c09 ad0e94d
+Author: ThupaneJuska <116320282+ThupaneJuska@users.noreply.github.com>
+Date:   Mon Aug 26 09:16:28 2024 +0200
+
+    Merge pull request #18 from ThupaneJuska/juska
+    
+    changes
+
+[33mcommit ad0e94d10e26857724ff1dc5b1d710731c317e2a[m
+Author: Edward <edwardthupane80@gmail.com>
+Date:   Mo
